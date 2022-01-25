@@ -8,7 +8,7 @@
 // import 'uikit/dist/js/uikit-icons.js';
 
 // import Swiper JS
-import Swiper, {Navigation, Pagination} from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 // import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -28,4 +28,11 @@ import './components/template/component.js';
 
 // my
 import './scss/style.scss';
+import './scss/header.scss';
+
+import './scss/footer.scss';
+import './scss/stuff.scss';
+import './scss/button.scss';
+import './scss/added-styles.scss';
+
 import './js/my.js';
