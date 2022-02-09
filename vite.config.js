@@ -1,11 +1,12 @@
 import legacy from '@vitejs/plugin-legacy';
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
   root: path.join(__dirname, 'src/'),
 
   build: {
+    minify: false,
     outDir: path.join(__dirname, './dist/./'),
     rollupOptions: {
       input: {

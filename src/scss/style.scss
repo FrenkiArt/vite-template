@@ -19,17 +19,19 @@
 // @import 'uikit/src/scss/uikit.scss';
 // @import './fonts.scss';
 
+:root {
+}
+
 * {
   box-sizing: border-box;
   outline: none;
 }
 
-html,
-body {
-}
-
 html {
   scroll-behavior: smooth;
+}
+
+body {
 }
 
 .container {
@@ -47,40 +49,12 @@ html {
   }
 }
 
-.container-big {
-  margin: 0 auto;
-  max-width: 1280px;
-  width: 100%;
-
-  @media screen and (max-width: 1330px) {
-    max-width: 100%;
-    padding: 0 16px;
-  }
-
-  @media screen and (max-width: 640px) {
-    padding: 0 10px;
-  }
-}
-
 .page {
   display: flex;
   flex-direction: column;
   max-width: 100%;
   min-height: 100vh;
   overflow: hidden;
-}
-
-.header {
-  @media screen and (max-width: 800px) {
-  }
-}
-
-.footer {
-  @media screen and (max-width: 1100px) {
-  }
-
-  @media screen and (max-width: 640px) {
-  }
 }
 
 .img {
@@ -92,61 +66,6 @@ html {
 .sec-title {
   @media screen and (max-width: 640px) {
   }
-}
-
-.h2 {
-}
-
-.h3 {
-}
-
-.btn {
-  transition: color 0.3s;
-
-  svg {
-    stroke: #ffffff;
-  }
-
-  .right-icon {
-    margin-left: 12px;
-  }
-
-  &:hover {
-    color: #ea5e6b;
-
-    svg {
-      stroke: #ea5e6b;
-    }
-  }
-}
-
-.btn-link {
-  transition: color 0.3s;
-
-  svg {
-    stroke: #000000;
-    fill: transparent;
-  }
-
-  .right-icon {
-    margin-left: 12px;
-  }
-
-  &:hover {
-    color: #ea5e6b;
-
-    svg {
-      stroke: #ea5e6b;
-    }
-  }
-}
-
-.m-b-24 {
-  margin-bottom: 24px;
-}
-
-.m-b-35 {
-  margin-bottom: 35px;
 }
 
 svg {

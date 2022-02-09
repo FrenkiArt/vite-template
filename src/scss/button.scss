@@ -1,0 +1,15 @@
+.btn {
+  transition: color 0.3s, background-color 0.3s;
+
+  .right-icon {
+    margin-left: 12px;
+  }
+
+  .left-icon {
+    margin-right: 12px;
+  }
+
+  &:hover {
+    color: #ea5e6b;
+  }
+}
