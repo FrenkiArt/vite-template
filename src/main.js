@@ -1,5 +1,5 @@
 // bootstrap
-// import 'bootstrap/scss/bootstrap.scss';
+import 'bootstrap/scss/bootstrap-grid.scss';
 // import 'bootstrap/dist/js/bootstrap.min.js';
 
 // uikit
