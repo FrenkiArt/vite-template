@@ -1,11 +1,11 @@
 // bootstrap
 import 'bootstrap/scss/bootstrap-grid.scss';
-// import 'bootstrap/dist/js/bootstrap.min.js';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 // uikit
-// import 'uikit/dist/css/uikit.css';
-// import 'uikit/dist/js/uikit.js';
-// import 'uikit/dist/js/uikit-icons.js';
+import 'uikit/dist/css/uikit.css';
+import 'uikit/dist/js/uikit.js';
+import 'uikit/dist/js/uikit-icons.js';
 
 // import Swiper JS
 import Swiper, { Navigation, Pagination } from 'swiper';
