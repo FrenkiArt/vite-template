@@ -1,25 +1,11 @@
-// 1. Your custom variables and variable overwrites.
-// $global-link-color: #da7d02;
-
-// 2. Import default variables and available mixins.
-// @import 'uikit/src/scss/variables-theme.scss';
-// @import 'uikit/src/scss/mixins-theme.scss';
-
-// 3. Your custom mixin overwrites.
-/* @mixin hook-card() {
-  color: #000;
-} */
-
-// 4. Import UIkit.
-// @import 'uikit/src/scss/uikit-theme.scss';
-
-@import 'normalize.css';
-// @import './vendors/tailwind.scss';
+@import "normalize.css";
 // @import 'bootstrap/scss/bootstrap.scss';
-// @import 'uikit/src/scss/uikit.scss';
 // @import './fonts.scss';
 
 :root {
+  --main-fz: 16px;
+  --main-lh: 1.5;
+  --main-ff: "inherit";
 }
 
 * {
@@ -32,6 +18,8 @@ html {
 }
 
 body {
+  font-size: var(--main-fz);
+  line-height: var(--main-lh);
 }
 
 .container {
@@ -70,4 +58,8 @@ body {
 
 svg {
   transition: fill 0.3s, stroke 0.3s;
+}
+
+a {
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
