@@ -1,17 +1,17 @@
-import legacy from '@vitejs/plugin-legacy';
-import { defineConfig } from 'vite';
-import path from 'path';
+import legacy from "@vitejs/plugin-legacy";
+import { defineConfig } from "vite";
+import path from "path";
 
 export default defineConfig({
-  root: path.join(__dirname, 'src/'),
+  root: path.join(__dirname, "src/"),
 
   build: {
     minify: false,
-    outDir: path.join(__dirname, './dist/./'),
+    outDir: path.join(__dirname, "./dist/./"),
     rollupOptions: {
       input: {
-        index: path.resolve(__dirname, 'src', 'index.html'),
-        index2: path.resolve(__dirname, 'src', 'all-elements.html'),
+        index: path.resolve(__dirname, "src", "index.html"),
+        index2: path.resolve(__dirname, "src", "all-elements.html"),
       },
 
       output: {
@@ -20,7 +20,7 @@ export default defineConfig({
         assetFileNames: function (filename) {
           // console.log(filename);
 
-          if (
+          /* if (
             filename.name.includes('.jpg') ||
             filename.name.includes('.jpeg') ||
             filename.name.includes('.png') ||
@@ -39,16 +39,20 @@ export default defineConfig({
             return `assets/fonts/[name].[ext]`;
           } else {
             return `assets/[ext]/[name].[ext]`;
+          } */
+
+          if (filename.name.includes(".css")) {
+            return `assets/css/[name].[ext]`;
+          } else {
+            return `assets/[ext]/[name].[ext]`;
           }
         },
       },
     },
-
-    // minify: false,
   },
 
   server: {
-    open: '/index.html',
+    open: "/index.html",
   },
 
   plugins: [
