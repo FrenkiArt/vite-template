@@ -1,1 +1,1 @@
-## Мой сборщик на vite и js (pure, vanilla)
+# Мой сборщик на vite и js (pure, vanilla)
