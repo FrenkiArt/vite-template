@@ -1,0 +1,26 @@
+{
+  "extends": ["development"],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "scroll-behavior",
+          "-webkit-tap-highlight-color",
+          "scrollbar-width",
+          "scrollbar-color",
+          "backface-visibility",
+          "aspect-ratio",
+          "backdrop-filter"
+        ]
+      }
+    ],
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": ["img[loading]", "iframe[loading]", "meta[name=theme-color]"]
+      }
+    ],
+    "detect-css-reflows/layout": "off"
+  }
+}

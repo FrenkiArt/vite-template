@@ -1,12 +1,12 @@
-import { defineConfig } from "vite";
-import path from "path";
+import { defineConfig } from 'vite';
+import path from 'path';
 
 export default defineConfig({
-  root: path.join(__dirname, "/"),
+  root: path.join(__dirname, '/'),
 
   server: {
     //open: "/index.html",
-    open: "/",
+    open: '/',
     // port: 5555,
   },
 
@@ -16,8 +16,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         // index: path.resolve(__dirname, "src", "index.html"),
-        index: path.resolve(__dirname, "index.html"),
-        allelements: path.resolve(__dirname, "pages/", "all-elements.html"),
+        index: path.resolve(__dirname, 'index.html'),
+        //allelements: path.resolve(__dirname, "pages/", "all-elements.html"),
+        allelements: path.resolve(__dirname, 'all-elements.html'),
       },
       output: {
         entryFileNames: `assets/js/[name].js`,
@@ -28,25 +29,25 @@ export default defineConfig({
           // console.log(filename);
 
           if (
-            filename.name.includes(".png") ||
-            filename.name.includes(".jpe?g") ||
-            filename.name.includes(".jfif") ||
-            filename.name.includes(".pjpeg") ||
-            filename.name.includes(".pjp") ||
-            filename.name.includes(".gif") ||
-            filename.name.includes(".avif") ||
-            filename.name.includes(".webp")
+            filename.name.includes('.png') ||
+            filename.name.includes('.jpe?g') ||
+            filename.name.includes('.jfif') ||
+            filename.name.includes('.pjpeg') ||
+            filename.name.includes('.pjp') ||
+            filename.name.includes('.gif') ||
+            filename.name.includes('.avif') ||
+            filename.name.includes('.webp')
           ) {
             return `assets/img/[name].[ext]`;
-          } else if (filename.name.includes(".svg")) {
+          } else if (filename.name.includes('.svg')) {
             return `assets/svg/[name].[ext]`;
-          } else if (filename.name.includes(".css")) {
+          } else if (filename.name.includes('.css')) {
             return `assets/css/[name].[ext]`;
           } else if (
-            filename.name.includes(".eot") ||
-            filename.name.includes(".ttf") ||
-            filename.name.includes(".otf") ||
-            filename.name.includes(".woff2?")
+            filename.name.includes('.eot') ||
+            filename.name.includes('.ttf') ||
+            filename.name.includes('.otf') ||
+            filename.name.includes('.woff2?')
           ) {
             return `assets/fonts/[name].[ext]`;
           } else {
