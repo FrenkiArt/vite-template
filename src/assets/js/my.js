@@ -1,24 +1,26 @@
-// window.innerWidth > 768
+import IMask from 'imask';
 
-window.addEventListener("resize", function (e) {
+window.addEventListener('resize', function (e) {
   console.log(window.innerWidth);
 });
 
-if (document.querySelector("#menu-trigger")) {
-  document
-    .querySelector("#menu-trigger")
-    .addEventListener("click", function (e) {
-      this.classList.toggle("active");
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('input[type=tel]')) {
+    telMasksTrigger();
+  }
+});
 
-      document.querySelector("#menu").classList.toggle("active");
-    });
-}
+function telMasksTrigger() {
+  document.querySelectorAll('input[type=tel]').forEach((el) => {
+    window.telArr = [];
 
-if (document.querySelector("#menu")) {
-  document.querySelector("#menu").addEventListener("click", function (e) {
-    if (window.innerWidth < 800) {
-      document.querySelector("#menu-trigger").classList.toggle("active");
-      document.querySelector("#menu").classList.toggle("active");
-    }
+    window.telArr.push(
+      IMask(el, {
+        mask: '+{7} 000 000 00 00',
+        //mask: '+{7} (000) 000-00-00',
+        //lazy: false, // make placeholder always visible
+        //placeholderChar: '#', // defaults to '_'
+      })
+    );
   });
 }

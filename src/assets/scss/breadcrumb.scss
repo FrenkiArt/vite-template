@@ -1,0 +1,43 @@
+.breadcrumb {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+
+  @media (min-width: 576px) {
+    gap: 8px;
+  }
+
+  // .breadcrumb__sep
+  &__sep {
+    flex-shrink: 0;
+  }
+
+  // .breadcrumb__item
+  &__item {
+    position: relative;
+    color: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // .breadcrumb__item.active
+  &__item.active {
+    color: rgba(0, 0, 0, 1);
+    pointer-events: none;
+  }
+
+  // .breadcrumb__link
+  &__link {
+    color: inherit;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: #000000;
+    }
+  }
+}

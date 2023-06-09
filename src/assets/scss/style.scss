@@ -1,20 +1,22 @@
 $font-family-base: sans-serif;
 //$primary: orange;
 
-@import "bootstrap/scss/bootstrap-reboot.scss";
-@import "bootstrap/scss/bootstrap-grid.scss";
-@import "bootstrap/scss/bootstrap-utilities.scss";
+@import 'bootstrap/scss/bootstrap-reboot.scss';
+@import 'bootstrap/scss/bootstrap-grid.scss';
+@import 'bootstrap/scss/bootstrap-utilities.scss';
 // @import 'bootstrap/scss/bootstrap.scss';
 
 :root {
   --main-fz: 16px;
   --main-lh: 1.5;
   --main-ff: sans-serif;
+  --second-ff: sans-serif;
   --main-fc: #000000;
   --swiper-theme-color: #12a6df;
   --swiper-pagination-bullet-horizontal-gap: 10px;
-  --main-color: "inherit";
-  --second-color: "inherit";
+  --main-color: 'inherit';
+  --second-color: 'inherit';
+  --color-accent: blue;
 }
 
 * {
@@ -53,13 +55,13 @@ body {
   min-height: 100vh;
 }
 
-.container {
+/* .container {
   @media (min-width: 1280px) {
     max-width: 1224px;
     padding-left: 0;
     padding-right: 0;
   }
-}
+} */
 
 /* .row {
   --bs-gutter-x: 20px;
@@ -107,11 +109,14 @@ svg {
 }
 
 a {
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-[type="search"] {
+[type='search'],
+[type='number'] {
   -webkit-appearance: textfield;
+  appearance: textfield;
 }
 
 // animation: delay-overflow 0.3s linear 0.3s 1 forwards;
