@@ -6,3 +6,79 @@
   position: absolute;
   width: 1px;
 }
+
+.wrap-slider {
+  padding-bottom: 32px;
+  position: relative;
+
+  .swiper {
+    --swiper-pagination-bottom: -38px;
+
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .swiper-slide-fully-visible {
+    opacity: 1;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    --swiper-navigation-sides-offset: -74px;
+
+    align-items: center;
+    background: var(--accent-color, #ff8554);
+    border-radius: 25px;
+    border: 1px solid var(--accent-color, #ff8554);
+    display: none;
+    height: 51px;
+    justify-content: center;
+    margin-top: 0;
+    top: calc(50% - 16px);
+    transform: translate(0, -40%);
+    width: 51px;
+
+    @media (min-width: 576px) {
+      --swiper-navigation-sides-offset: -30px;
+      display: flex;
+    }
+    @media (min-width: 680px) {
+      --swiper-navigation-sides-offset: -74px;
+    }
+    @media (min-width: 768px) {
+      --swiper-navigation-sides-offset: -30px;
+    }
+    @media (min-width: 860px) {
+      --swiper-navigation-sides-offset: -74px;
+    }
+    @media (min-width: 992px) {
+      --swiper-navigation-sides-offset: -26px;
+    }
+    @media (min-width: 1110px) {
+      --swiper-navigation-sides-offset: -74px;
+    }
+    @media (min-width: 1200px) {
+      --swiper-navigation-sides-offset: -26px;
+    }
+    @media (min-width: 1240px) {
+      --swiper-navigation-sides-offset: -40px;
+    }
+    @media (min-width: 1340px) {
+      --swiper-navigation-sides-offset: -74px;
+    }
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: darken(#ff8554, 10%);
+    }
+  }
+}

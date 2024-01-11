@@ -1,3 +1,41 @@
 button {
   cursor: pointer;
 }
+
+.btn {
+  --bs-btn-padding-x: 1.666rem;
+  --bs-btn-padding-y: 0.943rem;
+  --bs-btn-font-weight: 700;
+  --bs-btn-line-height: normal;
+  --bs-btn-border-width: 0.5px;
+  --bs-btn-border-radius: 20px;
+}
+
+.btn-accent {
+  --bs-btn-bg: var(--accent-color, #ff8554);
+  --bs-btn-active-bg: var(--accent-color, #ff8554);
+  --bs-btn-color: #fff;
+  --bs-btn-active-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-border-color: var(--accent-color, #ff8554);
+  --bs-btn-hover-border-color: var(--accent-color, #ff8554);
+  --bs-btn-active-border-color: var(--accent-color, #ff8554);
+  display: inline-flex;
+  justify-content: center;
+
+  gap: 8px;
+
+  &:hover,
+  &:focus-visible {
+    background-color: darken(#ff8554, 10%);
+  }
+
+  &.green {
+    --accent-color: var(--fourth-color);
+
+    &:hover,
+    &:focus-visible {
+      background-color: darken(#6bbd5f, 10%);
+    }
+  }
+}
