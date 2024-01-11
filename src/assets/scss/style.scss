@@ -1,9 +1,9 @@
-$font-family-base: sans-serif;
+//$font-family-base: sans-serif;
 //$primary: orange;
 
-@import 'bootstrap/scss/bootstrap-reboot.scss';
-@import 'bootstrap/scss/bootstrap-grid.scss';
-@import 'bootstrap/scss/bootstrap-utilities.scss';
+//@import 'bootstrap/scss/bootstrap-reboot.scss';
+//@import 'bootstrap/scss/bootstrap-grid.scss';
+//@import 'bootstrap/scss/bootstrap-utilities.scss';
 // @import 'bootstrap/scss/bootstrap.scss';
 
 :root {
@@ -69,10 +69,13 @@ body {
 
 @media (min-width: 576px) {
 }
+
 @media (min-width: 768px) {
 }
+
 @media (min-width: 992px) {
 }
+
 @media (min-width: 1200px) {
 }
 
@@ -124,6 +127,7 @@ a {
   from {
     overflow: auto;
   }
+
   to {
     overflow: auto;
   }

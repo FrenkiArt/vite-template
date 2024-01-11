@@ -1,17 +1,17 @@
-//@import 'bootstrap/scss/bootstrap-utilities.scss';
-@import 'bootstrap/scss/_functions.scss';
-@import 'bootstrap/scss/_variables.scss';
-@import 'bootstrap/scss/_maps';
-@import 'bootstrap/scss/_mixins.scss';
-@import 'bootstrap/scss/_utilities.scss';
+$font-family-base: sans-serif;
+$primary: #ffa424;
 
-//@import 'bootstrap/scss/forms/_form-control.scss';
-//@import 'bootstrap/scss/forms/_input-group.scss';
+@import 'bootstrap/scss/bootstrap-utilities.scss';
+//@import 'bootstrap/scss/_functions.scss';
+//@import 'bootstrap/scss/_variables.scss';
+//@import 'bootstrap/scss/_maps';
+//@import 'bootstrap/scss/_mixins.scss';
+//@import 'bootstrap/scss/_utilities.scss';
+
+@import 'bootstrap/scss/forms/_form-control.scss';
+@import 'bootstrap/scss/forms/_input-group.scss';
 @import 'bootstrap/scss/_type.scss';
 @import 'bootstrap/scss/_buttons.scss';
-
-//$font-family-base: Arial;
-//$primary: #ffa424;
 
 $utilities: map-merge(
   $utilities,
