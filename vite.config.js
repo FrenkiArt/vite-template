@@ -25,6 +25,13 @@ export default defineConfig({
         chunkFileNames: `assets/js/[name].js`,
         // assetFileNames: `assets/[name].[ext]`,
 
+        /* manualChunks(id) {
+          if (id.includes('node_modules')) {
+            // Разделяет вендорные зависимости
+            return 'vendor';
+          }
+        }, */
+
         assetFileNames: function (filename) {
           // console.log(filename);
 
@@ -63,5 +70,6 @@ export default defineConfig({
       },
     },
     minify: false,
+
   },
 });

@@ -1,17 +1,200 @@
-$font-family-base: sans-serif;
-$primary: #ffa424;
+@import 'bootstrap/scss/_functions.scss';
+
+$primary: #f96b23 !default;
+
+@import 'bootstrap/scss/_variables.scss';
+
+$enable-gradients: true !default;
+$enable-shadows: true !default;
+$enable-cssgrid: true !default;
+$paragraph-margin-bottom: 1rem !default;
+
+$font-family-base: 'Inter', sans-serif;
+$body-bg: #f7f7f7;
+$body-color: #212529;
+
+// scss-docs-start theme-color-variables
+
+$newcolor: #bbd034 !default;
+$custom: #312491 !default;
+
+$newcolor-100: tint-color($newcolor, 80%) !default;
+$newcolor-200: tint-color($newcolor, 60%) !default;
+$newcolor-300: tint-color($newcolor, 40%) !default;
+$newcolor-400: tint-color($newcolor, 20%) !default;
+$newcolor-500: $newcolor !default;
+$newcolor-600: shade-color($newcolor, 20%) !default;
+$newcolor-700: shade-color($newcolor, 40%) !default;
+$newcolor-800: shade-color($newcolor, 60%) !default;
+$newcolor-900: shade-color($newcolor, 80%) !default;
+
+$newcolors: (
+  'newcolor-100': $newcolor-100,
+  'newcolor-200': $newcolor-200,
+  'newcolor-300': $newcolor-300,
+  'newcolor-400': $newcolor-400,
+  'newcolor-500': $newcolor-500,
+  'newcolor-600': $newcolor-600,
+  'newcolor-700': $newcolor-700,
+  'newcolor-800': $newcolor-800,
+  'newcolor-900': $newcolor-900,
+) !default;
+
+$custom-100: tint-color($custom, 80%) !default;
+$custom-200: tint-color($custom, 60%) !default;
+$custom-300: tint-color($custom, 40%) !default;
+$custom-400: tint-color($custom, 20%) !default;
+$custom-500: $custom !default;
+$custom-600: shade-color($custom, 20%) !default;
+$custom-700: shade-color($custom, 40%) !default;
+$custom-800: shade-color($custom, 60%) !default;
+$custom-900: shade-color($custom, 80%) !default;
+
+$customs: (
+  'custom-100': $custom-100,
+  'custom-200': $custom-200,
+  'custom-300': $custom-300,
+  'custom-400': $custom-400,
+  'custom-500': $custom-500,
+  'custom-600': $custom-600,
+  'custom-700': $custom-700,
+  'custom-800': $custom-800,
+  'custom-900': $custom-900,
+) !default;
+
+$colors: map-merge(
+  $colors,
+  (
+    'newcolor': $newcolor,
+    'custom': $custom,
+  )
+);
+
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    'newcolor': $newcolor,
+    'custom': $custom,
+  )
+);
+
+$all-colors: map-merge-multiple(
+  $blues,
+  $indigos,
+  $purples,
+  $pinks,
+  $reds,
+  $oranges,
+  $yellows,
+  $greens,
+  $teals,
+  $cyans,
+  $newcolors,
+  $customs
+);
+
+$enable-negative-margins: true !default;
+
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+  6: $spacer * 2.5,
+  7: $spacer * 3,
+  8: $spacer * 3.5,
+  9: $spacer * 4,
+  10: $spacer * 4.5,
+  11: $spacer * 5,
+);
+
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+@import 'bootstrap/scss/_maps';
+
+@import 'bootstrap/scss/_mixins.scss';
+@import 'bootstrap/scss/_utilities.scss';
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'color':
+      map-merge(
+        map-get($utilities, 'color'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'color'), 'values'),
+              ($colors)
+            ),
+        )
+      ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'background-color':
+      map-merge(
+        map-get($utilities, 'background-color'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'background-color'), 'values'),
+              ($colors)
+            ),
+        )
+      ),
+  )
+);
+
+@import 'bootstrap/scss/_root';
 
 @import 'bootstrap/scss/bootstrap-utilities.scss';
-//@import 'bootstrap/scss/_functions.scss';
-//@import 'bootstrap/scss/_variables.scss';
-//@import 'bootstrap/scss/_maps';
-//@import 'bootstrap/scss/_mixins.scss';
-//@import 'bootstrap/scss/_utilities.scss';
 
-@import 'bootstrap/scss/forms/_form-control.scss';
-@import 'bootstrap/scss/forms/_input-group.scss';
+@import 'bootstrap/scss/_reboot.scss';
 @import 'bootstrap/scss/_type.scss';
+@import 'bootstrap/scss/_containers.scss';
+@import 'bootstrap/scss/_grid.scss';
+@import 'bootstrap/scss/_tables.scss';
+//@import 'bootstrap/scss/_forms.scss';
+//@import 'bootstrap/scss/forms/_form-control.scss';
+//@import 'bootstrap/scss/forms/_form-check.scss';
+//@import 'bootstrap/scss/forms/_input-group.scss';
 @import 'bootstrap/scss/_buttons.scss';
+//@import 'bootstrap/scss/_dropdown.scss';
+//@import 'bootstrap/scss/_button-group.scss';
+//@import 'bootstrap/scss/_nav.scss';
+//@import 'bootstrap/scss/_navbar.scss';
+//@import 'bootstrap/scss/_card.scss';
+//@import 'bootstrap/scss/_breadcrumb.scss';
+//@import 'bootstrap/scss/_accordion.scss';
+//@import 'bootstrap/scss/_pagination.scss';
+//@import 'bootstrap/scss/_badge.scss';
+//@import 'bootstrap/scss/_alert.scss';
+//@import 'bootstrap/scss/_progress.scss';
+//@import 'bootstrap/scss/_list-group.scss';
+@import 'bootstrap/scss/_close.scss';
+//@import 'bootstrap/scss/_toasts.scss';
+//@import 'bootstrap/scss/_modal.scss';
+//@import 'bootstrap/scss/_tooltip.scss';
+//@import 'bootstrap/scss/_popover.scss';
+//@import 'bootstrap/scss/_carousel.scss';
+//@import 'bootstrap/scss/_spinners.scss';
+//@import 'bootstrap/scss/_offcanvas.scss';
+//@import 'bootstrap/scss/_placeholders.scss';
+@import 'bootstrap/scss/_helpers.scss';
 
 $utilities: map-merge(
   $utilities,
@@ -34,5 +217,5 @@ $utilities: map-merge(
 
 @import 'bootstrap/scss/utilities/api';
 
-@import 'bootstrap/scss/bootstrap-reboot.scss';
-@import 'bootstrap/scss/bootstrap-grid.scss';
+//@import 'bootstrap/scss/bootstrap-reboot.scss';
+//@import 'bootstrap/scss/bootstrap-grid.scss';
