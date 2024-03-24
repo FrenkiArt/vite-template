@@ -2,19 +2,6 @@
 
 $primary: #f96b23 !default;
 
-@import 'bootstrap/scss/_variables.scss';
-
-$enable-gradients: true !default;
-$enable-shadows: true !default;
-$enable-cssgrid: true !default;
-$paragraph-margin-bottom: 1rem !default;
-
-$font-family-base: 'Inter', sans-serif;
-$body-bg: #f7f7f7;
-$body-color: #212529;
-
-// scss-docs-start theme-color-variables
-
 $newcolor: #bbd034 !default;
 $custom: #312491 !default;
 
@@ -62,23 +49,36 @@ $customs: (
   'custom-900': $custom-900,
 ) !default;
 
+@import 'bootstrap/scss/_variables.scss';
+
 $colors: map-merge(
   $colors,
   (
-    'newcolor': $newcolor,
     'custom': $custom,
+    'newcolor': $newcolor,
   )
 );
 
 $theme-colors: map-merge(
   $theme-colors,
   (
-    'newcolor': $newcolor,
     'custom': $custom,
+    'newcolor': $newcolor,
   )
 );
 
-$all-colors: map-merge-multiple(
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
+
+$enable-gradients: true !default;
+$enable-shadows: true !default;
+$enable-cssgrid: true !default;
+$paragraph-margin-bottom: 1rem !default;
+
+$font-family-base: 'Inter', sans-serif;
+$body-bg: #f7f7f7;
+$body-color: #212529;
+
+/* $all-colors: map-merge-multiple(
   $blues,
   $indigos,
   $purples,
@@ -91,11 +91,9 @@ $all-colors: map-merge-multiple(
   $cyans,
   $newcolors,
   $customs
-);
+); */
 
 $enable-negative-margins: true !default;
-
-$theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
 
 $spacer: 1rem;
 $spacers: (
