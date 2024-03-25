@@ -1,7 +1,5 @@
 // import Swiper styles
-import "swiper/css/bundle";
-
-
+import 'swiper/css/bundle';
 
 // my
 import './assets/scss/custom-bootstrap.scss';
