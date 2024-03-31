@@ -102,11 +102,6 @@ body {
 }
 
 .sec-title {
-  @media screen and (max-width: 640px) {
-  }
-}
-
-.sec-title {
   color: var(--title-color-primary);
   font-size: rfs-fluid-value(52px);
   font-weight: 600;
@@ -168,7 +163,8 @@ a {
 }
 
 .selector {
-  border: 1px solid gray;
   padding: rfs-fluid-value(2rem);
   margin-top: rfs-fluid-value(5rem);
+  //@include rfs(1.5rem, font-size);
+  //@include rfs(4rem, border-radius);
 }

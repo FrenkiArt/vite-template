@@ -1,6 +1,10 @@
 // import Swiper styles
 import 'swiper/css/bundle';
 
+import 'lightgallery/css/lightgallery.css';
+//import 'lightgallery/css/lg-fullscreen.css';
+//import 'lightgallery/css/lg-video.css';
+
 // my
 import './assets/scss/custom-bootstrap.scss';
 
@@ -29,11 +33,12 @@ import './assets/js/popup.js';
 import './assets/js/youtube.js';
 
 // import 'bootstrap/js/dist/alert';
-// import 'bootstrap/js/dist/button';
+//import 'bootstrap/js/dist/button';
 // import 'bootstrap/js/dist/carousel';
 // import 'bootstrap/js/dist/collapse';
 // import 'bootstrap/js/dist/dropdown';
 //import 'bootstrap/js/dist/modal';
+
 // import 'bootstrap/js/dist/offcanvas';
 // import 'bootstrap/js/dist/popover';
 // import 'bootstrap/js/dist/scrollspy';
