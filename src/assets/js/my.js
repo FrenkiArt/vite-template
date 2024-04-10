@@ -43,9 +43,8 @@ function initLightGalleries() {
   });
 }
 
-// Функция инициализации слайдера с симптомами
 function initTemplateSlider() {
-  const sliderSymptoms = new SwiperCore('.slider-template', {
+  const slider = new SwiperCore('.slider-template', {
     loop: true,
     spaceBetween: 0,
     slidesPerView: 1,
@@ -68,12 +67,11 @@ function initTemplateSlider() {
   });
 }
 function initTemplateSlider2() {
-  const sliderSymptoms2 = new SwiperCore('.slider-template2', {
+  const slider = new SwiperCore('.slider-template2', {
     loop: true,
-    spaceBetween: 0,
     slidesPerView: 1,
+    spaceBetween: 0,
     speed: 400,
-
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
