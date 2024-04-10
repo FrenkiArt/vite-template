@@ -1,63 +1,89 @@
 import IMask from 'imask';
 import lightGallery from 'lightgallery';
-//import lgFullscreen from 'lightgallery/plugins/fullscreen';
-import { Modal } from 'bootstrap/js/index.esm.js';
-import Swiper from 'swiper';
-import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
+import lgFullscreen from 'lightgallery/plugins/fullscreen';
+import { Modal } from 'bootstrap/js/dist/modal';
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  EffectFade,
+  Autoplay,
+} from 'swiper/core';
 
-window.addEventListener('resize', function (e) {
-  console.log(window.innerWidth);
+SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay]);
+
+// Инициализация при загрузке DOM-дерева
+document.addEventListener('DOMContentLoaded', () => {
+  initTelMasks();
+  initLightGalleries();
+  initTemplateSlider();
+  initTemplateSlider2();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (document.querySelector('input[type=tel]')) {
-    telMasksTrigger();
-  }
-
-  if (document.querySelector('[data-gallary]')) {
-    document.querySelectorAll('[data-gallary]').forEach((el) => {
-      lightGallery(el, {
-        licenseKey: '0000 0000 0000 0000',
-        download: false,
-        fullScreen: false,
-        //plugins: [lgFullscreen],
-
-        selector: '[data-src]',
-        //selector: 'this',
-      });
+// Функция инициализации масок телефонных номеров
+function initTelMasks() {
+  const telInputs = document.querySelectorAll('input[type=tel]');
+  telInputs.forEach((el) => {
+    IMask(el, {
+      mask: '+{7} 000 000 00 00',
     });
-  }
+  });
+}
 
-  /* const sliderSimptoms = new Swiper('.slider-simptoms', {
+// Функция инициализации галерей изображений
+function initLightGalleries() {
+  const galleryElements = document.querySelectorAll('[data-gallery]');
+  galleryElements.forEach((el) => {
+    lightGallery(el, {
+      licenseKey: '0000 0000 0000 0000',
+      download: false,
+      fullScreen: false,
+      plugins: [lgFullscreen],
+      selector: '[data-src]',
+    });
+  });
+}
+
+// Функция инициализации слайдера с симптомами
+function initTemplateSlider() {
+  const sliderSymptoms = new SwiperCore('.slider-template', {
+    loop: true,
+    spaceBetween: 0,
+    slidesPerView: 1,
+    speed: 400,
+    autoplay: {
+      delay: 5000,
+    },
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+}
+function initTemplateSlider2() {
+  const sliderSymptoms2 = new SwiperCore('.slider-template2', {
     loop: true,
     spaceBetween: 0,
     slidesPerView: 1,
     speed: 400,
 
-    autoplay: {
-      delay: 5000,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
-
-    modules: [EffectFade, Autoplay],
-
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
     },
-  }); */
-});
-
-function telMasksTrigger() {
-  document.querySelectorAll('input[type=tel]').forEach((el) => {
-    window.telArr = [];
-
-    window.telArr.push(
-      IMask(el, {
-        mask: '+{7} 000 000 00 00',
-        //mask: '+{7} (000) 000-00-00',
-        //lazy: false, // make placeholder always visible
-        //placeholderChar: '#', // defaults to '_'
-      })
-    );
   });
 }
+
+// Экспорт модального окна для доступа извне
+window.modal = Modal;
