@@ -26,10 +26,10 @@ import './assets/styles/added-styles.scss';
 //import './assets/styles/pagination.scss';
 //import './assets/styles/popup.scss';
 
-import './assets/js/tabs.js';
-import './assets/js/acc.js';
-import './assets/js/shortened.js';
-import './assets/js/popup.js';
-import './assets/js/youtube.js';
+//import './assets/js/tabs.js';
+//import './assets/js/acc.js';
+//import './assets/js/shortened.js';
+//import './assets/js/popup.js';
+//import './assets/js/youtube.js';
 
 import './assets/js/my.js';

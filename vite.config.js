@@ -4,7 +4,14 @@ import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
   root: path.join(__dirname, '/'),
-  plugins: [visualizer({ open: true })],
+  plugins: [
+    visualizer({
+      open: true,
+      template: 'treemap',
+      gzipSize: true,
+      brotliSize: true,
+    }),
+  ],
   server: {
     open: true,
     cors: true,
