@@ -1,13 +1,13 @@
 import { defineConfig } from 'vite';
 import path from 'path';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
   root: path.join(__dirname, '/'),
-
+  plugins: [visualizer({ open: true })],
   server: {
-    //open: "/index.html",
-    open: '/',
-    // port: 5555,
+    open: true,
+    cors: true,
   },
 
   build: {
@@ -15,61 +15,41 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       input: {
-        // index: path.resolve(__dirname, "src", "index.html"),
         index: path.resolve(__dirname, 'index.html'),
-        //allelements: path.resolve(__dirname, "pages/", "all-elements.html"),
         allelements: path.resolve(__dirname, 'all-elements.html'),
       },
       output: {
         entryFileNames: `assets/js/[name].js`,
         chunkFileNames: `assets/js/[name].js`,
-        // assetFileNames: `assets/[name].[ext]`,
 
-        /* manualChunks(id) {
-          if (id.includes('node_modules')) {
-            // Разделяет вендорные зависимости
-            return 'vendor';
-          }
-        }, */
-
-        assetFileNames: function (filename) {
-          // console.log(filename);
+        assetFileNames: (assetInfo) => {
+          const ext = assetInfo.name.split('.').pop();
 
           if (
-            filename.name.includes('.png') ||
-            filename.name.includes('.jpe?g') ||
-            filename.name.includes('.jfif') ||
-            filename.name.includes('.pjpeg') ||
-            filename.name.includes('.pjp') ||
-            filename.name.includes('.gif') ||
-            filename.name.includes('.avif') ||
-            filename.name.includes('.webp')
+            [
+              'png',
+              'jpe?g',
+              'jfif',
+              'pjpeg',
+              'pjp',
+              'gif',
+              'avif',
+              'webp',
+            ].includes(ext)
           ) {
             return `assets/img/[name].[ext]`;
-          } else if (filename.name.includes('.svg')) {
+          } else if (ext === 'svg') {
             return `assets/svg/[name].[ext]`;
-          } else if (filename.name.includes('.css')) {
+          } else if (['css', 'scss'].includes(ext)) {
             return `assets/css/[name].[ext]`;
-          } else if (
-            filename.name.includes('.eot') ||
-            filename.name.includes('.ttf') ||
-            filename.name.includes('.otf') ||
-            filename.name.includes('.woff2?')
-          ) {
+          } else if (['eot', 'ttf', 'otf', 'woff2?'].includes(ext)) {
             return `assets/fonts/[name].[ext]`;
           } else {
             return `assets/[ext]/[name].[ext]`;
           }
-
-          /* if (filename.name.includes(".css")) {
-            return `assets/css/[name].[ext]`;
-          } else {
-            return `assets/[ext]/[name].[ext]`;
-          } */
         },
       },
     },
     minify: false,
-
   },
 });

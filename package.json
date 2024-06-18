@@ -13,26 +13,27 @@
     "lint": "eslint . --ext .js"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.3.1",
-    "@typescript-eslint/parser": "^7.3.1",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
     "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
+    "eslint": "^9.5.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
     "path": "^0.12.7",
     "postcss": "^8.4.38",
-    "prettier": "3.2.5",
-    "sass": "^1.72.0",
-    "vite": "^5.2.6"
+    "prettier": "3.3.2",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "sass": "^1.77.6",
+    "vite": "^5.3.1"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "imask": "^7.5.0",
+    "imask": "^7.6.1",
     "jshint": "^2.13.6",
     "lightgallery": "^2.7.2",
     "normalize.css": "^8.0.1",
     "rfs": "^10.0.0",
-    "swiper": "^11.0.7"
+    "swiper": "^11.1.4"
   }
 }

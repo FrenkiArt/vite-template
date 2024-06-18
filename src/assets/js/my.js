@@ -2,14 +2,11 @@ import IMask from 'imask';
 import lightGallery from 'lightgallery';
 import lgFullscreen from 'lightgallery/plugins/fullscreen';
 import { Modal } from 'bootstrap/js/dist/modal';
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  EffectFade,
-  Autoplay,
-} from 'swiper/core';
 
-SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay]);
+import Swiper from 'swiper';
+import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
+
+Swiper.use([Navigation, Pagination, EffectFade, Autoplay]);
 
 // Инициализация при загрузке DOM-дерева
 document.addEventListener('DOMContentLoaded', () => {

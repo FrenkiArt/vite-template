@@ -21,10 +21,10 @@ import './assets/styles/buttons.scss';
 import './assets/styles/stuff.scss';
 import './assets/styles/added-styles.scss';
 
-import './assets/styles/shortened.scss';
-import './assets/styles/acc.scss';
-import './assets/styles/pagination.scss';
-import './assets/styles/popup.scss';
+//import './assets/styles/shortened.scss';
+//import './assets/styles/acc.scss';
+//import './assets/styles/pagination.scss';
+//import './assets/styles/popup.scss';
 
 import './assets/js/tabs.js';
 import './assets/js/acc.js';
