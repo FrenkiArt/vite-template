@@ -40,8 +40,6 @@ vite-js-builder — это сборщик для быстрого старта �
 
 ---
 
-# vite-js-builder
-
 ## Project Description and Objective
 
 vite-js-builder is a scaffold for quickly starting new projects with Vite and pure JavaScript (vanilla). It comes with all the necessary settings to ensure a streamlined development experience and efficient production builds.
@@ -53,25 +51,31 @@ vite-js-builder is a scaffold for quickly starting new projects with Vite and pu
    - Download or clone this repository to your local machine.
 
 2. **Install Dependencies**:
+
    - Open your terminal and navigate to the project directory.
    - Run the following command:
 
-bash
-npm install
+   ```bash
+      npm install
+   ```
 
 3. **Start the Local Development Server**:
+
    - After installing the dependencies, run the command:
 
-bash
-npm run dev
+   ```bash
+      npm run dev
+   ```
 
-- Enjoy fast performance and a streamlined development process.
+   - Enjoy fast performance and a streamlined development process.
 
 4. **Production Build**:
+
    - To create a production build of the project, run the command:
 
-bash
-npm run build
+   ```bash
+      npm run build
+   ```
 
 5. **Deployment**:
    - Use any preferred service for deployment. I personally use Netlify.
