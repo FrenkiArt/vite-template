@@ -16,7 +16,11 @@ export default defineConfig({
     }),
     viteCompression(),
     VitePWA(),
-    pugPlugin({ pretty: true }),
+    pugPlugin({
+      handler: {
+        pretty: true,
+      },
+    }),
   ],
   server: {
     open: true,
@@ -31,6 +35,7 @@ export default defineConfig({
         index: path.resolve(__dirname, 'index.html'),
         allelements: path.resolve(__dirname, 'all-elements.html'),
       },
+
       output: {
         entryFileNames: `assets/js/[name].js`,
         chunkFileNames: `assets/js/[name].js`,
