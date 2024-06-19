@@ -36,7 +36,6 @@ vite-js-builder — это сборщик для быстрого старта �
 
 ## Контакты для обратной связи
 
-- Телефон: +7 (927) 677-75-31
 - Telegram: [@artywork](https://t.me/artywork)
 
 ---
@@ -84,5 +83,4 @@ npm run build
 
 ## Contact Information
 
-- Phone: +7 (927) 677-75-31
 - Telegram: [@artywork](https://t.me/artywork)
