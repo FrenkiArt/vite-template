@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
+import viteCompression from 'vite-plugin-compression';
+import { VitePWA } from 'vite-plugin-pwa';
+import pugPlugin from 'vite-plugin-pug';
 
 export default defineConfig({
   root: path.join(__dirname, '/'),
@@ -11,6 +14,9 @@ export default defineConfig({
       gzipSize: true,
       brotliSize: true,
     }),
+    viteCompression(),
+    VitePWA(),
+    pugPlugin({ pretty: true }),
   ],
   server: {
     open: true,
@@ -58,5 +64,9 @@ export default defineConfig({
       },
     },
     minify: false,
+    cssMinify: true,
+    cssMinifyOptions: {
+      target: 'es2015',
+    },
   },
 });
