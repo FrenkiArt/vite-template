@@ -1,4 +1,5 @@
 @import 'bootstrap/scss/_functions.scss';
+@import 'bootstrap/scss/_variables.scss';
 
 $primary: #f96b23 !default;
 
@@ -55,8 +56,6 @@ $customs: (
   'custom-900': $custom-900,
 ) !default;
 
-@import 'bootstrap/scss/_variables.scss';
-
 $colors: map-merge(
   $colors,
   (
@@ -74,33 +73,14 @@ $theme-colors: map-merge(
 );
 
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
-
 $enable-gradients: true !default;
 $enable-shadows: true !default;
 $enable-cssgrid: true !default;
 $paragraph-margin-bottom: 1rem !default;
-
 $font-family-base: 'Inter', sans-serif;
 $body-bg: #f7f7f7;
 $body-color: #212529;
-
-/* $all-colors: map-merge-multiple(
-  $blues,
-  $indigos,
-  $purples,
-  $pinks,
-  $reds,
-  $oranges,
-  $yellows,
-  $greens,
-  $teals,
-  $cyans,
-  $newcolors,
-  $customs
-); */
-
 $enable-negative-margins: true !default;
-
 $spacer: 1rem;
 $spacers: (
   0: 0,
@@ -117,6 +97,16 @@ $spacers: (
   11: $spacer * 5,
 );
 
+$font-size-base: 1rem;
+$font-size-sm: $font-size-base * 0.875;
+$font-size-lg: $font-size-base * 1.25;
+
+$font-weight-base: $font-weight-normal;
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
 $h1-font-size: $font-size-base * 2.5 !default;
 $h2-font-size: $font-size-base * 2 !default;
 $h3-font-size: $font-size-base * 1.75 !default;
@@ -124,49 +114,26 @@ $h4-font-size: $font-size-base * 1.5 !default;
 $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
 
-@import 'bootstrap/scss/_maps';
+/* $all-colors: map-merge-multiple(
+  $blues,
+  $indigos,
+  $purples,
+  $pinks,
+  $reds,
+  $oranges,
+  $yellows,
+  $greens,
+  $teals,
+  $cyans,
+  $newcolors,
+  $customs
+); */
 
+@import 'bootstrap/scss/_maps';
 @import 'bootstrap/scss/_mixins.scss';
 @import 'bootstrap/scss/_utilities.scss';
-
-$utilities: map-merge(
-  $utilities,
-  (
-    'color':
-      map-merge(
-        map-get($utilities, 'color'),
-        (
-          values:
-            map-merge(
-              map-get(map-get($utilities, 'color'), 'values'),
-              ($colors)
-            ),
-        )
-      ),
-  )
-);
-
-$utilities: map-merge(
-  $utilities,
-  (
-    'background-color':
-      map-merge(
-        map-get($utilities, 'background-color'),
-        (
-          values:
-            map-merge(
-              map-get(map-get($utilities, 'background-color'), 'values'),
-              ($colors)
-            ),
-        )
-      ),
-  )
-);
-
 @import 'bootstrap/scss/_root';
-
 @import 'bootstrap/scss/bootstrap-utilities.scss';
-
 @import 'bootstrap/scss/_reboot.scss';
 @import 'bootstrap/scss/_type.scss';
 @import 'bootstrap/scss/_containers.scss';
@@ -199,10 +166,33 @@ $utilities: map-merge(
 //@import 'bootstrap/scss/_offcanvas.scss';
 //@import 'bootstrap/scss/_placeholders.scss';
 @import 'bootstrap/scss/_helpers.scss';
+@import 'bootstrap/scss/utilities/api';
 
 $utilities: map-merge(
   $utilities,
   (
+    'color':
+      map-merge(
+        map-get($utilities, 'color'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'color'), 'values'),
+              ($colors)
+            ),
+        )
+      ),
+    'background-color':
+      map-merge(
+        map-get($utilities, 'background-color'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'background-color'), 'values'),
+              ($colors)
+            ),
+        )
+      ),
     'opacity':
       map-merge(
         map-get($utilities, 'opacity'),
@@ -218,8 +208,3 @@ $utilities: map-merge(
       ),
   )
 );
-
-@import 'bootstrap/scss/utilities/api';
-
-//@import 'bootstrap/scss/bootstrap-reboot.scss';
-//@import 'bootstrap/scss/bootstrap-grid.scss';
