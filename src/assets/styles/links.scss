@@ -1,5 +1,13 @@
 a {
+  //text-decoration-color: rgba(0,0,0,0.3);
+  transition:
+    color 0.2s ease-out,
+    background-color 0.2s ease-out,
+    border-color 0.2s ease-out,
+    text-underline-offset 0.2s ease-out;
+  text-underline-offset: 0.25em;
 }
 
 a:hover {
+  text-underline-offset: 0.18em;
 }

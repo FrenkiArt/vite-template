@@ -1,5 +1,10 @@
 @import 'rfs/scss';
 
 .uni-sec {
-  padding: rfs-fluid-value(4rem) 0;
+  padding-top: rfs-fluid-value(64px);
+  padding-bottom: rfs-fluid-value(64px);
+
+  &:nth-of-type(odd) {
+    background-color: #ffffff;
+  }
 }

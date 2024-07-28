@@ -3,9 +3,16 @@
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/mixins';
 
+/* 
 button {
-  cursor: pointer;
+  --bs-btn-padding-x: 1.666rem;
+  --bs-btn-padding-y: 0.943rem;
+  --bs-btn-font-weight: 700;
+  --bs-btn-line-height: normal;
+  --bs-btn-border-width: 0.5px;
+  --bs-btn-border-radius: 20px;
 }
+ */
 
 .custom2-button {
   @include button-variant(
@@ -34,16 +41,6 @@ button {
   );
 }
 
-/* 
-.btn {
-  --bs-btn-padding-x: 1.666rem;
-  --bs-btn-padding-y: 0.943rem;
-  --bs-btn-font-weight: 700;
-  --bs-btn-line-height: normal;
-  --bs-btn-border-width: 0.5px;
-  --bs-btn-border-radius: 20px;
-} 
-*/
 $bd-violet: #712cf9;
 
 .btn-bd-primary {
@@ -73,7 +70,7 @@ $bd-violet: #712cf9;
   display: inline-flex;
   justify-content: center;
 
-  gap: 8px;
+  gap: 0.375em;
 
   &:hover,
   &:focus-visible {

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-bs-theme="auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,7 @@
     <pug src="src/includes/header.pug" />
 
     <main id="app" class="page">
-      <section id="first" class="first">
+      <section id="first" class="first uni-sec">
         <div class="container">
           <div class="row g-3">
             <div class="col-6">
@@ -32,6 +32,13 @@
               11111111 11111 1 1 1 1 1 1 1 1
 
               <a href="#" class="link-primary">sdfds </a>
+
+              <a href="#" class="link">sdfds </a>
+              <a href="#" class="">sdfds </a>
+            </div>
+
+            <div class="col-12 col-xs-4 col-sm-6 col-md-12 text-bg-newcolor">
+              <h3>test col-xs</h3>
             </div>
 
             <div class="col-12">
@@ -50,9 +57,11 @@
                 </div>
 
                 <div class="card__content">
-                  <div class="card__title"></div>
-                  <div class="card__text"></div>
-                  <button type="button" class="btn card__trigger"></button>
+                  <div class="card__title">card</div>
+                  <div class="card__text">card text</div>
+                  <button type="button" class="btn btn-secondary card__trigger"
+                    >card trigger</button
+                  >
                 </div>
               </article>
             </div>
@@ -61,6 +70,11 @@
               <button type="button" class="btn btn-primary opacity-70">
                 button
               </button>
+              <button type="button" class="btn btn-secondary">
+                secondary
+              </button>
+              <button type="button" class="btn btn-teal"> teal </button>
+
               <button type="button" class="btn btn-accent">button</button>
               <button type="button" class="btn btn-newcolor">newcolor</button>
               <button type="button" class="btn btn-outline-newcolor"
@@ -81,8 +95,57 @@
               <button type="button" class="btn btn-bd-primary">
                 btn-bd-primary
               </button>
+              <button type="button" class="btn btn-danger"> btn-danger </button>
+              <button type="button" class="btn btn-dark"> btn-dark </button>
             </div>
 
+            <div class="col-12 d-none">
+              <div class="grid text-center" style="--bs-gap: 0.5rem">
+                <div class="g-col-6 g-col-md-4 text-bg-secondary"
+                  >.g-col-6 .g-col-md-4</div
+                >
+                <div class="g-col-6 g-col-md-4 text-bg-secondary"
+                  >.g-col-6 .g-col-md-4</div
+                >
+                <div class="g-col-6 g-col-md-4 text-bg-secondary"
+                  >.g-col-6 .g-col-md-4</div
+                >
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="vstack gap-3">
+                <div class="p-2">First item</div>
+                <div class="p-2">Second item</div>
+                <div class="p-2">Third item</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="uni-sec">
+        <div class="container">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="hstack gap-3">
+                <div class="p-2 text-bg-primary ratio ratio-5x1"
+                  >First item</div
+                >
+                <div class="p-2">Second item</div>
+                <div class="p-2">Third item</div>
+                <div class="p-2">Third item</div>
+                <div class="p-2">Third item</div>
+                <div class="p-2">Third item</div>
+                <div class="p-2">Third item</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="uni-sec">
+        <div class="container">
+          <div class="row g-3">
             <div class="col-6">
               <div class="card p-5 bg-primary bg-opacity-10">
                 <img
@@ -138,7 +201,12 @@
                 </div>
               </div>
             </div>
-
+          </div>
+        </div>
+      </section>
+      <section class="uni-sec">
+        <div class="container">
+          <div class="row g-3">
             <div class="col-12">
               <div class="card text-bg-newcolor bg-opacity-25">
                 <img

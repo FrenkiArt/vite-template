@@ -2,6 +2,7 @@ import IMask from 'imask';
 import lightGallery from 'lightgallery';
 import lgFullscreen from 'lightgallery/plugins/fullscreen';
 import { Modal } from 'bootstrap/js/dist/modal';
+//import Modal from 'bootstrap/js/dist/modal'
 
 import Swiper from 'swiper';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
