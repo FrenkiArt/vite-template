@@ -12,7 +12,7 @@ export default defineConfig({
       open: true,
       template: 'treemap',
       gzipSize: true,
-      brotliSize: true,
+      brotliSize: false,
     }),
     viteCompression(),
     VitePWA(),
