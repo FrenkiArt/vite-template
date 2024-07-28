@@ -1,7 +1,40 @@
+// SCSS файл
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
 button {
   cursor: pointer;
 }
 
+.custom2-button {
+  @include button-variant(
+    $primary,
+    $primary,
+    $white,
+    $secondary,
+    $secondary,
+    $white
+  );
+  @include button-size(
+    $btn-padding-y,
+    $btn-padding-x,
+    $font-size-base,
+    $btn-border-radius
+  );
+}
+
+.custom2-outline-button {
+  @include button-outline-variant($primary, $white, $secondary, $white);
+  @include button-size(
+    $btn-padding-y,
+    $btn-padding-x,
+    $font-size-base,
+    $btn-border-radius
+  );
+}
+
+/* 
 .btn {
   --bs-btn-padding-x: 1.666rem;
   --bs-btn-padding-y: 0.943rem;
@@ -9,6 +42,23 @@ button {
   --bs-btn-line-height: normal;
   --bs-btn-border-width: 0.5px;
   --bs-btn-border-radius: 20px;
+} 
+*/
+$bd-violet: #712cf9;
+
+.btn-bd-primary {
+  --bd-violet-bg: #712cf9;
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+  --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+  --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
 }
 
 .btn-accent {
@@ -30,12 +80,7 @@ button {
     background-color: darken(#ff8554, 10%);
   }
 
-  &.green {
-    --accent-color: var(--fourth-color);
-
-    &:hover,
-    &:focus-visible {
-      background-color: darken(#6bbd5f, 10%);
-    }
+  &:active {
+    background-color: darken(#ff8554, 20%);
   }
 }
