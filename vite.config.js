@@ -60,7 +60,7 @@ export default defineConfig({
             return `assets/svg/[name].[ext]`;
           } else if (['css', 'scss'].includes(ext)) {
             return `assets/css/[name].[ext]`;
-          } else if (['eot', 'ttf', 'otf', 'woff2?'].includes(ext)) {
+          } else if (['eot', 'ttf', 'otf', 'woff2?', 'woff'].includes(ext)) {
             return `assets/fonts/[name].[ext]`;
           } else {
             return `assets/[ext]/[name].[ext]`;

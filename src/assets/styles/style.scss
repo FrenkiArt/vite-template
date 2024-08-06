@@ -1,9 +1,6 @@
 @import 'rfs/scss';
 
 :root {
-  --fs: 16px;
-  --lh: 1.5;
-  --ff: sans-serif;
   --color-font: #212529;
   --swiper-theme-color: #12a6df;
   --swiper-pagination-bullet-horizontal-gap: 10px;
@@ -39,17 +36,7 @@
   border-radius: 3px;
 } */
 
-/* html {
-  scroll-behavior: smooth;
-} */
-
 body {
-  /* color: var(--main-fc);
-  font-family: var(--main-ff);
-  font-size: var(--main-fz);
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--main-lh); */
   min-width: 320px;
   min-height: 100vh;
 }
