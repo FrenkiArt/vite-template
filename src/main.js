@@ -18,6 +18,7 @@ import './assets/styles/typograf.scss';
 import './assets/styles/links.scss';
 import './assets/styles/buttons.scss';
 
+import './assets/styles/card.scss';
 import './assets/styles/stuff.scss';
 import './assets/styles/added-styles.scss';
 
