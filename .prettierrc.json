@@ -7,7 +7,7 @@
   "jsxSingleQuote": false,
   "bracketSpacing": true,
   "jsxBracketSameLine": false,
-  "htmlWhitespaceSensitivity": "strict",
+  "htmlWhitespaceSensitivity": "css",
   "endOfLine": "auto",
   "embeddedLanguageFormatting": "auto",
   "quoteProps": "as-needed",
