@@ -16,18 +16,18 @@
     "autoprefixer": "^10.4.20",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint": "^9.9.1",
-    "eslint-plugin-import": "^2.29.1",
+    "eslint": "^9.11.0",
+    "eslint-plugin-import": "^2.30.0",
     "path": "^0.12.7",
-    "postcss": "^8.4.44",
+    "postcss": "^8.4.47",
     "prettier": "3.3.3",
     "pug": "^3.0.3",
     "rollup-plugin-visualizer": "^5.12.0",
-    "sass": "^1.77.8",
-    "vite": "^5.4.2",
+    "sass": "^1.79.3",
+    "vite": "^5.4.7",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-pug": "^0.3.2",
-    "vite-plugin-pwa": "^0.20.2"
+    "vite-plugin-pwa": "^0.20.5"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
@@ -37,6 +37,6 @@
     "normalize.css": "^8.0.1",
     "nouislider": "^15.8.1",
     "rfs": "^10.0.0",
-    "swiper": "^11.1.12"
+    "swiper": "^11.1.14"
   }
 }
