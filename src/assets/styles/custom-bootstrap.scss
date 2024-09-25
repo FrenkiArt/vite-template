@@ -241,7 +241,7 @@ $grid-breakpoints: (
 $modal-content-border-color: none;
 $modal-content-box-shadow-xs: none;
 $modal-header-border-color: transparent;
-$modal-border-radius: 0;
+$modal-content-border-radius: 0;
 
 @import 'bootstrap/scss/_maps';
 @import 'bootstrap/scss/_mixins.scss';

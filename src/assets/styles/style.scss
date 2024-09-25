@@ -39,6 +39,16 @@
 body {
   min-width: 320px;
   min-height: 100vh;
+
+  [id] {
+    scroll-margin-top: 70px;
+    scroll-margin-block-start: 70px;
+
+    @media (min-width: 992px) {
+      scroll-margin-top: 105px;
+      scroll-margin-block-start: 105px;
+    }
+  }
 }
 
 /* .container {
