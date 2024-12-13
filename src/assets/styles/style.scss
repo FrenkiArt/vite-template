@@ -13,6 +13,8 @@
   --card-box-shadow-2: 0px 4px 16px 16px rgba(0, 0, 0, 0.04);
   --white: #ffffff;
   --white2: #f7f7f7;
+
+  interpolate-size: allow-keywords;
 }
 
 /* * {
@@ -127,6 +129,19 @@ svg {
   }
 
   to {
+    opacity: 1;
+  }
+}
+@keyframes open {
+  from {
+    grid-template-rows: 0fr;
+    opacity: 0;
+    content-visibility: visible;
+  }
+
+  to {
+    grid-template-rows: 1fr;
+    content-visibility: visible;
     opacity: 1;
   }
 }
