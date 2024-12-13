@@ -268,6 +268,7 @@ input[type='range']::-ms-track {
     align-items: center;
     gap: 1rem;
     cursor: pointer;
+    position: relative;
 
     &:focus {
       outline: none;
@@ -305,6 +306,7 @@ input[type='range']::-ms-track {
     transition:
       block-size 1s,
       content-visibility 1s;
+    transition-behavior: allow-discrete;
   } */
 
   &[open] {
@@ -313,12 +315,17 @@ input[type='range']::-ms-track {
     }
 
     .details__body {
-      //grid-template-rows: 1fr;
+      grid-template-rows: 1fr;
       animation: open 0.3s ease-out 0s 1 forwards;
     }
 
-    /* &::details-content {
+    /*  &::details-content {
       block-size: auto;
+      block-size: calc-size(auto);
+
+      @starting-style {
+        block-size: 0;
+      }
     } */
   }
 }
