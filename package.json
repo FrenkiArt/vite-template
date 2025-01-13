@@ -22,7 +22,7 @@
     "postcss": "^8.4.49",
     "prettier": "3.4.2",
     "pug": "^3.0.3",
-    "rollup-plugin-visualizer": "^5.13.1",
+    "rollup-plugin-visualizer": "^5.14.0",
     "sass": "^1.83.1",
     "vite": "^6.0.7",
     "vite-plugin-compression": "^0.5.1",
