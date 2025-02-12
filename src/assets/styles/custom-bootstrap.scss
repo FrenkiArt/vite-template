@@ -242,7 +242,16 @@ $modal-content-border-color: none;
 $modal-content-box-shadow-xs: none;
 $modal-header-border-color: transparent;
 $modal-content-border-radius: 0;
-
+/* 
+--bs-link-color: #0d6efd;
+--bs-link-color-rgb: 13, 110, 253;
+--bs-link-decoration: underline;
+--bs-link-hover-color: rgb(10.4, 88, 202.4);
+--bs-link-hover-color-rgb: 10, 88, 202;
+--bs-focus-ring-width: 0.25rem;
+--bs-focus-ring-opacity: 0.25;
+--bs-focus-ring-color: rgba(13, 110, 253, 0.25);
+ */
 @import 'bootstrap/scss/_maps';
 @import 'bootstrap/scss/_mixins.scss';
 @import 'bootstrap/scss/_utilities.scss';

@@ -40,7 +40,11 @@
 
 body {
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;
+
+  font-optical-sizing: auto;
+  font-variation-settings: 'wdth' 100;
+  text-wrap: balance;
 
   [id] {
     scroll-margin-top: 70px;
