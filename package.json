@@ -23,7 +23,7 @@
     "prettier": "3.5.3",
     "pug": "^3.0.3",
     "rollup-plugin-visualizer": "^5.14.0",
-    "sass": "^1.85.0",
+    "sass": "^1.85.1",
     "vite": "^6.2.0",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-pug": "^0.4.1",
