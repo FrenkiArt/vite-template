@@ -16,7 +16,7 @@
     "autoprefixer": "^10.4.21",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.2.3",
-    "eslint": "^9.20.1",
+    "eslint": "^9.22.0",
     "eslint-plugin-import": "^2.31.0",
     "path": "^0.12.7",
     "postcss": "^8.5.2",
