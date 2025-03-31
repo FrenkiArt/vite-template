@@ -27,7 +27,7 @@
     "vite": "^6.2.2",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-pug": "^0.4.1",
-    "vite-plugin-pwa": "^0.21.1"
+    "vite-plugin-pwa": "^1.0.0"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
