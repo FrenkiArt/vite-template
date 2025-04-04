@@ -1,7 +1,7 @@
+@import 'rfs/scss';
+
 .card {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  display: flex;  
   position: relative;
 
   // .card__wrap-media
@@ -37,17 +37,17 @@
 
   // .card__title
   &__title {
-    position: relative;
+    position: initial;
     margin-bottom: 0;
   }
 
   // .card__text
   &__text {
-    position: relative;
+    position: initial;
   }
 
   // .card__trigger
   &__trigger {
-    position: relative;
+    position: initial;
   }
 }
