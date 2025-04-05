@@ -111,7 +111,7 @@ $enable-dark-mode: true;
 //$color-mode-type: data;
 //$color-mode-type: media-query;
 
-$focus-ring-color: rgba($logo, $focus-ring-opacity);
+$focus-ring-color: rgba($primary, $focus-ring-opacity);
 $focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color;
 $input-btn-focus-box-shadow: $focus-ring-box-shadow;
 $btn-focus-box-shadow: $input-btn-focus-box-shadow;
