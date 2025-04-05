@@ -1,20 +1,23 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
-import viteCompression from 'vite-plugin-compression';
+//import viteCompression from 'vite-plugin-compression';
 import { VitePWA } from 'vite-plugin-pwa';
 import pugPlugin from 'vite-plugin-pug';
+import webfontDownload from 'vite-plugin-webfont-dl';
 
 export default defineConfig({
   root: path.join(__dirname, '/'),
   plugins: [
+    webfontDownload(),
+
     visualizer({
       open: true,
       template: 'treemap',
       gzipSize: true,
       brotliSize: false,
     }),
-    viteCompression(),
+    //viteCompression(),
     VitePWA(),
     pugPlugin({
       handler: {

@@ -14,10 +14,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-prettier": "^5.2.5",
     "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.5",
     "path": "^0.12.7",
     "postcss": "^8.5.2",
     "prettier": "3.5.3",
@@ -27,7 +27,8 @@
     "vite": "^6.2.5",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-pug": "^0.4.1",
-    "vite-plugin-pwa": "^1.0.0"
+    "vite-plugin-pwa": "^1.0.0",
+    "vite-plugin-webfont-dl": "^3.10.4"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",

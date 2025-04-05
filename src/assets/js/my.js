@@ -1,6 +1,6 @@
-import IMask from 'imask';
-import lightGallery from 'lightgallery';
-import lgFullscreen from 'lightgallery/plugins/fullscreen';
+// import IMask from 'imask';
+//import lightGallery from 'lightgallery';
+//import lgFullscreen from 'lightgallery/plugins/fullscreen';
 import { Modal } from 'bootstrap/js/dist/modal';
 //import Modal from 'bootstrap/js/dist/modal'
 
@@ -11,8 +11,8 @@ Swiper.use([Navigation, Pagination, EffectFade, Autoplay]);
 
 // Инициализация при загрузке DOM-дерева
 document.addEventListener('DOMContentLoaded', () => {
-  initTelMasks();
-  initLightGalleries();
+  // initTelMasks();
+  // initLightGalleries();
   initTemplateSlider();
   initTemplateSlider2();
 });
