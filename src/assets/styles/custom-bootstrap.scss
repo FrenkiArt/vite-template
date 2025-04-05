@@ -111,6 +111,19 @@ $enable-dark-mode: true;
 //$color-mode-type: data;
 //$color-mode-type: media-query;
 
+$focus-ring-color: rgba($logo, $focus-ring-opacity);
+$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color;
+$input-btn-focus-box-shadow: $focus-ring-box-shadow;
+$btn-focus-box-shadow: $input-btn-focus-box-shadow;
+$btn-close-focus-shadow: $focus-ring-box-shadow;
+$input-focus-box-shadow: $input-btn-focus-box-shadow;
+$form-range-thumb-focus-box-shadow:
+  0 0 0 1px $body-bg,
+  $input-focus-box-shadow;
+$form-check-input-focus-box-shadow: $focus-ring-box-shadow;
+$nav-link-focus-box-shadow: $focus-ring-box-shadow;
+$pagination-focus-box-shadow: $focus-ring-box-shadow;
+
 $font-family-base: 'Inter', sans-serif;
 $body-bg: #f7f7f7;
 $body-color: #212529;

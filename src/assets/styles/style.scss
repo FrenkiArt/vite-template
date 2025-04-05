@@ -1,8 +1,8 @@
 @import 'rfs/scss';
 
-:root { 
+:root {
   --swiper-theme-color: #12a6df;
-  --swiper-pagination-bullet-horizontal-gap: 10px; 
+  --swiper-pagination-bullet-horizontal-gap: 10px;
   --color-primary: #1560bd;
   --title-color-primary: #1e2d3f;
   --text-color-primary: #5e666e;
@@ -13,6 +13,12 @@
   --white2: #f7f7f7;
 
   interpolate-size: allow-keywords;
+
+  --header-height: 0px;
+
+  @media (min-width: 576px) {
+    --header-height: 0px;
+  }
 }
 
 /* * {
@@ -45,13 +51,8 @@ body {
   text-wrap: balance;
 
   [id] {
-    scroll-margin-top: 70px;
-    scroll-margin-block-start: 70px;
-
-    @media (min-width: 992px) {
-      scroll-margin-top: 105px;
-      scroll-margin-block-start: 105px;
-    }
+    scroll-margin-top: var(--header-height, 0);
+    scroll-margin-block-start: var(--header-height, 0);
   }
 }
 
