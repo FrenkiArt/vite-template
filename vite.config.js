@@ -5,12 +5,13 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import { VitePWA } from 'vite-plugin-pwa';
 import pugPlugin from 'vite-plugin-pug';
 import webfontDownload from 'vite-plugin-webfont-dl';
+import vituum from 'vituum';
+import pug from '@vituum/vite-plugin-pug';
 
 export default defineConfig({
   root: path.join(__dirname, '/'),
   plugins: [
     webfontDownload(),
-
     visualizer({
       open: true,
       template: 'treemap',
@@ -18,12 +19,21 @@ export default defineConfig({
       brotliSize: false,
     }),
     //viteCompression(),
-    VitePWA(),
+    //VitePWA(),
+    // vituum(),
+    /* pug({ 
+      locals: {
+        // Глобальные переменные для всех шаблонов
+        title: 'Мой сайт',
+        environment: process.env.NODE_ENV,
+        version: require('./package.json').version,
+      },
+    }), */
     pugPlugin({
       handler: {
         pretty: true,
       },
-    }),
+    }),  
   ],
   server: {
     open: true,
@@ -33,18 +43,27 @@ export default defineConfig({
   build: {
     cssCodeSplit: true,
     sourcemap: true,
-    rollupOptions: {
+    assetsInlineLimit: 0, // Отключение инлайнинга мелких файлов
+    emptyOutDir: true, // Очистка выходной директории
+
+    rollupOptions: { 
+      //input: ['index.pug.html'],
       input: {
         index: path.resolve(__dirname, 'index.html'),
         allelements: path.resolve(__dirname, 'all-elements.html'),
       },
+      /*  
+      inputzz: {
+        index: path.resolve(__dirname, 'index.html'),
+        allelements: path.resolve(__dirname, 'all-elements.html'),
+      }, */
 
       output: {
         entryFileNames: `assets/js/[name].js`,
         chunkFileNames: `assets/js/[name].js`,
 
         assetFileNames: (assetInfo) => {
-          const ext = assetInfo.name.split('.').pop();
+          const ext = assetInfo.names[0].split('.').pop();
 
           if (
             [

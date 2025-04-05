@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 .hidden-text {
   height: 1px;
   opacity: 0;
@@ -78,7 +80,7 @@
 
     &:hover,
     &:focus-visible {
-      background-color: darken(#ff8554, 10%);
+      background-color: color.adjust(#ff8554, $lightness: -10%);
     }
   }
 }

@@ -1,7 +1,12 @@
+- var values = ['Агастахе', 'Астильба', 'Астра', 'Бадан', 'Барвинок', 'Вальдштейния', 'Вербейник', 'Вероника', 'Гвоздика', 'Гейхера', 'Горец'];
+
+mixin navLink(title)
+    a.nav__inner-link(href='#')= title 
+
 .sec-nav.bg-primary.d-none.d-lg-block(style="--bs-bg-opacity: .05;")
     .container
         nav.nav
-            ul.nav__list
+            ul.nav__list 
                 li.nav__item
                     a.nav__link(href='#')
                         span Многолетники
@@ -10,45 +15,9 @@
                     .nav__inner
                         .row
                             .col.nav__inner-list
-                                a.nav__inner-link(href='#') Агастахе
-                                a.nav__inner-link(href='#') Астильба
-                                a.nav__inner-link(href='#') Астра
-                                a.nav__inner-link(href='#') Бадан 
-                                a.nav__inner-link(href='#') Барвинок 
-                                a.nav__inner-link(href='#') Вальдштейния 
-                                a.nav__inner-link(href='#') Вербейник 
-                                a.nav__inner-link(href='#') Вероника
-                                a.nav__inner-link(href='#') Гвоздика
-                                a.nav__inner-link(href='#') Гейхера
-                                a.nav__inner-link(href='#') Гелениум 
-                                a.nav__inner-link(href='#') Герань 
-                                a.nav__inner-link(href='#') Горец 
-                                a.nav__inner-link(href='#') Дербенник 
-                                a.nav__inner-link(href='#') Душица
-                                a.nav__inner-link(href='#') Живучка 
-                                a.nav__inner-link(href='#') Колокольчик
-                                a.nav__inner-link(href='#') Котовник 
-                                a.nav__inner-link(href='#') Кровохлебка 
-                                a.nav__inner-link(href='#') Лаванда 
-                                a.nav__inner-link(href='#') Лилейник 
-                                a.nav__inner-link(href='#') Манжетка
-                                a.nav__inner-link(href='#') Мискантус
-                                a.nav__inner-link(href='#') Молиния
-                                a.nav__inner-link(href='#') Монарда 
-                                a.nav__inner-link(href='#') Мята 
-                                a.nav__inner-link(href='#') Овсяница 
-                                a.nav__inner-link(href='#') Осока 
-                                a.nav__inner-link(href='#') Очиток
-                                a.nav__inner-link(href='#') Папоротник
-                                a.nav__inner-link(href='#') Рудбекия
-                                a.nav__inner-link(href='#') Полынь 
-                                a.nav__inner-link(href='#') Тимьян 
-                                a.nav__inner-link(href='#') Тысячелистник
-                                a.nav__inner-link(href='#') Флокс 
-                                a.nav__inner-link(href='#') Хоста 
-                                a.nav__inner-link(href='#') Шалфей 
-                                a.nav__inner-link(href='#') Элимус 
-                                a.nav__inner-link(href='#') Показать еще 500 многолетников  
+                                each item in values.length ? values : ['There are no values'] 
+                                    +navLink(item)
+
                 li.nav__item
                     a.nav__link(href='#')
                         span Декоративные кустарники

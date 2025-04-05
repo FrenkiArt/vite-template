@@ -121,11 +121,11 @@
     padding: 8px 12px;
     position: relative;
     text-decoration: none;
-    text-transform: uppercase;
 
     &:hover,
     &:focus-visible {
       text-decoration: underline;
+      text-decoration-color: rgba(0, 0, 0, 0.5);
     }
 
     &:active,

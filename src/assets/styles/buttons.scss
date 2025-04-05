@@ -1,4 +1,6 @@
+@use 'sass:color';
 @import 'rfs/scss';
+
 // SCSS файл
 @import 'bootstrap/scss/functions';
 @import 'bootstrap/scss/variables';
@@ -75,10 +77,10 @@ $bd-violet: #712cf9;
 
   &:hover,
   &:focus-visible {
-    background-color: darken(#ff8554, 10%);
+    background-color: color.adjust(#ff8554, $lightness: -10%);
   }
 
   &:active {
-    background-color: darken(#ff8554, 20%);
+    background-color: color.adjust(#ff8554, $lightness: -10%);
   }
 }
