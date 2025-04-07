@@ -60,10 +60,8 @@
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     //border: 0.5px solid var(--color-gray);
-    left: 0;
-    max-height: 70vh;
-    opacity: 0;
-    padding: 24px 16px;
+    left: 0; 
+    opacity: 0; 
     pointer-events: none;
     position: absolute;
     top: 100%;
@@ -108,10 +106,12 @@
   // .nav__inner-list
   &__inner-list {
     align-items: start;
-    display: grid;
-    gap: 16px 24px;
+    display: grid; 
     grid-template-columns: repeat(4, 1fr);
     justify-items: start;
+    max-height: 70vh;
+    overflow: auto;
+    padding: 24px 16px;
   }
 
   // .nav__inner-link
