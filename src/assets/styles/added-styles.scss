@@ -88,3 +88,9 @@
 .bg-white {
   background-color: var(--white);
 }
+
+.w-sm-auto {
+  @media (min-width: 576px) {
+    width: auto !important;
+  }
+}
