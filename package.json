@@ -20,7 +20,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.4.0",
     "path": "^0.12.7",
-    "postcss": "^8.5.2",
+    "postcss": "^8.5.4",
     "prettier": "3.5.3",
     "pug": "^3.0.3",
     "rollup-plugin-visualizer": "^5.14.0",
