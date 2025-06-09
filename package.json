@@ -29,7 +29,7 @@
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-pug": "^0.4.1",
     "vite-plugin-pwa": "^1.0.0",
-    "vite-plugin-webfont-dl": "^3.10.4"
+    "vite-plugin-webfont-dl": "^3.10.5"
   },
   "dependencies": {
     "bootstrap": "^5.3.6",
