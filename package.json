@@ -16,7 +16,7 @@
     "@vituum/vite-plugin-pug": "^1.1.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.31.0",
-    "eslint-config-prettier": "^10.1.5",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.3",
     "path": "^0.12.7",
