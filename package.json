@@ -27,9 +27,9 @@
     "sass": "^1.89.2",
     "vite": "^7.0.5",
     "vite-plugin-compression": "^0.5.1",
-    "vite-plugin-pug": "^0.4.1",
-    "vite-plugin-pwa": "^1.0.1",
-    "vite-plugin-webfont-dl": "^3.10.5"
+    "vite-plugin-pug": "^0.4.1", 
+    "vite-plugin-webfont-dl": "^3.11.1", 
+    "vite-plugin-pwa": "^1.0.1" 
   },
   "dependencies": {
     "bootstrap": "^5.3.7",
