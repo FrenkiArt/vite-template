@@ -161,6 +161,15 @@ $h4-font-size: $font-size-base * 1.5;
 $h5-font-size: $font-size-base * 1.25;
 $h6-font-size: $font-size-base;
 
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+);
+
 $display-font-sizes: (
   1: 5rem,
   2: 4.5rem,
@@ -357,34 +366,28 @@ $theme-colors-border-subtle-dark: map-merge(
 $utilities: map-merge(
   $utilities,
   (
-    'color':
-      map-merge(
+    'color': map-merge(
         map-get($utilities, 'color'),
         (
-          values:
-            map-merge(
+          values: map-merge(
               map-get(map-get($utilities, 'color'), 'values'),
               ($colors)
             ),
         )
       ),
-    'background-color':
-      map-merge(
+    'background-color': map-merge(
         map-get($utilities, 'background-color'),
         (
-          values:
-            map-merge(
+          values: map-merge(
               map-get(map-get($utilities, 'background-color'), 'values'),
               ($colors)
             ),
         )
       ),
-    'opacity':
-      map-merge(
+    'opacity': map-merge(
         map-get($utilities, 'opacity'),
         (
-          values:
-            map-merge(
+          values: map-merge(
               map-get(map-get($utilities, 'opacity'), 'values'),
               (
                 70: 0.7,

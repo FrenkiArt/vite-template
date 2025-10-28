@@ -10,7 +10,8 @@
     "build": "vite build --emptyOutDir --base=/",
     "buildnested": "vite build --emptyOutDir --base=/dist/",
     "preview": "vite preview",
-    "lint": "eslint . --ext .js"
+    "lint": "eslint . --ext .js",
+    "archive-dist": "node archive.js"
   },
   "devDependencies": {
     "@vituum/vite-plugin-pug": "^1.1.0",

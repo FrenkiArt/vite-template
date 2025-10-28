@@ -51,7 +51,6 @@ body {
   text-wrap: balance;
 
   [id] {
-    scroll-margin-top: var(--header-height, 0);
     scroll-margin-block-start: var(--header-height, 0);
   }
 }
@@ -154,4 +153,9 @@ svg {
   margin-top: rfs-fluid-value(5rem);
   //@include rfs(1.5rem, font-size);
   //@include rfs(4rem, border-radius);
+}
+//color.adjust(#65b3e3, $lightness: -5%);
+
+[data-gallery] [data-src] {
+  cursor: zoom-in;
 }
