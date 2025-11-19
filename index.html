@@ -52,14 +52,40 @@
               11111111 111111 11111 11111111 11111 1 1111111 111111 11111
               11111111 11111 1 1 1 1 1 1 1 1
 
-              <a href="#" class="link-primary">sdfds </a>
+              <a href="#" class="link-primary">link-primary </a>
 
-              <a href="#" class="link">sdfds </a>
-              <a href="#" class="">sdfds </a>
+              <a href="#" class="link">link </a>
+              <a href="#" class="">Просто ссылка </a>
             </div>
 
             <div class="col-12 col-xs-4 col-sm-6 col-md-12 text-bg-newcolor">
               <h3>test col-xs</h3>
+
+              <div class="custom-rfs">Custom-rfs</div>
+            </div>
+
+            <div class="col-12">
+              <div class="rounded-5 p-5 text-bg-primary">
+                <div class="fs-1 text-white fw-semibold">test rounded</div>
+                <div class="fs-1 text-green fw-semibold">test rounded</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div
+                class="rounded-5 p-5 text-bg-secondary ar-1x1 ar-sm-4x3 ar-md-16x9 ar-lg-21x9 mw-md-50"
+              >
+                <div class="fs-1 fw-semibold">test ar</div>
+                <div class="fs-1 fw-semibold text-white">test ar</div>
+              </div>
+
+              <div class="fs-1 fw-semibold text-secondary">test ar</div>
+              <div class="fs-1 fw-semibold text-body">test ar</div>
+
+              <a href="#" class="link-body-emphasis">test link-body-emphasis</a>
+              <a href="#" class="link-blackzzz">test link-blackzzz</a>
+              <a href="#" class="">просто ссылка</a>
+              <a href="#" class="link-secondary">test link-secondary</a>
+              <a href="#" class="link-primary">test link-primary</a>
             </div>
 
             <div class="col-12">
@@ -144,7 +170,13 @@
               <details class="details" open name="details">
                 <summary class="details__head">
                   <h4 class="h4 details__title">Нативный аккардион</h4>
-                  <div class="details__arrow">></div>
+                  <div class="details__arrow">
+                    <svg class="sprite-icon">
+                      <use
+                        xlink:href="assets/svg/svg_sprite.svg#link-arrow"
+                      ></use>
+                    </svg>
+                  </div>
                 </summary>
 
                 <div class="details__body">
@@ -205,7 +237,7 @@
           <div class="row g-3">
             <div class="col-12">
               <div class="hstack gap-3">
-                <div class="p-2 text-bg-primary ratio ratio-5x1">
+                <div class="p-2 text-bg-primary ratio ratio-16x9 rounded-5">
                   First item
                 </div>
                 <div class="p-2">Second item</div>

@@ -1,14 +1,5 @@
 @use 'sass:color';
 
-.hidden-text {
-  height: 1px;
-  opacity: 0;
-  overflow: hidden;
-  pointer-events: none;
-  position: absolute;
-  width: 1px;
-}
-
 .wrap-slider {
   padding-bottom: 32px;
   position: relative;
@@ -82,15 +73,5 @@
     &:focus-visible {
       background-color: color.adjust(#ff8554, $lightness: -10%);
     }
-  }
-}
-
-.bg-white {
-  background-color: var(--white);
-}
-
-.w-sm-auto {
-  @media (min-width: 576px) {
-    width: auto !important;
   }
 }

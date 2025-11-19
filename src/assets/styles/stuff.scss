@@ -1,15 +1,4 @@
-@import 'rfs/scss';
-
-.socials {
-  align-items: center;
-  display: inline-flex;
-  gap: 8px;
-
-  // .socials__link
-  &__link {
-    text-decoration: none;
-  }
-}
+@use 'sass:math';
 
 /* input[type="range"]:focus,
 input[type="number"]:focus {

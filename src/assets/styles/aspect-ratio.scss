@@ -1,0 +1,27 @@
+//@use 'sass:math';
+// @import 'bootstrap/scss/_functions.scss'; // если нужны bootstrap helper функции
+@import 'bootstrap/scss/_variables.scss'; // для $grid-breakpoints
+
+$custom-aspect-ratios: (
+  '1x1': '1 / 1',
+  '3x4': '3 / 4',
+  '4x3': '4 / 3',
+  '16x9': '16 / 9',
+  '21x9': '21 / 9',
+);
+
+@each $name, $ratio in $custom-aspect-ratios {
+  .ar-#{$name} {
+    aspect-ratio: #{$ratio};
+  }
+
+  @each $breakpoint, $min-width in $grid-breakpoints {
+    @if $min-width != 0 {
+      @media (min-width: $min-width) {
+        .ar-#{$breakpoint}-#{$name} {
+          aspect-ratio: #{$ratio};
+        }
+      }
+    }
+  }
+}

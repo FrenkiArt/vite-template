@@ -1,17 +1,6 @@
-@import 'rfs/scss';
-
 :root {
-  --color-primary: #1560bd;
-  --title-color-primary: #1e2d3f;
-  --text-color-primary: #5e666e;
-  --bg-color-primary: #e8eff6;
-  --card-box-shadow: 0px 4px 16px 16px rgba(0, 0, 0, 0.02);
-  --card-box-shadow-2: 0px 4px 16px 16px rgba(0, 0, 0, 0.04);
-  --white: #ffffff;
-  --white2: #f7f7f7;
   --swiper-theme-color: var(--color-primary);
   --swiper-pagination-bullet-horizontal-gap: 10px;
-
   interpolate-size: allow-keywords;
 
   --header-height: 0px;
@@ -22,8 +11,6 @@
 }
 
 /* * {
-  box-sizing: border-box;
-  outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   scrollbar-width: thin;
   scrollbar-color: var(--color-primary) #bdbdbd;
@@ -55,23 +42,14 @@ body {
   }
 }
 
-/* .container {
-  @media (min-width: 1280px) {
-    max-width: 1224px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-} */
-
+@media (min-width: 400px) {
+}
 @media (min-width: 576px) {
 }
-
 @media (min-width: 768px) {
 }
-
 @media (min-width: 992px) {
 }
-
 @media (min-width: 1200px) {
 }
 
@@ -79,27 +57,21 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   // overflow: hidden;
 }
 
 .sec-head {
-  margin-bottom: rfs-fluid-value(40px);
+  @include rfs(40px, margin-bottom);
 }
 
 .sec-title {
-  color: var(--title-color-primary);
-  font-size: rfs-fluid-value(52px);
-  font-weight: 600;
-  line-height: 120%;
-  margin-bottom: rfs-fluid-value(40px);
+  @include rfs(52px, font-size);
+  @include rfs(40px, margin-bottom);
 }
 
 .sec-subtitle {
-  color: var(--color-primary);
-  font-size: rfs-fluid-value(22px);
-  font-weight: 600;
-  line-height: 1.2;
+  @include rfs(22px, font-size);
 }
 
 svg {
@@ -148,13 +120,14 @@ svg {
   }
 }
 
-.selector {
-  padding: rfs-fluid-value(2rem);
-  margin-top: rfs-fluid-value(5rem);
-  //@include rfs(1.5rem, font-size);
-  //@include rfs(4rem, border-radius);
-}
 //color.adjust(#65b3e3, $lightness: -5%);
+
+.custom-rfs {
+  @include rfs(3rem, font-size);
+  @include rfs(4rem, border-radius);
+  @include rfs(2.5rem, padding);
+  background-color: rgba(#000, 0.05);
+}
 
 [data-gallery] [data-src] {
   cursor: zoom-in;

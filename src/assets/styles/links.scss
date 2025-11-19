@@ -1,16 +1,42 @@
-@import 'rfs/scss';
+@use 'sass:color';
+
+a:not([class^='link-']):not([class*=' link-']) {
+  //text-decoration-color: color-mix(in srgb, currentColor 33%, transparent);
+  //--bs-link-color-rgb
+  //--bs-link-hover-color-rgb
+  //text-decoration-color: rgba(#f96b23, 0.33);
+
+  &:hover,
+  &:focus-visible {
+    //text-decoration-color: color-mix(in srgb, currentColor 100%, transparent);
+    //color: #f96b23;
+    //text-decoration-color: rgba(#f96b23, 1);
+  }
+}
 
 a {
-  //text-decoration-color: rgba(0,0,0,0.3);
+  text-underline-offset: 0.25em;
+  text-decoration-color: rgba(#f96b23, 0.33);
   transition:
     color 0.2s ease-out,
     background-color 0.2s ease-out,
     border-color 0.2s ease-out,
     text-underline-offset 0.2s ease-out;
-  text-underline-offset: 0.25em;
+
+  &:hover,
+  &:focus-visible {
+    color: #f96b23;
+    text-decoration-color: rgba(#f96b23, 1);
+  }
 }
 
-a:hover {
-  //text-underline-offset: 0.18em;
-  //text-decoration-color: rgba(0, 0, 0, 0.5);
+[class^='link-'],
+[class*=' link-'] {
+  --bs-link-underline-opacity: 0.33;
+
+  &:hover,
+  &:focus-visible {
+    --bs-link-underline-opacity: 1;
+    //color: color-mix(in srgb, currentColor 100%, transparent);
+  }
 }

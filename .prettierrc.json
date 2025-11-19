@@ -12,5 +12,6 @@
   "embeddedLanguageFormatting": "auto",
   "quoteProps": "as-needed",
   "arrowParens": "always",
-  "proseWrap": "preserve"
+  "proseWrap": "preserve",
+  "enableDebugLogs": true
 }
