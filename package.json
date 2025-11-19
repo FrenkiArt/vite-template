@@ -36,7 +36,7 @@
     "bootstrap": "^5.3.8",
     "imask": "^7.6.1",
     "jshint": "^2.13.6",
-    "lightgallery": "^2.8.3",
+    "lightgallery": "^2.9.0",
     "normalize.css": "^8.0.1",
     "nouislider": "^15.8.1",
     "rfs": "^10.0.0",
