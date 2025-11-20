@@ -19,7 +19,21 @@ import 'lightgallery/css/lightgallery.css';
 //import 'lightgallery/css/lg-video.css';
 
 // my
-import './assets/styles/main.scss';
+//import './assets/styles/main.scss';
+import './assets/styles/custom-bootstrap.scss';
+import './assets/styles/style.scss';
+import './assets/styles/header.scss';
+import './assets/styles/sections.scss';
+import './assets/styles/footer.scss';
+import './assets/styles/typograf.scss';
+import './assets/styles/links.scss';
+import './assets/styles/buttons.scss';
+import './assets/styles/nav.scss';
+import './assets/styles/details.scss';
+import './assets/styles/card.scss';
+import './assets/styles/stuff.scss';
+import './assets/styles/aspect-ratio.scss';
+import './assets/styles/added-styles.scss';
 
 //import './assets/js/qwiz.js';
 //import './assets/js/tabs.js';
