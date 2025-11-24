@@ -26,7 +26,7 @@
     "pug": "^3.0.3",
     "rollup-plugin-visualizer": "^6.0.5",
     "sass": "^1.94.2",
-    "vite": "^7.1.12",
+    "vite": "^7.2.4",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-pug": "^0.4.1", 
     "vite-plugin-webfont-dl": "^3.11.1", 
