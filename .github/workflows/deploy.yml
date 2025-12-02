@@ -20,17 +20,14 @@ jobs:
       - name: Install dependencies and build
         run: npm ci && npm run build
 
-      # <-- НОВЫЙ ШАГ ДЛЯ ОТЛАДКИ -->
-      - name: Debug repository name
-        run: |
-          echo "Repository name is: ${{ github.repository_name }}"
-          echo "Bucket name will be: s3://${{ github.repository_name }}"
-
-      # Шаг 4: Загружаем файлы в Yandex Cloud
+      # Шаг 4: Загружаем файлы в Yandex Cloud (надежный способ)
       - name: Deploy to Yandex Cloud
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ru-central1
         run: |
-          aws s3 sync ./dist s3://${{ github.repository_name }} --delete --endpoint-url https://storage.yandexcloud.net
+          # Получаем имя репозитория из полного пути owner/repo
+          REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f 2)
+          echo "Deploying to bucket: $REPO_NAME"
+          aws s3 sync ./dist s3://$REPO_NAME --delete --endpoint-url https://storage.yandexcloud.net
