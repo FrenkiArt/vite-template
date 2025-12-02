@@ -1,5 +1,5 @@
 //@use 'sass:math';
-// @import 'bootstrap/scss/_functions.scss'; // если нужны bootstrap helper функции
+@import 'bootstrap/scss/_functions.scss'; // если нужны bootstrap helper функции
 @import 'bootstrap/scss/_variables.scss'; // для $grid-breakpoints
 
 $custom-aspect-ratios: (
