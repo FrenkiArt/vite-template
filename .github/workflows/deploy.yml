@@ -24,11 +24,14 @@ jobs:
         run: npm ci && npm run build # Убедитесь, что у вас есть скрипт build в package.json
 
       # Шаг 4: Загружаем файлы в Yandex Cloud
-      - name: Deploy to Yandex Cloud
-        uses: yandex-cloud-actions/yc-s3-sync-action@v1
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          bucket: my-bootstrap-starter # <-- ЗАМЕНИТЕ НА ИМЯ ВАШЕГО БАКЕТА!
-          dir: ./dist # <-- ЗАМЕНИТЕ НА ПАПКУ С РЕЗУЛЬТАТОМ СБОРКИ!
-          access-key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          secret-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          endpoint: storage.yandexcloud.net
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ru-central1
+
+      # Шаг 5: Загружаем файлы в Yandex Cloud
+      - name: Deploy to Yandex Cloud
+        run: |
+          aws s3 sync ./dist s3://my-bootstrap-starter --delete --endpoint-url https://storage.yandexcloud.net
