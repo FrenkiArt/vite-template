@@ -29,6 +29,6 @@ jobs:
         with:
           bucket: my-bootstrap-starter # <-- ЗАМЕНИТЕ НА ИМЯ ВАШЕГО БАКЕТА!
           dir: ./dist # <-- ЗАМЕНИТЕ НА ПАПКУ С РЕЗУЛЬТАТОМ СБОРКИ!
-          access-key: ${{ secrets.YC_ACCESS_KEY }}
-          secret-key: ${{ secrets.YC_SECRET_KEY }}
+          access-key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           endpoint: storage.yandexcloud.net
