@@ -1,0 +1,34 @@
+name: Build and Deploy to Yandex Cloud
+
+on:
+  push:
+    branches:
+      - master # или main, в зависимости от вашей основной ветки
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Шаг 1: Клонируем репозиторий
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Шаг 2: Устанавливаем Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22' # Укажите вашу версию Node.js
+
+      # Шаг 3: Устанавливаем зависимости и собираем проект
+      - name: Install dependencies and build
+        run: npm ci && npm run build # Убедитесь, что у вас есть скрипт build в package.json
+
+      # Шаг 4: Загружаем файлы в Yandex Cloud
+      - name: Deploy to Yandex Cloud
+        uses: yandex-cloud-actions/yc-s3-sync-action@v1
+        with:
+          bucket: my-bootstrap-starter # <-- ЗАМЕНИТЕ НА ИМЯ ВАШЕГО БАКЕТА!
+          dir: ./dist # <-- ЗАМЕНИТЕ НА ПАПКУ С РЕЗУЛЬТАТОМ СБОРКИ!
+          access-key: ${{ secrets.YC_ACCESS_KEY }}
+          secret-key: ${{ secrets.YC_SECRET_KEY }}
+          endpoint: storage.yandexcloud.net
