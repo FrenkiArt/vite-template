@@ -46,8 +46,11 @@ $spacer: 1rem;
 $spacers: (
   0: 0,
   1: $spacer * 0.25,
+  1_5: $spacer * 0.375,
   2: $spacer * 0.5,
+  2_5: $spacer * 0.75,
   3: $spacer,
+  3_5: $spacer * 1.25,
   4: $spacer * 1.5,
   5: $spacer * 2,
   6: $spacer * 2.5,
