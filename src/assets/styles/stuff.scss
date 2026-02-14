@@ -229,6 +229,10 @@ input[type='range']::-ms-track {
 }
 
 .sprite-icon {
-  width: var(--width, 1.5rem);
+  display: inline-block;
+  fill: currentColor;
   height: var(--height, 1.5rem);
+  stroke: currentColor;
+  vertical-align: middle;
+  width: var(--width, 1.5rem);
 }

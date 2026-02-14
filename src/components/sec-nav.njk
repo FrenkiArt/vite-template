@@ -1,152 +1,33 @@
-{% set values = ['Агастахе', 'Астильба', 'Астра', 'Бадан', 'Барвинок', 'Вальдштейния', 'Вербейник', 'Вероника', 'Гвоздика', 'Гейхера', 'Горец'] %}
-
 {% macro navLink(title) %}
   <a class="nav__inner-link" href="#">{{ title }}</a>
 {% endmacro %}
+
+ 
+
 
 <div class="sec-nav bg-primary d-none d-lg-block" style="--bs-bg-opacity: .05;">
   <div class="container">
     <nav class="nav">
       <ul class="nav__list">
-        {# Пункт 1: Многолетники (с циклом) #}
-        <li class="nav__item">
-          <a class="nav__link" href="#">
-            <span>Многолетники</span>
-            <svg width="24" height="25">
-              <use href="assets/svg/sprite.svg#link-arrow"></use>
-            </svg>
-          </a>
-          <div class="nav__inner">
-            <div class="row">
-              <div class="col nav__inner-list">
-                {% for item in values %}
-                  {{ navLink(item) }}
-                {% endfor %}
+        {% for item in navigation.items %}
+          <li class="nav__item">
+            <a class="nav__link" href="{{ item.url | default('#') }}">
+              <span>{{ item.title }}</span>
+              <svg width="24" height="25">
+                <use href="assets/svg/sprite.svg#link-arrow"></use>
+              </svg>
+            </a>
+            <div class="nav__inner">
+              <div class="row">
+                <div class="col nav__inner-list">
+                  {% for sub in item.subitems %}
+                    {{ navLink(sub) }}
+                  {% endfor %}
+                </div>
               </div>
             </div>
-          </div>
-        </li>
-
-        {# Пункт 2: Декоративные кустарники (статические ссылки) #}
-        <li class="nav__item">
-          <a class="nav__link" href="#">
-            <span>Декоративные кустарники</span>
-            <svg width="24" height="25">
-              <use href="assets/svg/sprite.svg#link-arrow"></use>
-            </svg>
-          </a>
-          <div class="nav__inner">
-            <div class="row">
-              <div class="col nav__inner-list">
-                <a class="nav__inner-link" href="#">Айва</a>
-                <a class="nav__inner-link" href="#">Арония</a>
-                <a class="nav__inner-link" href="#">Барбарис</a>
-                <a class="nav__inner-link" href="#">Бересклет</a>
-                <a class="nav__inner-link" href="#">Боярышник</a>
-                <a class="nav__inner-link" href="#">Вейгела</a>
-                <a class="nav__inner-link" href="#">Гортензия</a>
-                <a class="nav__inner-link" href="#">Дерен</a>
-                <a class="nav__inner-link" href="#">Ива</a>
-                <a class="nav__inner-link" href="#">Ирга</a>
-                <a class="nav__inner-link" href="#">Калина</a>
-                <a class="nav__inner-link" href="#">Кизильник</a>
-                <a class="nav__inner-link" href="#">Крушина</a>
-                <a class="nav__inner-link" href="#">Лапчатка</a>
-                <a class="nav__inner-link" href="#">Пузыреплодник</a>
-                <a class="nav__inner-link" href="#">Роза</a>
-                <a class="nav__inner-link" href="#">Рябинник</a>
-                <a class="nav__inner-link" href="#">Сирень</a>
-                <a class="nav__inner-link" href="#">Скумпия</a>
-                <a class="nav__inner-link" href="#">Снежноягодник</a>
-                <a class="nav__inner-link" href="#">Спирея</a>
-                <a class="nav__inner-link" href="#">Стефанандра</a>
-                <a class="nav__inner-link" href="#">Форзиция</a>
-                <a class="nav__inner-link" href="#">Чубушник</a>
-                <a class="nav__inner-link" href="#">Показать еще 500 декоративных кустарников</a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        {# Пункт 3: Плодовые кустарники #}
-        <li class="nav__item">
-          <a class="nav__link" href="#">
-            <span>Плодовые кустарники</span>
-            <svg width="24" height="25">
-              <use href="assets/svg/sprite.svg#link-arrow"></use>
-            </svg>
-          </a>
-          <div class="nav__inner">
-            <div class="row">
-              <div class="col nav__inner-list">
-                <a class="nav__inner-link" href="#">Актинидия</a>
-                <a class="nav__inner-link" href="#">Брусника</a>
-                <a class="nav__inner-link" href="#">Голубика</a>
-                <a class="nav__inner-link" href="#">Ежевика</a>
-                <a class="nav__inner-link" href="#">Ежемалина</a>
-                <a class="nav__inner-link" href="#">Жимолость</a>
-                <a class="nav__inner-link" href="#">Крыжовник</a>
-                <a class="nav__inner-link" href="#">Малина</a>
-                <a class="nav__inner-link" href="#">Облепиха</a>
-                <a class="nav__inner-link" href="#">Смородина</a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        {# Пункт 4: Плодовые деревья #}
-        <li class="nav__item">
-          <a class="nav__link" href="#">
-            <span>Плодовые деревья</span>
-            <svg width="24" height="25">
-              <use href="assets/svg/sprite.svg#link-arrow"></use>
-            </svg>
-          </a>
-          <div class="nav__inner">
-            <div class="row">
-              <div class="col nav__inner-list">
-                <a class="nav__inner-link" href="#">Абрикос</a>
-                <a class="nav__inner-link" href="#">Алыча</a>
-                <a class="nav__inner-link" href="#">Вишня</a>
-                <a class="nav__inner-link" href="#">Груша</a>
-                <a class="nav__inner-link" href="#">Дюк</a>
-                <a class="nav__inner-link" href="#">Персик</a>
-                <a class="nav__inner-link" href="#">Рябина</a>
-                <a class="nav__inner-link" href="#">Слива</a>
-                <a class="nav__inner-link" href="#">Черешня</a>
-                <a class="nav__inner-link" href="#">Шелковица</a>
-                <a class="nav__inner-link" href="#">Яблоня</a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        {# Пункт 5: Декоративные деревья #}
-        <li class="nav__item">
-          <a class="nav__link" href="#">
-            <span>Декоративные деревья</span>
-            <svg width="24" height="25">
-              <use href="assets/svg/sprite.svg#link-arrow"></use>
-            </svg>
-          </a>
-          <div class="nav__inner">
-            <div class="row">
-              <div class="col nav__inner-list">
-                <a class="nav__inner-link" href="#">Береза</a>
-                <a class="nav__inner-link" href="#">Боярышник</a>
-                <a class="nav__inner-link" href="#">Вяз</a>
-                <a class="nav__inner-link" href="#">Дуб</a>
-                <a class="nav__inner-link" href="#">Ива</a>
-                <a class="nav__inner-link" href="#">Каштан</a>
-                <a class="nav__inner-link" href="#">Клен</a>
-                <a class="nav__inner-link" href="#">Липа</a>
-                <a class="nav__inner-link" href="#">Рябина</a>
-                <a class="nav__inner-link" href="#">Черемуха</a>
-                <a class="nav__inner-link" href="#">Яблоня</a>
-              </div>
-            </div>
-          </div>
-        </li>
+          </li>
+        {% endfor %}
       </ul>
     </nav>
   </div>

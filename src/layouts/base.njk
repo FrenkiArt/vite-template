@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {# Блок для заголовка страницы. Можно переопределить в дочерних шаблонах #}
-    <title>{% block title %}{{ title | default('Vite App') }}{% endblock %}</title>
+    <title>{% block title %}{{ title | default(site_name) }}{% endblock %}</title>
 
     {# Блок для мета-описания #}
     <meta name="description" content="{% block description %}{{ description | default('') }}{% endblock %}">

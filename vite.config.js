@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';  
+import { defineConfig } from 'vite';
 import vituum from 'vituum';
 import nunjucks from '@vituum/vite-plugin-nunjucks';
 import path from 'path';
@@ -6,6 +6,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 // import viteCompression from 'vite-plugin-compression';
 //import { VitePWA } from 'vite-plugin-pwa';
 import webfontDownload from 'vite-plugin-webfont-dl';
+import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 
 export default defineConfig({
   //root: path.join(__dirname, '/'),
@@ -21,17 +22,19 @@ export default defineConfig({
     //VitePWA(),
     vituum(),
     nunjucks({
-      root: './src', // Корневая папка для поиска шаблонов. 
+      root: './src', // Корневая папка для поиска шаблонов.
       // Дополнительные настройки (опционально)
       globals: {
-        siteName: 'Мой сайт',
         currentYear: new Date().getFullYear(),
         resource: { pagetitle: 'Главная', content: '<p>Привет</p>' },
       },
     }),
+    VitePluginSvgSpritemap('./src/icons/*.svg', {
+      // prefix: 'icon-', // Префикс для ID символов (по умолчанию 'sprite-')
+    }),
   ],
-  server: { 
-    open: true, 
+  server: {
+    open: true,
     cors: true,
   },
 
@@ -42,7 +45,7 @@ export default defineConfig({
     emptyOutDir: true, // Очистка выходной директории
 
     rollupOptions: {
-     /*  input: { 
+      /*  input: { 
         index: path.resolve(__dirname, 'src/templates/pages/index.njk'), 
         //allelements: path.resolve(__dirname, 'src/templates/pages/all-elements.njk'),
       }, */
@@ -51,7 +54,18 @@ export default defineConfig({
         chunkFileNames: `assets/js/[name].js`,
         assetFileNames: (assetInfo) => {
           const ext = assetInfo.names[0].split('.').pop();
-          if (['png', 'jpe?g', 'jfif', 'pjpeg', 'pjp', 'gif', 'avif', 'webp'].includes(ext)) {
+          if (
+            [
+              'png',
+              'jpe?g',
+              'jfif',
+              'pjpeg',
+              'pjp',
+              'gif',
+              'avif',
+              'webp',
+            ].includes(ext)
+          ) {
             return `assets/img/[name].[ext]`;
           } else if (ext === 'svg') {
             return `assets/svg/[name].[ext]`;

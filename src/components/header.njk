@@ -1,3 +1,26 @@
  <header id="header" class="header">
-    <div class="container">{{ siteName | default('Мой сайт') }}</div>
+    <div class="container">{{ site.site_name | default('Мой сайт') }}</div>
+
+     <nav>
+      <ul>
+        {% for item in site.menu %}
+        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <a href="tel:{{ site.phone }}">{{ site.phone }}</a>
+
+    <div class="div">
+        <svg class="sprite-icon">
+        {# ID иконки теперь формируется как "sprite-имя_файла_без_расширения" #}
+        <use xlink:href="/__spritemap#sprite-vite"></use>
+        </svg>
+        <svg class="sprite-icon text-primary"> 
+        <use xlink:href="/__spritemap#sprite-burger"></use>
+        </svg>
+        <svg class="sprite-icon"> 
+        <use xlink:href="/__spritemap#sprite-javascript"></use>
+        </svg>
+    </div>
 </header>

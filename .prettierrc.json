@@ -12,6 +12,5 @@
   "embeddedLanguageFormatting": "auto",
   "quoteProps": "as-needed",
   "arrowParens": "always",
-  "proseWrap": "preserve",
-  "plugins": ["prettier-plugin-nunjucks"]
+  "proseWrap": "preserve"
 }
