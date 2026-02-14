@@ -1,0 +1,275 @@
+{% extends "layouts/base.njk" %}
+
+{% set title = "Главная страница" %}
+
+{% block content %}
+<section id="first" class="first uni-sec">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-12 text-primary">
+        <svg class="sprite-icon">
+          <use xlink:href="assets/svg/sprite.svg#geo"></use>
+        </svg>
+        <svg class="sprite-icon">
+          <use xlink:href="assets/svg/sprite.svg#link-arrow"></use>
+        </svg>
+      </div>
+
+      <div class="col-6">
+        11111111 111111 11111 11111111 11111 1 1111111 111111 11111
+        11111111 11111 1 1 1 1 1 1 1 1
+      </div>
+      <div class="col-3">
+        11111111 111111 11111 11111111 11111 1 1111111 111111 11111
+        11111111 11111 1 1 1 1 1 1 1 1
+      </div>
+      <div class="col-3">
+        11111111 111111 11111 11111111 11111 1 1111111 111111 11111
+        11111111 11111 1 1 1 1 1 1 1 1
+
+        <a href="#" class="link-primary">link-primary </a>
+        <a href="#" class="link">link </a>
+        <a href="#" class="">Просто ссылка </a>
+      </div>
+
+      <div class="col-12 col-xs-4 col-sm-6 col-md-12 text-bg-newcolor">
+        <h3>test col-xs</h3>
+        <div class="custom-rfs">Custom-rfs</div>
+      </div>
+
+      <div class="col-12">
+        <div class="rounded-5 p-5 text-bg-primary">
+          <div class="fs-1 text-white fw-semibold">test rounded</div>
+          <div class="fs-1 text-green fw-semibold">test rounded</div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="rounded-5 p-5 text-bg-secondary ar-1x1 ar-sm-4x3 ar-md-16x9 ar-lg-21x9 mw-md-50">
+          <div class="fs-1 fw-semibold">test ar</div>
+          <div class="fs-1 fw-semibold text-white">test ar</div>
+        </div>
+
+        <div class="fs-1 fw-semibold text-secondary">test ar</div>
+        <div class="fs-1 fw-semibold text-body">test ar</div>
+
+        <a href="#" class="link-body-emphasis">test link-body-emphasis</a>
+        <a href="#" class="link-blackzzz">test link-blackzzz</a>
+        <a href="#" class="">просто ссылка</a>
+        <a href="#" class="link-secondary">test link-secondary</a>
+        <a href="#" class="link-primary">test link-primary</a>
+      </div>
+
+      {# Внимание: в оригинале здесь был повторный вызов header.pug.
+         Оставляем его как компонент, но учтите, что header уже подключён в базовом шаблоне,
+         поэтому на странице может быть два хедера. Если это не нужно — удалите эту строку. #}
+      <div class="col-12">
+        {% include "components/header.njk" %}
+      </div>
+
+      <div class="col-12">
+        <article class="card">
+          <div class="card__wrap-media">
+            <img loading="lazy" src="assets/img" alt="" class="card__img" />
+          </div>
+          <div class="card__content">
+            <div class="card__title">card</div>
+            <div class="card__text">card text</div>
+            <button type="button" class="btn btn-secondary card__trigger">
+              card trigger
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12">
+        <button type="button" class="btn btn-primary opacity-70">button</button>
+        <button type="button" class="btn btn-secondary">secondary</button>
+        <button type="button" class="btn btn-teal">teal</button>
+        <button type="button" class="btn btn-accent">button</button>
+        <button type="button" class="btn btn-newcolor">newcolor</button>
+        <button type="button" class="btn btn-outline-newcolor">newcolor</button>
+        <button type="button" class="btn btn-custom">new custom color</button>
+        <button type="button" class="btn btn-outline-custom">new custom color</button>
+        <button type="button" class="btn custom2-button">custom2-button</button>
+        <button type="button" class="btn custom2-outline-button">custom2-outline-button</button>
+        <button type="button" class="btn btn-bd-primary">btn-bd-primary</button>
+        <button type="button" class="btn btn-danger">btn-danger</button>
+        <button type="button" class="btn btn-dark">btn-dark</button>
+      </div>
+
+      <div class="col-12 d-none">
+        <div class="grid text-center" style="--bs-gap: 0.5rem">
+          <div class="g-col-6 g-col-md-4 text-bg-secondary">.g-col-6 .g-col-md-4</div>
+          <div class="g-col-6 g-col-md-4 text-bg-secondary">.g-col-6 .g-col-md-4</div>
+          <div class="g-col-6 g-col-md-4 text-bg-secondary">.g-col-6 .g-col-md-4</div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="vstack gap-3">
+          <div class="p-2">First item</div>
+          <div class="p-2">Second item</div>
+          <div class="p-2">Third item</div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <details class="details" open name="details">
+          <summary class="details__head">
+            <h4 class="h4 details__title">Нативный аккардион</h4>
+            <div class="details__arrow">
+              <svg class="sprite-icon">
+                <use xlink:href="assets/svg/sprite.svg#link-arrow"></use>
+              </svg>
+            </div>
+          </summary>
+          <div class="details__body">
+            <div class="details__content">
+              Значимость этих проблем настолько очевидна, что новая модель
+              организационной деятельности влечёт за собой интересный процесс
+              внедрения модернизации модели развития. Не вызывает сомнений, что
+              новая модель организационной деятельности напрямую зависит от
+              поставленных обществом и правительством задач. Равным образом
+              понимание сущности ресурсосберегающих технологий влечёт за собой
+              интересный процесс внедрения модернизации новых предложений. Задача
+              организации, в особенности же новая модель организационной
+              деятельности создаёт предпосылки качественно новых шагов для
+              поэтапного и последовательного развития общества. Задача
+              организации, в особенности же дальнейшее развитие различных форм
+              деятельности позволяет оценить значение направлений прогрессивного
+              развития. Идейные соображения высшего порядка, а также
+              социально-экономическое развитие требует анализа дальнейших
+              направлений развития.
+            </div>
+          </div>
+        </details>
+        <details class="details" name="details">
+          <summary class="details__head">
+            <h4 class="h4 details__title">Title</h4>
+            <div class="details__arrow">></div>
+          </summary>
+          <div class="details__body">
+            <div class="details__content">
+              Значимость этих проблем настолько очевидна, что новая модель
+              организационной деятельности влечёт за собой интересный процесс
+              внедрения модернизации модели развития. Не вызывает сомнений, что
+              новая модель организационной деятельности напрямую зависит от
+              поставленных обществом и правительством задач. Равным образом
+              понимание сущности ресурсосберегающих технологий влечёт за собой
+              интересный процесс внедрения модернизации новых предложений. Задача
+              организации, в особенности же новая модель организационной
+              деятельности создаёт предпосылки качественно новых шагов для
+              поэтапного и последовательного развития общества. Задача
+              организации, в особенности же дальнейшее развитие различных форм
+              деятельности позволяет оценить значение направлений прогрессивного
+              развития. Идейные соображения высшего порядка, а также
+              социально-экономическое развитие требует анализа дальнейших
+              направлений развития.
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="uni-sec">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-12">
+        <div class="hstack gap-3">
+          <div class="p-2 text-bg-primary ratio ratio-16x9 rounded-5">First item</div>
+          <div class="p-2">Second item</div>
+          <div class="p-2">Third item</div>
+          <div class="p-2">Third item</div>
+          <div class="p-2">Third item</div>
+          <div class="p-2">Third item</div>
+          <div class="p-2">Third item</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="uni-sec">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-6">
+        <div class="card p-5 bg-primary bg-opacity-10">
+          <img src="assets/svg/javascript.svg" class="card-img-top mb-6" alt="" />
+          <div class="card-body bd-cyan-400 bg-cyan-400 text-color-400">
+            <h5 class="card-title text-primary">Card title</h5>
+            <p class="card-text text-color-custom-100">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="card-link">Go somewhere</a>
+            <a href="#" class="link-newcolor">Go somewhere</a>
+            <a href="#" class="link-danger border border-custom">Go somewhere</a>
+            <a href="#" class="link-custom">Custom color link ggg</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="card p-6 text-bg-custom bg-opacity-50 rounded-7">
+          <img src="assets/svg/javascript.svg" class="card-img-top" alt="" />
+          <div class="card-body">
+            <h5 class="card-title text-newcolor">Card title</h5>
+            <p class="card-text bd-newcolor-800">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <p class="card-text text-newcolor custom-300">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="card-link">Go somewhere</a>
+            <a href="#" class="link-newcolor">Go somewhere</a>
+            <a href="#" class="link-danger border border-newcolor">Go somewhere</a>
+            <a href="#" class="link-custom">Custom color link ggg</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="uni-sec">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-12">
+        <div class="card text-bg-newcolor bg-opacity-25">
+          <img src="assets/svg/javascript.svg" class="card-img-top" alt="" />
+          <div class="card-body bg-newcolor-200 bg-custom-100">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text text-newcolor bg-custom">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <p class="card-text bg-custom-300 body-custom">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <p class="card-text bg-primary-300 text-primary">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="card-link">Go somewhere</a>
+            <a href="#" class="link-newcolor">Go somewhere</a>
+            <a href="#" class="link-danger">Go somewhere</a>
+            <a href="#" class="link-custom">Custom color link ggg</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

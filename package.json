@@ -14,7 +14,7 @@
     "archive-dist": "node archive.js"
   },
   "devDependencies": {
-    "@vituum/vite-plugin-pug": "^1.1.0",
+    "@vituum/vite-plugin-nunjucks": "^1.1.0",
     "autoprefixer": "^10.4.23",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
@@ -22,15 +22,15 @@
     "eslint-plugin-prettier": "^5.5.4",
     "path": "^0.12.7",
     "postcss": "^8.5.6",
-    "prettier": "3.7.4",
-    "pug": "^3.0.3",
+    "prettier": "^3.8.1",
+    "prettier-plugin-twig": "^1.0.1",
     "rollup-plugin-visualizer": "^6.0.5",
     "sass": "^1.97.1",
     "vite": "^7.3.0",
     "vite-plugin-compression": "^0.5.1",
-    "vite-plugin-pug": "^0.4.1", 
-    "vite-plugin-webfont-dl": "^3.11.1", 
-    "vite-plugin-pwa": "^1.2.0" 
+    "vite-plugin-pwa": "^1.2.0",
+    "vite-plugin-webfont-dl": "^3.11.1",
+    "vituum": "^1.2.0"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
@@ -40,7 +40,6 @@
     "normalize.css": "^8.0.1",
     "nouislider": "^15.8.1",
     "rfs": "^10.0.0",
-    "swiper": "^12.0.3",
-    "vituum": "^1.2.0"
+    "swiper": "^12.0.3"
   }
 }

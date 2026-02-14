@@ -1,15 +1,14 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite';  
+import vituum from 'vituum';
+import nunjucks from '@vituum/vite-plugin-nunjucks';
 import path from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
-//import viteCompression from 'vite-plugin-compression';
-import { VitePWA } from 'vite-plugin-pwa';
-import pugPlugin from 'vite-plugin-pug';
+// import viteCompression from 'vite-plugin-compression';
+//import { VitePWA } from 'vite-plugin-pwa';
 import webfontDownload from 'vite-plugin-webfont-dl';
-import vituum from 'vituum';
-import pug from '@vituum/vite-plugin-pug';
 
 export default defineConfig({
-  root: path.join(__dirname, '/'),
+  //root: path.join(__dirname, '/'),
   plugins: [
     webfontDownload(),
     visualizer({
@@ -20,23 +19,19 @@ export default defineConfig({
     }),
     //viteCompression(),
     //VitePWA(),
-    // vituum(),
-    /* pug({ 
-      locals: {
-        // Глобальные переменные для всех шаблонов
-        title: 'Мой сайт',
-        environment: process.env.NODE_ENV,
-        version: require('./package.json').version,
+    vituum(),
+    nunjucks({
+      root: './src', // Корневая папка для поиска шаблонов. 
+      // Дополнительные настройки (опционально)
+      globals: {
+        siteName: 'Мой сайт',
+        currentYear: new Date().getFullYear(),
+        resource: { pagetitle: 'Главная', content: '<p>Привет</p>' },
       },
-    }), */
-    pugPlugin({
-      handler: {
-        pretty: true,
-      },
-    }),  
+    }),
   ],
-  server: {
-    open: true,
+  server: { 
+    open: true, 
     cors: true,
   },
 
@@ -46,37 +41,17 @@ export default defineConfig({
     assetsInlineLimit: 0, // Отключение инлайнинга мелких файлов
     emptyOutDir: true, // Очистка выходной директории
 
-    rollupOptions: { 
-      //input: ['index.pug.html'],
-      input: {
-        index: path.resolve(__dirname, 'index.html'),
-        allelements: path.resolve(__dirname, 'all-elements.html'),
-      },
-      /*  
-      inputzz: {
-        index: path.resolve(__dirname, 'index.html'),
-        allelements: path.resolve(__dirname, 'all-elements.html'),
+    rollupOptions: {
+     /*  input: { 
+        index: path.resolve(__dirname, 'src/templates/pages/index.njk'), 
+        //allelements: path.resolve(__dirname, 'src/templates/pages/all-elements.njk'),
       }, */
-
       output: {
         entryFileNames: `assets/js/[name].js`,
         chunkFileNames: `assets/js/[name].js`,
-
         assetFileNames: (assetInfo) => {
           const ext = assetInfo.names[0].split('.').pop();
-
-          if (
-            [
-              'png',
-              'jpe?g',
-              'jfif',
-              'pjpeg',
-              'pjp',
-              'gif',
-              'avif',
-              'webp',
-            ].includes(ext)
-          ) {
+          if (['png', 'jpe?g', 'jfif', 'pjpeg', 'pjp', 'gif', 'avif', 'webp'].includes(ext)) {
             return `assets/img/[name].[ext]`;
           } else if (ext === 'svg') {
             return `assets/svg/[name].[ext]`;

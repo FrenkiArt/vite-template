@@ -13,5 +13,5 @@
   "quoteProps": "as-needed",
   "arrowParens": "always",
   "proseWrap": "preserve",
-  "enableDebugLogs": true
+  "plugins": ["prettier-plugin-nunjucks"]
 }
