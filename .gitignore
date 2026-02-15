@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 *.zip
+*.tar
+*.gz
 
 # Editor directories and files
 .vscode/*
@@ -23,3 +25,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.continue
+stats.html
+stats.json
+stats.yml
+
+.env
+.env.local
+.env.*.local
+
+.cache
+.temp
