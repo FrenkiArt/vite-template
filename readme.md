@@ -1,101 +1,230 @@
-# vite-js-builder
+# Vite + Nunjucks Builder (vite-js-builder)
 
-## Описание проекта и его цель
+**Актуальная версия:** 2.0.0 (февраль 2026)
 
-vite-js-builder — это сборщик для быстрого старта новых проектов с использованием Vite и чистого JavaScript (vanilla). Он включает в себя все необходимые настройки для обеспечения быстрой разработки и построения продуктивных сборок.
-
-## Инструкции по установке
-
-1. **Скачивание и клонирование репозитория**:
-
-   - Скачайте или клонируйте данный репозиторий на свой компьютер.
-
-2. **Установка зависимостей**:
-
-   - Откройте консоль и перейдите в директорию проекта.
-   - Выполните команду:
-
-     ```bash
-        npm install
-     ```
-
-3. **Запуск локального сервера для разработки**:
-
-   - После установки зависимостей выполните команду:
-
-     ```bash
-        npm run dev
-     ```
-
-   - Наслаждайтесь быстрой работой и удобным процессом разработки.
-
-4. **Финальная сборка проекта**:
-
-   - Для создания продакшн-версии проекта выполните команду:
-
-     ```bash
-        npm run build
-     ```
-
-5. **Деплой**:
-   - Для деплоя используйте предпочитаемый вами сервис. Я рекомендую Netlify.
-
-## Структура проекта
-
-- assets/ — содержит все стили (SCSS) и JavaScript файлы проекта.
-- public/ — содержит изображения, иконки и статические файлы, которые не требуют обработки и попадут в продакшен версию проекта.
-
-## Контакты для обратной связи
-
-- Telegram: [@artywork](https://t.me/artywork)
+> Быстрый старт для вёрстки сайтов с использованием **Vite**, **Vituum** и **Nunjucks**.  
+> Шаблонизатор выбран из-за его схожести с Fenom (используется в MODX Revolution), что позволяет легко переносить готовую вёрстку в CMS.  
+> Проект построен на **Vituum** для удобной работы с многостраничными сайтами и компонентами.
 
 ---
 
-## Project Description and Objective
+## 🇷🇺 Описание на русском
 
-vite-js-builder is a scaffold for quickly starting new projects with Vite and pure JavaScript (vanilla). It comes with all the necessary settings to ensure a streamlined development experience and efficient production builds.
+## Возможности
 
-## Installation Instructions
+- ⚡ Мгновенная разработка — HMR для Nunjucks, SCSS и JavaScript
+- 📁 Компонентный подход — переиспользуемые блоки (header, footer, карточки и т.д.)
+- 📄 Многостраничность — каждая страница в `src/pages` → отдельный HTML
+- 🌐 Глобальные данные — JSON-файлы автоматически доступны в шаблонах
+- 🧩 Близко к MODX — структура layouts/components/pages напоминает чанки и шаблоны
+- 🎨 SCSS + автопрефиксы
+- 🖼 SVG-спрайт — автоматическая сборка всех иконок
+- 🔧 Prettier — форматирование кода
+- 📦 Продакшн-сборка — минификация, оптимизация ассетов
 
-1. **Download and Clone the Repository**:
+---
 
-   - Download or clone this repository to your local machine.
+## Установка и запуск
 
-2. **Install Dependencies**:
+### 1. Клонирование
 
-   - Open your terminal and navigate to the project directory.
-   - Run the following command:
+git clone https://github.com/FrenkiArt/vite-template.git your-project
+cd your-project
 
-   ```bash
-      npm install
-   ```
+### 2. Установка зависимостей
 
-3. **Start the Local Development Server**:
+npm install
 
-   - After installing the dependencies, run the command:
+### 3. Запуск сервера разработки
 
-   ```bash
-      npm run dev
-   ```
+npm run dev
 
-   - Enjoy fast performance and a streamlined development process.
+После запуска откроется браузер с главной страницей. Все изменения применяются мгновенно.
 
-4. **Production Build**:
+### 4. Сборка для продакшена
 
-   - To create a production build of the project, run the command:
+npm run build
 
-   ```bash
-      npm run build
-   ```
+Готовые файлы появятся в `dist/`.
 
-5. **Deployment**:
-   - Use any preferred service for deployment. I personally use Netlify.
+---
 
-## Project Structure
+## Структура проекта
 
-- assets/ — contains all project assets such as styles (CSS) and JavaScript files.
-- public/ — contains images, icons, and static files that do not require processing and will be directly included in the production build.
+vite-template/
+├── public/  
+├── src/
+│ ├── assets/  
+│ │ ├── css/
+│ │ │ └── main.scss
+│ │ └── js/
+│ │ └── main.js
+│ ├── components/  
+│ │ ├── header.njk
+│ │ ├── footer.njk
+│ │ └── sec-nav.njk
+│ ├── data/  
+│ │ ├── site.json
+│ │ └── menu.json
+│ ├── icons/  
+│ │ ├── geo.svg
+│ │ ├── link-arrow.svg
+│ │ └── ...
+│ ├── layouts/  
+│ │ └── base.njk
+│ └── pages/  
+│ ├── index.njk
+│ └── contacts.njk
+├── .prettierrc.json
+├── package.json
+└── vite.config.js
 
-## Contact Information
+---
 
-- Telegram: [@artywork](https://t.me/artywork)
+## Работа с данными (JSON)
+
+Все файлы из `src/data/` становятся глобальными переменными.
+
+### Пример site.json
+
+{
+"siteName": "Мой питомник растений",
+"phone": "+7 (123) 456-78-90"
+}
+
+### Использование в шаблоне
+
+<header>
+  <a href="/" class="logo">{{ site.siteName }}</a>
+  <a href="tel:{{ site.phone }}">{{ site.phone }}</a>
+</header>
+
+---
+
+## SVG-спрайт
+
+Плагин @spiriit/vite-plugin-svg-spritemap собирает все SVG в `/__spritemap`.
+
+### Использование
+
+<svg class="sprite-icon">
+  <use xlink:href="/__spritemap#sprite-geo"></use>
+</svg>
+
+### Стилизация
+
+.sprite-icon {
+width: 24px;
+height: 24px;
+fill: currentColor;
+stroke: currentColor;
+vertical-align: middle;
+}
+
+---
+
+## Используемые технологии
+
+- Vite
+- Vituum
+- Nunjucks
+- SCSS
+- Prettier
+- rollup-plugin-visualizer
+- vite-plugin-webfont-dl
+- @spiriit/vite-plugin-svg-spritemap
+
+---
+
+## Конфигурация
+
+Основной файл — vite.config.js.
+
+Подключены:
+
+- vituum()
+- @vituum/vite-plugin-nunjucks
+- @spiriit/vite-plugin-svg-spritemap
+- visualizer()
+- webfontDownload()
+
+---
+
+## Перенос в MODX
+
+1. npm run build
+2. Скопировать dist/ в assets/templates/
+3. Заменить переменные:
+
+Nunjucks → MODX  
+{{ site.siteName }} → [[++site_name]]  
+{% for item in menu.items %} → pdoMenu  
+{{ resource.pagetitle }} → [[*pagetitle]]
+
+4. Разбить страницы на шаблоны и чанки.
+
+---
+
+# 🇬🇧 English Description
+
+## Features
+
+- Instant HMR
+- Component-based architecture
+- Multi-page support
+- Global JSON data
+- MODX-friendly
+- SCSS + autoprefixer
+- SVG spritemap
+- Prettier
+- Production build
+
+---
+
+## Installation
+
+git clone https://github.com/FrenkiArt/vite-template.git your-project
+cd your-project
+npm install
+npm run dev
+npm run build
+
+---
+
+## Working with Data (JSON)
+
+Same as in the Russian section.
+
+---
+
+## SVG Spritemap
+
+Same usage as above.
+
+---
+
+## Technologies Used
+
+- Vite
+- Vituum
+- Nunjucks
+- SCSS
+- Prettier
+- rollup-plugin-visualizer
+- vite-plugin-webfont-dl
+- @spiriit/vite-plugin-svg-spritemap
+
+---
+
+## Porting to MODX
+
+Same steps as in the Russian section.
+
+---
+
+## 📬 Contact
+
+Telegram: @artywork  
+Repository: https://github.com/FrenkiArt/vite-template
+
+Happy coding!
