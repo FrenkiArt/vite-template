@@ -17,7 +17,7 @@
     "@spiriit/vite-plugin-svg-spritemap": "^6.0.0",
     "@vituum/vite-plugin-nunjucks": "^1.1.0",
     "autoprefixer": "^10.4.23",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.5",
