@@ -26,7 +26,8 @@ dist-ssr
 *.sln
 *.sw?
 
-.continue
+.continuez
+.qwen
 stats.html
 stats.json
 stats.yml

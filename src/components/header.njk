@@ -12,8 +12,8 @@
     <a href="tel:{{ site.phone }}">{{ site.phone }}</a>
 
     <div class="div">
+      {# ID иконки теперь формируется как "sprite-имя_файла_без_расширения" #}
         <svg class="sprite-icon">
-        {# ID иконки теперь формируется как "sprite-имя_файла_без_расширения" #}
         <use xlink:href="/__spritemap#sprite-vite"></use>
         </svg>
         <svg class="sprite-icon text-primary"> 
@@ -23,4 +23,6 @@
         <use xlink:href="/__spritemap#sprite-javascript"></use>
         </svg>
     </div>
+
+    
 </header>
