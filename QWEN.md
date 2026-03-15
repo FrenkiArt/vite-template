@@ -135,11 +135,11 @@ src/
 
 ## ⚙️ Команды
 
-| Команда                | Описание                 |
-| ---------------------- | ------------------------ |
-| `npm run dev`          | Запуск сервера разработки |
-| `npm run build`        | Сборка продакшена        |
-| `npm run lint`         | Проверка ESLint          |
+| Команда         | Описание                 |
+| --------------- | ------------------------ |
+| `npm run dev`   | Запуск сервера разработки |
+| `npm run build` | Сборка продакшена        |
+| `npm run lint`  | Проверка ESLint          |
 
 ---
 
@@ -163,12 +163,12 @@ src/
 
 ### Именование файлов
 
-| Тип          | Формат           | Пример               |
-| ------------ | ---------------- | -------------------- |
-| SCSS файлы   | `kebab-case.scss` | `card-template.scss` |
-| Компоненты   | `kebab-case.njk`  | `header.njk`         |
-| Страницы     | `kebab-case.njk`  | `contacts.njk`       |
-| JS модули    | `kebab-case.js`   | `init-slider.js`     |
+| Тип        | Формат            | Пример               |
+| ---------- | ----------------- | -------------------- |
+| SCSS файлы | `kebab-case.scss` | `card-template.scss` |
+| Компоненты | `kebab-case.njk`  | `header.njk`         |
+| Страницы   | `kebab-case.njk`  | `contacts.njk`       |
+| JS модули  | `kebab-case.js`   | `init-slider.js`     |
 
 ### CSS / SCSS классы (BEM-подобные)
 
@@ -284,11 +284,13 @@ SCSS медиа-запросы от меньшего к большему:
 ```
 
 **Использование:**
+
 ```nunjucks
 {% include "components/component-name.njk" %}
 ```
 
 **Пример (header.njk):**
+
 ```nunjucks
 <header id="header" class="header">
   <div class="container">
@@ -321,13 +323,13 @@ SCSS медиа-запросы от меньшего к большему:
 }
 ```
 
-2. Импортировать в `main.scss`:
+1. Импортировать в `main.scss`:
 
 ```scss
 @import 'module-name';
 ```
 
-3. Использовать BEM-классы в шаблонах:
+1. Использовать BEM-классы в шаблонах:
 
 ```html
 <div class="module-name">
