@@ -1,28 +1,28 @@
- <header id="header" class="header">
-    <div class="container">{{ site.site_name | default('Мой сайт') }}</div>
+<header id="header" class="header">
+  <div class="container">{{ site.site_name | default('Мой сайт') }}</div>
 
-     <nav>
-      <ul>
-        {% for item in site.menu2 %}
+  <nav>
+    <ul>
+      {% for item in site.menu2 %}
         <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
+      {% endfor %}
+    </ul>
+  </nav>
 
-    <a href="tel:{{ site.contacts.phone_link }}">{{ site.contacts.phone_display }}</a>
+  <a href="tel:{{ site.contacts.phone_link }}">
+    {{ site.contacts.phone_display }}
+  </a>
 
-    <div class="div">
-      {# ID иконки теперь формируется как "sprite-имя_файла_без_расширения" #}
-        <svg class="sprite-icon">
-        <use xlink:href="/__spritemap#sprite-vite"></use>
-        </svg>
-        <svg class="sprite-icon text-primary"> 
-        <use xlink:href="/__spritemap#sprite-burger"></use>
-        </svg>
-        <svg class="sprite-icon"> 
-        <use xlink:href="/__spritemap#sprite-javascript"></use>
-        </svg>
-    </div>
-
-    
+  <div class="div">
+    {# ID иконки теперь формируется как "sprite-имя_файла_без_расширения" #}
+    <svg class="sprite-icon">
+      <use xlink:href="/__spritemap#sprite-vite"></use>
+    </svg>
+    <svg class="sprite-icon text-primary">
+      <use xlink:href="/__spritemap#sprite-burger"></use>
+    </svg>
+    <svg class="sprite-icon">
+      <use xlink:href="/__spritemap#sprite-javascript"></use>
+    </svg>
+  </div>
 </header>

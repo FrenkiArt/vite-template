@@ -1,79 +1,105 @@
- <!doctype html>
+<!doctype html>
 <html lang="ru" data-bs-theme="auto">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {# Блок для заголовка страницы. Можно переопределить в дочерних шаблонах #}
-    <title>{% block title %}{{ title | default(site_name) }}{% endblock %}</title>
+    <title>
+      {% block title %}{{ title | default(site_name) }}{% endblock %}
+    </title>
 
     {# Блок для мета-описания #}
-    <meta name="description" content="{% block description %}{{ description | default('') }}{% endblock %}">
+    <meta
+      name="description"
+      content="{% block description %}{{ description | default('') }}{% endblock %}"
+    />
 
     {# Блок для Open Graph и Twitter Cards #}
     {% block social %}
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="{{ title | default(site_name) }}">
-        <meta property="og:description" content="{{ description | default('') }}">
-        <meta property="og:url" content="{{ site.config.base_url }}{{ site.resource.uri }}">
-        <meta property="og:site_name" content="{{ site.site_name | default('Site') }}">
-        <meta property="og:image" content="{{ site.config.base_url }}{{ site.seo.og_image }}">
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:title" content="{{ title | default(site_name) }}">
-        <meta property="twitter:description" content="{{ description | default('') }}">
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="{{ title | default(site_name) }}" />
+      <meta
+        property="og:description"
+        content="{{ description | default('') }}"
+      />
+      <meta
+        property="og:url"
+        content="{{ site.config.base_url }}{{ site.resource.uri }}"
+      />
+      <meta
+        property="og:site_name"
+        content="{{ site.site_name | default('Site') }}"
+      />
+      <meta
+        property="og:image"
+        content="{{ site.config.base_url }}{{ site.seo.og_image }}"
+      />
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta
+        property="twitter:title"
+        content="{{ title | default(site_name) }}"
+      />
+      <meta
+        property="twitter:description"
+        content="{{ description | default('') }}"
+      />
     {% endblock %}
 
     {# JSON-LD микроразметка #}
     {% block jsonld %}
-        <script type="application/ld+json">
+      <script type="application/ld+json">
         {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "{{ site.site_name | default('Site') }}",
-            "url": "{{ site.config.base_url }}{{ site.resource.uri }}",
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": "{{ site.config.base_url }}/search?q={query}",
-                "query-input": "required name=query"
-            }
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "{{ site.site_name | default('Site') }}",
+          "url": "{{ site.config.base_url }}{{ site.resource.uri }}",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{{ site.config.base_url }}/search?q={query}",
+            "query-input": "required name=query"
+          }
         }
-        </script>
+      </script>
     {% endblock %}
 
     {# Блок для дополнительных мета-тегов и ресурсов в head #}
     {% block head %}
-        {# Кэширование #}
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-        <meta http-equiv="Pragma" content="no-cache">
-        <meta http-equiv="Expires" content="0">
+      {# Кэширование #}
+      <meta
+        http-equiv="Cache-Control"
+        content="no-cache, no-store, must-revalidate"
+      />
+      <meta http-equiv="Pragma" content="no-cache" />
+      <meta http-equiv="Expires" content="0" />
 
-        {# Шрифты #}
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+      {# Шрифты #}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+        rel="stylesheet"
+      />
 
-        {# Фавикон и стили #}
-        <link rel="icon" type="image/svg+xml" href="assets/svg/vite.svg">
-        <link rel="stylesheet" href="assets/fonts/lato/stylesheet.css">
+      {# Фавикон и стили #}
+      <link rel="icon" type="image/svg+xml" href="assets/svg/vite.svg" />
+      <link rel="stylesheet" href="assets/fonts/lato/stylesheet.css" />
     {% endblock %}
-</head>
-<body>
-   
+  </head>
+  <body>
     {% include "components/header.njk" %}
     {% include "components/sec-nav.njk" %}
 
     {# Основной контент страницы — будет подставляться из дочерних шаблонов #}
-    <main id="app" class="page">
-        {% block content %}{% endblock %}
-    </main>
+    <main id="app" class="page">{% block content %}{% endblock %}</main>
 
     {% include "components/footer.njk" %}
 
     {# Общая иконка и скрипт (можно оставить здесь) #}
     <svg class="sprite-icon text-primary">
-        <use xlink:href="assets/svg/sprite.svg#geo"></use>
+      <use xlink:href="assets/svg/sprite.svg#geo"></use>
     </svg>
 
     <script defer type="module" src="/src/main.js"></script>
-</body>
+  </body>
 </html>
