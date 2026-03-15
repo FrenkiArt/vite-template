@@ -267,3 +267,188 @@ SCSS медиа-запросы от меньшего к большему:
 {{ site.menu2 }}  ← массив меню
 ```
 
+---
+
+## 🧩 Новый компонент
+
+Создать `src/components/component-name.njk`:
+
+```nunjucks
+{# component-name.njk #}
+<div class="component-name">
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+</div>
+```
+
+**Использование:**
+```nunjucks
+{% include "components/component-name.njk" %}
+```
+
+**Пример (header.njk):**
+```nunjucks
+<header id="header" class="header">
+  <div class="container">
+    <a href="/">{{ site.site_name }}</a>
+    <nav>
+      {% for item in site.menu2 %}
+        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
+```
+
+---
+
+## 🎨 Добавить SCSS модуль
+
+1. Создать `src/assets/styles/module-name.scss`
+
+```scss
+// module-name.scss
+.module-name {
+  &__element {
+    // стили элемента
+  }
+  
+  &__element--modifier {
+    // стили модификатора
+  }
+}
+```
+
+2. Импортировать в `main.scss`:
+
+```scss
+@import 'module-name';
+```
+
+3. Использовать BEM-классы в шаблонах:
+
+```html
+<div class="module-name">
+  <div class="module-name__element module-name__element--modifier">
+    Контент
+  </div>
+</div>
+```
+
+**Пример (buttons.scss):**
+```scss
+.btn-custom {
+  background-color: $primary;
+  color: $white;
+  
+  &:hover {
+    background-color: darken($primary, 10%);
+  }
+}
+```
+
+---
+
+## 🏷️ JSON-LD примеры
+
+**WebSite (в base.njk):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.site_name }}",
+  "url": "{{ site.config.base_url }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site.config.base_url }}/search?q={query}",
+    "query-input": "required name=query"
+  }
+}
+```
+
+**Organization (в footer):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.site_name }}",
+  "url": "{{ site.config.base_url }}",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "{{ site.contacts.phone_link }}",
+    "contactType": "customer service"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.contacts.address }}",
+    "addressCountry": "RU"
+  },
+  "sameAs": [
+    "{{ site.social.vk }}",
+    "{{ site.social.telegram }}"
+  ]
+}
+```
+
+**Article (новость/статья):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ resource.pagetitle }}",
+  "description": "{{ resource.description }}",
+  "author": {
+    "@type": "Person",
+    "name": "Автор"
+  },
+  "datePublished": "{{ resource.publishedon }}",
+  "dateModified": "{{ resource.editedon }}"
+}
+```
+
+**Product (товар):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Название товара",
+  "description": "Описание товара",
+  "image": "{{ site.config.base_url }}/assets/img/product.jpg",
+  "offers": {
+    "@type": "Offer",
+    "price": "1000.00",
+    "priceCurrency": "RUB",
+    "availability": "https://schema.org/InStock"
+  }
+}
+```
+
+**BreadcrumbList (хлебные крошки):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "{{ site.config.base_url }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Каталог",
+      "item": "{{ site.config.base_url }}/catalog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Товар",
+      "item": "{{ site.config.base_url }}/catalog/product/"
+    }
+  ]
+}
+```
+
