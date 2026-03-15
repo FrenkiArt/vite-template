@@ -1,0 +1,91 @@
+{% extends "layouts/base.njk" %}
+
+{% set title = "Спасибо за заявку — Мой сайт" %}
+{% set description = "Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время." %}
+
+{% block content %}
+<section class="thank-you py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-6 text-center">
+                <!-- Иконка успеха -->
+                <div class="mb-4">
+                    <svg class="sprite-icon text-success" width="100" height="100">
+                        <use xlink:href="/__spritemap#sprite-vite"></use>
+                    </svg>
+                </div>
+                
+                <h1 class="display-4 mb-4">Спасибо за заявку!</h1>
+                
+                <p class="lead mb-4">
+                    Ваша заявка успешно отправлена.<br>
+                    Мы свяжемся с вами в ближайшее время.
+                </p>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="h5 mb-3">Что дальше?</h2>
+                        <ol class="text-start mb-0">
+                            <li class="mb-2">
+                                <strong>Мы получили вашу заявку</strong><br>
+                                <small class="text-muted">Она уже в нашей системе</small>
+                            </li>
+                            <li class="mb-2">
+                                <strong>Менеджер обработает заявку</strong><br>
+                                <small class="text-muted">В течение рабочего дня</small>
+                            </li>
+                            <li class="mb-2">
+                                <strong>Мы свяжемся с вами</strong><br>
+                                <small class="text-muted">По телефону или email</small>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info" role="alert">
+                    <strong>⏱️ Время ответа:</strong><br>
+                    Обычно мы отвечаем в течение 1-2 часов в рабочее время.
+                </div>
+                
+                <!-- Кнопки действий -->
+                <div class="d-flex gap-3 justify-content-center flex-wrap mt-4">
+                    <a href="/" class="btn btn-primary">
+                        <svg class="sprite-icon me-2" width="16" height="16">
+                            <use xlink:href="/__spritemap#sprite-geo"></use>
+                        </svg>
+                        На главную
+                    </a>
+                    <a href="/catalog/" class="btn btn-outline-primary">
+                        В каталог
+                    </a>
+                    <a href="/contacts/" class="btn btn-outline-secondary">
+                        Контакты
+                    </a>
+                </div>
+                
+                <!-- Контакты для связи -->
+                <div class="mt-5 pt-5 border-top">
+                    <h2 class="h6 text-muted mb-3">Есть вопросы?</h2>
+                    <p class="mb-2">
+                        <strong>Телефон:</strong><br>
+                        <a href="tel:{{ site.contacts.phone_link }}" class="h5">
+                            {{ site.contacts.phone_display }}
+                        </a>
+                    </p>
+                    <p class="mb-2">
+                        <strong>Email:</strong><br>
+                        <a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a>
+                    </p>
+                    <p>
+                        <strong>Режим работы:</strong><br>
+                        {{ site.contacts.working_hours }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Запрет индексации страницы благодарности #}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}

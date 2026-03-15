@@ -1,0 +1,66 @@
+{% extends "layouts/base.njk" %}
+
+{% set title = "Доступ запрещён — 403 — Мой сайт" %}
+{% set description = "У вас нет доступа к этой странице." %}
+
+{% block content %}
+<section class="error-403 py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 text-center">
+                <h1 class="display-1 fw-bold text-danger">403</h1>
+                <h2 class="h3 mb-4">Доступ запрещён</h2>
+                <p class="lead mb-4">
+                    К сожалению, у вас нет прав для доступа к этой странице.
+                </p>
+                
+                <div class="alert alert-warning" role="alert">
+                    <strong>⛔ Возможные причины:</strong>
+                    <ul class="mb-0 mt-2 text-start">
+                        <li>Страница доступна только авторизованным пользователям</li>
+                        <li>У вас недостаточно прав для просмотра</li>
+                        <li>Доступ ограничен по IP-адресу</li>
+                        <li>Страница находится в черновике</li>
+                    </ul>
+                </div>
+                
+                <div class="d-flex gap-3 justify-content-center flex-wrap mt-4">
+                    <a href="/" class="btn btn-primary">
+                        <svg class="sprite-icon me-2" width="16" height="16">
+                            <use xlink:href="/__spritemap#sprite-geo"></use>
+                        </svg>
+                        На главную
+                    </a>
+                    <a href="javascript:history.back()" class="btn btn-secondary">
+                        Назад
+                    </a>
+                    <a href="/contacts/" class="btn btn-outline-primary">
+                        Связаться с нами
+                    </a>
+                </div>
+                
+                <!-- Хлебные крошки -->
+                <nav aria-label="breadcrumb" class="mt-5">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item">
+                            <a href="/">Главная</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">403</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# JSON-LD WebPage #}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Доступ запрещён — 403",
+    "description": "{{ site.seo.description }}",
+    "url": "{{ site.config.base_url }}/403/"
+}
+</script>
+{% endblock %}

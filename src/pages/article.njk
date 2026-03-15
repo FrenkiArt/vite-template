@@ -1,0 +1,244 @@
+{% extends "layouts/base.njk" %}
+
+{% set title = "Статья — Мой сайт" %}
+{% set description = "Подробная статья с информацией. Полезные советы и рекомендации." %}
+
+{% block content %}
+<article class="article py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <!-- Заголовок и мета -->
+                <header class="mb-4">
+                    <h1 class="display-5 mb-3">Заголовок статьи</h1>
+                    
+                    <div class="d-flex flex-wrap gap-3 text-muted small mb-4">
+                        <span>📅 <time datetime="2026-03-15">15 марта 2026</time></span>
+                        <span>👤 Автор: Иван Петров</span>
+                        <span>👁️ Просмотров: 1 234</span>
+                    </div>
+                    
+                    <!-- Изображение -->
+                    <img src="assets/svg/javascript.svg" alt="Статья" class="img-fluid rounded mb-4" style="width: 100%; max-height: 500px; object-fit: cover;">
+                </header>
+                
+                <!-- Оглавление -->
+                <nav class="card mb-4" aria-label="Оглавление">
+                    <div class="card-body">
+                        <h2 class="h5 mb-3">Содержание</h2>
+                        <ul class="mb-0">
+                            <li><a href="#section-1">Введение</a></li>
+                            <li><a href="#section-2">Основная часть</a></li>
+                            <li><a href="#section-3">Практические советы</a></li>
+                            <li><a href="#section-4">Заключение</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                <!-- Контент статьи -->
+                <div class="content">
+                    <section id="section-1" class="mb-5">
+                        <h2 class="h3 mb-3">Введение</h2>
+                        <p class="lead">
+                            Вступительный абзац статьи. Основная тема и проблематика.
+                            Почему эта тема важна для читателей.
+                        </p>
+                        <p>
+                            Основной текст введения. Здесь можно раскрыть контекст,
+                            объяснить актуальность темы и обозначить цели статьи.
+                        </p>
+                    </section>
+                    
+                    <section id="section-2" class="mb-5">
+                        <h2 class="h3 mb-3">Основная часть</h2>
+                        <p>
+                            Развёрнутое изложение материала. Факты, данные, исследования.
+                            Подробное описание проблемы и возможных решений.
+                        </p>
+                        
+                        <h3 class="h4 mt-4 mb-3">Подзаголовок уровня 3</h3>
+                        <p>
+                            Детализация отдельного аспекта. Примеры из практики,
+                            кейсы, реальные ситуации.
+                        </p>
+                        
+                        <blockquote class="blockquote border-start border-4 border-primary ps-4 my-4">
+                            <p class="mb-0">
+                                Важная цитата или ключевая мысль, которую нужно выделить.
+                                Это может быть мнение эксперта или результат исследования.
+                            </p>
+                            <footer class="blockquote-footer mt-2">Имя эксперта</footer>
+                        </blockquote>
+                        
+                        <h4 class="h5 mt-4 mb-3">Список преимуществ</h4>
+                        <ul>
+                            <li>Первое важное преимущество</li>
+                            <li>Второе важное преимущество</li>
+                            <li>Третье важное преимущество</li>
+                            <li>Четвёртое важное преимущество</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="section-3" class="mb-5">
+                        <h2 class="h3 mb-3">Практические советы</h2>
+                        <p>
+                            Рекомендации для применения на практике. Пошаговые инструкции,
+                            чек-листы, полезные приёмы.
+                        </p>
+                        
+                        <div class="alert alert-info" role="alert">
+                            <strong>💡 Совет:</strong> Обратите внимание на этот важный момент.
+                            Он поможет избежать распространённых ошибок.
+                        </div>
+                        
+                        <h3 class="h4 mt-4 mb-3">Таблица сравнения</h3>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Параметр</th>
+                                    <th>Вариант 1</th>
+                                    <th>Вариант 2</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Цена</td>
+                                    <td>1000 ₽</td>
+                                    <td>1500 ₽</td>
+                                </tr>
+                                <tr>
+                                    <td>Качество</td>
+                                    <td>Хорошее</td>
+                                    <td>Отличное</td>
+                                </tr>
+                                <tr>
+                                    <td>Гарантия</td>
+                                    <td>1 год</td>
+                                    <td>2 года</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    
+                    <section id="section-4" class="mb-5">
+                        <h2 class="h3 mb-3">Заключение</h2>
+                        <p>
+                            Выводы по статье. Краткое резюме основных мыслей.
+                            Призыв к действию или рекомендация для дальнейшего изучения.
+                        </p>
+                        
+                        <div class="alert alert-success" role="alert">
+                            <strong>✅ Вывод:</strong> Подытоживающая мысль статьи.
+                            Что читатель должен запомнить и применить.
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- Теги -->
+                <div class="mt-5 pt-4 border-top">
+                    <span class="text-muted me-2">Теги:</span>
+                    <a href="/tag/тег1/" class="badge bg-secondary text-decoration-none me-2">Тег 1</a>
+                    <a href="/tag/тег2/" class="badge bg-secondary text-decoration-none me-2">Тег 2</a>
+                    <a href="/tag/тег3/" class="badge bg-secondary text-decoration-none me-2">Тег 3</a>
+                </div>
+                
+                <!-- Поделиться -->
+                <div class="mt-4">
+                    <span class="text-muted me-2">Поделиться:</span>
+                    <a href="#" class="btn btn-sm btn-outline-primary">VK</a>
+                    <a href="#" class="btn btn-sm btn-outline-info">Telegram</a>
+                    <a href="#" class="btn btn-sm btn-outline-success">WhatsApp</a>
+                </div>
+                
+                <!-- Автор -->
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-4">
+                            <div class="rounded-circle bg-secondary" style="width: 80px; height: 80px;"></div>
+                            <div>
+                                <h3 class="h5 mb-1">Иван Петров</h3>
+                                <p class="text-muted mb-2">Автор, эксперт</p>
+                                <p class="small mb-0">
+                                    Краткая биография автора. Опыт работы, специализация,
+                                    достижения и регалии.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Читайте также -->
+                <div class="mt-5">
+                    <h2 class="h4 mb-4">Читайте также</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <article class="card h-100">
+                                <img src="assets/svg/javascript.svg" alt="Статья 1" class="card-img-top" style="height: 150px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h3 class="h6 card-title">
+                                        <a href="/news/article-2/" class="text-decoration-none">Связанная статья 1</a>
+                                    </h3>
+                                    <p class="card-text small text-muted">
+                                        Краткое описание связанной статьи.
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card h-100">
+                                <img src="assets/svg/javascript.svg" alt="Статья 2" class="card-img-top" style="height: 150px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h3 class="h6 card-title">
+                                        <a href="/news/article-3/" class="text-decoration-none">Связанная статья 2</a>
+                                    </h3>
+                                    <p class="card-text small text-muted">
+                                        Краткое описание связанной статьи.
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Хлебные крошки -->
+                <nav aria-label="breadcrumb" class="mt-5">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">Новости</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Статья</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</article>
+
+{# JSON-LD Article #}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Заголовок статьи",
+    "description": "{{ site.seo.description }}",
+    "image": "{{ site.config.base_url }}/assets/svg/javascript.svg",
+    "author": {
+        "@type": "Person",
+        "name": "Иван Петров"
+    },
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-15",
+    "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.site_name }}",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ site.config.base_url }}/assets/img/og-image.jpg"
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ site.config.base_url }}/article/"
+    }
+}
+</script>
+{% endblock %}

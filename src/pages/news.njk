@@ -1,0 +1,164 @@
+{% extends "layouts/base.njk" %}
+
+{% set title = "Новости — Мой сайт" %}
+{% set description = "Последние новости и статьи. Будьте в курсе всех событий." %}
+
+{% block content %}
+<section class="news py-5">
+    <div class="container">
+        <h1 class="mb-4">Новости</h1>
+        <p class="lead mb-5">Последние события и статьи из жизни компании</p>
+        
+        <!-- Сетка новостей -->
+        <div class="row g-4">
+            <!-- Новость 1 -->
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="assets/svg/javascript.svg" alt="Новость 1" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <div class="text-muted small mb-2">
+                            <time datetime="2026-03-15">15 марта 2026</time>
+                        </div>
+                        <h2 class="h5 card-title">
+                            <a href="/news/article-1/" class="text-decoration-none">Заголовок новости 1</a>
+                        </h2>
+                        <p class="card-text text-muted flex-grow-1">
+                            Краткое описание новости. Основные события и факты. Почему это важно для читателей.
+                        </p>
+                        <a href="/news/article-1/" class="btn btn-outline-primary mt-3">Читать далее →</a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Новость 2 -->
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="assets/svg/javascript.svg" alt="Новость 2" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <div class="text-muted small mb-2">
+                            <time datetime="2026-03-10">10 марта 2026</time>
+                        </div>
+                        <h2 class="h5 card-title">
+                            <a href="/news/article-2/" class="text-decoration-none">Заголовок новости 2</a>
+                        </h2>
+                        <p class="card-text text-muted flex-grow-1">
+                            Краткое описание новости. Основные события и факты. Почему это важно для читателей.
+                        </p>
+                        <a href="/news/article-2/" class="btn btn-outline-primary mt-3">Читать далее →</a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Новость 3 -->
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="assets/svg/javascript.svg" alt="Новость 3" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <div class="text-muted small mb-2">
+                            <time datetime="2026-03-05">5 марта 2026</time>
+                        </div>
+                        <h2 class="h5 card-title">
+                            <a href="/news/article-3/" class="text-decoration-none">Заголовок новости 3</a>
+                        </h2>
+                        <p class="card-text text-muted flex-grow-1">
+                            Краткое описание новости. Основные события и факты. Почему это важно для читателей.
+                        </p>
+                        <a href="/news/article-3/" class="btn btn-outline-primary mt-3">Читать далее →</a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Новость 4 -->
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="assets/svg/javascript.svg" alt="Новость 4" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <div class="text-muted small mb-2">
+                            <time datetime="2026-02-28">28 февраля 2026</time>
+                        </div>
+                        <h2 class="h5 card-title">
+                            <a href="/news/article-4/" class="text-decoration-none">Заголовок новости 4</a>
+                        </h2>
+                        <p class="card-text text-muted flex-grow-1">
+                            Краткое описание новости. Основные события и факты. Почему это важно для читателей.
+                        </p>
+                        <a href="/news/article-4/" class="btn btn-outline-primary mt-3">Читать далее →</a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Новость 5 -->
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="assets/svg/javascript.svg" alt="Новость 5" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <div class="text-muted small mb-2">
+                            <time datetime="2026-02-20">20 февраля 2026</time>
+                        </div>
+                        <h2 class="h5 card-title">
+                            <a href="/news/article-5/" class="text-decoration-none">Заголовок новости 5</a>
+                        </h2>
+                        <p class="card-text text-muted flex-grow-1">
+                            Краткое описание новости. Основные события и факты. Почему это важно для читателей.
+                        </p>
+                        <a href="/news/article-5/" class="btn btn-outline-primary mt-3">Читать далее →</a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Новость 6 -->
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="assets/svg/javascript.svg" alt="Новость 6" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <div class="text-muted small mb-2">
+                            <time datetime="2026-02-15">15 февраля 2026</time>
+                        </div>
+                        <h2 class="h5 card-title">
+                            <a href="/news/article-6/" class="text-decoration-none">Заголовок новости 6</a>
+                        </h2>
+                        <p class="card-text text-muted flex-grow-1">
+                            Краткое описание новости. Основные события и факты. Почему это важно для читателей.
+                        </p>
+                        <a href="/news/article-6/" class="btn btn-outline-primary mt-3">Читать далее →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <!-- Пагинация -->
+        <nav aria-label="Пагинация новостей" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Назад</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Вперёд</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Хлебные крошки -->
+        <nav aria-label="breadcrumb" class="mt-5">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Новости</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+{# JSON-LD Blog #}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Новости",
+    "description": "{{ site.seo.description }}",
+    "url": "{{ site.config.base_url }}/news/"
+}
+</script>
+{% endblock %}

@@ -1,0 +1,215 @@
+{% extends "layouts/base.njk" %}
+
+{% set title = "О нас — Мой сайт" %}
+{% set description = "Информация о нашей компании: опыт, преимущества, команда и партнёры." %}
+
+{% block content %}
+<section class="about py-5">
+    <div class="container">
+        <h1 class="mb-4">О нас</h1>
+        
+        <!-- Основной текст -->
+        <div class="row g-4 mb-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="h4 card-title">Наша компания</h2>
+                        <p class="card-text">
+                            Мы работаем на рынке с 2010 года и за это время зарекомендовали себя как надёжный партнёр.
+                            Наша миссия — предоставлять качественные услуги и товары для наших клиентов.
+                        </p>
+                        <p class="card-text">
+                            Мы постоянно развиваемся, внедряем новые технологии и улучшаем качество обслуживания.
+                            Наша команда состоит из профессионалов своего дела.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Преимущества -->
+        <div class="row g-4 mb-5">
+            <div class="col-12">
+                <h2 class="h3 mb-4">Наши преимущества</h2>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <svg class="sprite-icon text-primary mb-3" width="48" height="48">
+                            <use xlink:href="/__spritemap#sprite-vite"></use>
+                        </svg>
+                        <h3 class="h5 card-title">Качество</h3>
+                        <p class="card-text">
+                            Гарантируем высокое качество всех услуг и товаров
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <svg class="sprite-icon text-primary mb-3" width="48" height="48">
+                            <use xlink:href="/__spritemap#sprite-burger"></use>
+                        </svg>
+                        <h3 class="h5 card-title">Опыт</h3>
+                        <p class="card-text">
+                            Более 10 лет успешной работы на рынке
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <svg class="sprite-icon text-primary mb-3" width="48" height="48">
+                            <use xlink:href="/__spritemap#sprite-geo"></use>
+                        </svg>
+                        <h3 class="h5 card-title">Надёжность</h3>
+                        <p class="card-text">
+                            Выполняем обязательства в срок
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <svg class="sprite-icon text-primary mb-3" width="48" height="48">
+                            <use xlink:href="/__spritemap#sprite-javascript"></use>
+                        </svg>
+                        <h3 class="h5 card-title">Поддержка</h3>
+                        <p class="card-text">
+                            Круглосуточная поддержка клиентов
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Команда -->
+        <div class="row g-4 mb-5">
+            <div class="col-12">
+                <h2 class="h3 mb-4">Наша команда</h2>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="rounded-circle bg-secondary mb-3 mx-auto" style="width: 120px; height: 120px;"></div>
+                        <h3 class="h5 card-title">Иван Петров</h3>
+                        <p class="text-muted">Генеральный директор</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="rounded-circle bg-secondary mb-3 mx-auto" style="width: 120px; height: 120px;"></div>
+                        <h3 class="h5 card-title">Анна Сидорова</h3>
+                        <p class="text-muted">Менеджер по продажам</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="rounded-circle bg-secondary mb-3 mx-auto" style="width: 120px; height: 120px;"></div>
+                        <h3 class="h5 card-title">Алексей Иванов</h3>
+                        <p class="text-muted">Технический специалист</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="rounded-circle bg-secondary mb-3 mx-auto" style="width: 120px; height: 120px;"></div>
+                        <h3 class="h5 card-title">Мария Козлова</h3>
+                        <p class="text-muted">Бухгалтер</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Партнёры -->
+        <div class="row g-4">
+            <div class="col-12">
+                <h2 class="h3 mb-4">Наши партнёры</h2>
+            </div>
+            
+            <div class="col-12 col-md-4 col-lg-2">
+                <div class="card h-100">
+                    <div class="card-body d-flex align-items-center justify-content-center">
+                        <span class="text-muted">Партнёр 1</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-4 col-lg-2">
+                <div class="card h-100">
+                    <div class="card-body d-flex align-items-center justify-content-center">
+                        <span class="text-muted">Партнёр 2</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-4 col-lg-2">
+                <div class="card h-100">
+                    <div class="card-body d-flex align-items-center justify-content-center">
+                        <span class="text-muted">Партнёр 3</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-4 col-lg-2">
+                <div class="card h-100">
+                    <div class="card-body d-flex align-items-center justify-content-center">
+                        <span class="text-muted">Партнёр 4</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-4 col-lg-2">
+                <div class="card h-100">
+                    <div class="card-body d-flex align-items-center justify-content-center">
+                        <span class="text-muted">Партнёр 5</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-4 col-lg-2">
+                <div class="card h-100">
+                    <div class="card-body d-flex align-items-center justify-content-center">
+                        <span class="text-muted">Партнёр 6</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Хлебные крошки -->
+        <nav aria-label="breadcrumb" class="mt-5">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">О нас</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+{# JSON-LD AboutPage #}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "О нас",
+    "description": "{{ site.seo.description }}",
+    "url": "{{ site.config.base_url }}/about/"
+}
+</script>
+{% endblock %}

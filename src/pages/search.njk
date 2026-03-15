@@ -1,0 +1,166 @@
+{% extends "layouts/base.njk" %}
+
+{% set title = "Поиск — Мой сайт" %}
+{% set description = "Поиск по сайту. Найдите нужную информацию быстро." %}
+
+{% block content %}
+<section class="search py-5">
+    <div class="container">
+        <h1 class="mb-4">Поиск по сайту</h1>
+        
+        <!-- Форма поиска -->
+        <form class="mb-5" action="/search/" method="GET">
+            <div class="input-group input-group-lg">
+                <input type="search" class="form-control" placeholder="Что вы ищете?" name="q" value="{{ query | default('') }}" required autofocus>
+                <button type="submit" class="btn btn-primary">
+                    🔍 Найти
+                </button>
+            </div>
+        </form>
+        
+        <!-- Результаты поиска -->
+        {% if query %}
+        <div class="mb-4">
+            <p class="lead">
+                Результаты по запросу: <strong>"{{ query }}"</strong>
+            </p>
+            <p class="text-muted">Найдено: <strong>5</strong> результатов</p>
+        </div>
+        
+        <div class="vstack gap-4">
+            <!-- Результат 1 -->
+            <article class="card">
+                <div class="card-body">
+                    <h2 class="h4 card-title">
+                        <a href="/" class="text-decoration-none">Главная страница — Мой сайт</a>
+                    </h2>
+                    <p class="text-muted small mb-2">
+                        <span>📄 Страница</span>
+                    </p>
+                    <p class="card-text">
+                        Тестовые компоненты, элементы Bootstrap и демонстрация стилей...
+                    </p>
+                    <a href="/" class="btn btn-outline-primary btn-sm">Перейти →</a>
+                </div>
+            </article>
+            
+            <!-- Результат 2 -->
+            <article class="card">
+                <div class="card-body">
+                    <h2 class="h4 card-title">
+                        <a href="/catalog/" class="text-decoration-none">Каталог товаров и услуг</a>
+                    </h2>
+                    <p class="text-muted small mb-2">
+                        <span>📦 Каталог</span>
+                    </p>
+                    <p class="card-text">
+                        Каталог товаров и услуг. Выберите нужную категорию или товар...
+                    </p>
+                    <a href="/catalog/" class="btn btn-outline-primary btn-sm">Перейти →</a>
+                </div>
+            </article>
+            
+            <!-- Результат 3 -->
+            <article class="card">
+                <div class="card-body">
+                    <h2 class="h4 card-title">
+                        <a href="/about/" class="text-decoration-none">О нас — Информация о компании</a>
+                    </h2>
+                    <p class="text-muted small mb-2">
+                        <span>📄 Страница</span>
+                    </p>
+                    <p class="card-text">
+                        Информация о нашей компании: опыт, преимущества, команда и партнёры...
+                    </p>
+                    <a href="/about/" class="btn btn-outline-primary btn-sm">Перейти →</a>
+                </div>
+            </article>
+            
+            <!-- Результат 4 -->
+            <article class="card">
+                <div class="card-body">
+                    <h2 class="h4 card-title">
+                        <a href="/contacts/" class="text-decoration-none">Контакты — Свяжитесь с нами</a>
+                    </h2>
+                    <p class="text-muted small mb-2">
+                        <span>📞 Контакты</span>
+                    </p>
+                    <p class="card-text">
+                        Контактная информация: телефон, email, адрес. Свяжитесь с нами...
+                    </p>
+                    <a href="/contacts/" class="btn btn-outline-primary btn-sm">Перейти →</a>
+                </div>
+            </article>
+            
+            <!-- Результат 5 -->
+            <article class="card">
+                <div class="card-body">
+                    <h2 class="h4 card-title">
+                        <a href="/news/" class="text-decoration-none">Новости и статьи</a>
+                    </h2>
+                    <p class="text-muted small mb-2">
+                        <span>📰 Блог</span>
+                    </p>
+                    <p class="card-text">
+                        Последние новости и статьи. Будьте в курсе всех событий...
+                    </p>
+                    <a href="/news/" class="btn btn-outline-primary btn-sm">Перейти →</a>
+                </div>
+            </article>
+        </div>
+        
+        <!-- Пагинация -->
+        <nav aria-label="Пагинация поиска" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Назад</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Вперёд</a>
+                </li>
+            </ul>
+        </nav>
+        
+        {% else %}
+        <!-- Подсказки для поиска -->
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="h5 mb-3">💡 Советы по поиску</h2>
+                        <ul class="mb-0">
+                            <li class="mb-2">Введите ключевые слова для поиска</li>
+                            <li class="mb-2">Используйте конкретные термины</li>
+                            <li class="mb-2">Проверьте правильность написания</li>
+                            <li>Попробуйте синонимы</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Хлебные крошки -->
+        <nav aria-label="breadcrumb" class="mt-5">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Поиск</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+{# JSON-LD SearchResultsPage #}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "SearchResultsPage",
+    "name": "Поиск",
+    "description": "{{ site.seo.description }}",
+    "url": "{{ site.config.base_url }}/search/"
+}
+</script>
+{% endblock %}

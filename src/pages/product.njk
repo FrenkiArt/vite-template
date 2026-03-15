@@ -1,0 +1,253 @@
+{% extends "layouts/base.njk" %}
+
+{% set title = "Товар — Мой сайт" %}
+{% set description = "Подробное описание товара. Характеристики, цена, отзывы." %}
+
+{% block content %}
+<section class="product py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Изображения -->
+            <div class="col-12 col-lg-6">
+                <div class="card">
+                    <img src="assets/svg/javascript.svg" alt="Товар" class="card-img-top" style="height: 400px; object-fit: cover;">
+                </div>
+                
+                <!-- Миниатюры -->
+                <div class="row g-2 mt-2">
+                    <div class="col-3">
+                        <img src="assets/svg/javascript.svg" alt="Фото 1" class="img-fluid rounded border" style="cursor: pointer;">
+                    </div>
+                    <div class="col-3">
+                        <img src="assets/svg/javascript.svg" alt="Фото 2" class="img-fluid rounded border" style="cursor: pointer;">
+                    </div>
+                    <div class="col-3">
+                        <img src="assets/svg/javascript.svg" alt="Фото 3" class="img-fluid rounded border" style="cursor: pointer;">
+                    </div>
+                    <div class="col-3">
+                        <img src="assets/svg/javascript.svg" alt="Фото 4" class="img-fluid rounded border" style="cursor: pointer;">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Информация о товаре -->
+            <div class="col-12 col-lg-6">
+                <h1 class="mb-3">Название товара</h1>
+                
+                <!-- Артикул и наличие -->
+                <div class="d-flex gap-4 mb-4">
+                    <div>
+                        <span class="text-muted">Артикул:</span>
+                        <span class="fw-bold">ART-001</span>
+                    </div>
+                    <div>
+                        <span class="text-success fw-bold">✓ В наличии</span>
+                    </div>
+                </div>
+                
+                <!-- Цена -->
+                <div class="mb-4">
+                    <div class="h2 text-primary mb-0">10 000 ₽</div>
+                    <small class="text-muted">Старая цена: 12 000 ₽</small>
+                </div>
+                
+                <!-- Краткое описание -->
+                <div class="mb-4">
+                    <p class="lead">
+                        Краткое описание товара. Основные преимущества и особенности.
+                        Почему стоит купить именно этот товар.
+                    </p>
+                </div>
+                
+                <!-- Характеристики -->
+                <div class="mb-4">
+                    <h2 class="h5 mb-3">Характеристики</h2>
+                    <table class="table table-sm">
+                        <tbody>
+                            <tr>
+                                <td class="text-muted">Производитель</td>
+                                <td><strong>Бренд</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Материал</td>
+                                <td>Пластик</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Цвет</td>
+                                <td>Чёрный</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Размер</td>
+                                <td>100 × 50 × 30 мм</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Вес</td>
+                                <td>500 г</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Количество и покупка -->
+                <div class="d-flex gap-3 mb-4">
+                    <div class="input-group" style="width: 150px;">
+                        <button type="button" class="btn btn-outline-secondary" onclick="this.parentElement.querySelector('input').stepDown()">−</button>
+                        <input type="number" class="form-control text-center" value="1" min="1" max="10">
+                        <button type="button" class="btn btn-outline-secondary" onclick="this.parentElement.querySelector('input').stepUp()">+</button>
+                    </div>
+                    <button type="button" class="btn btn-primary flex-grow-1">
+                        Добавить в корзину
+                    </button>
+                </div>
+                
+                <!-- Дополнительные кнопки -->
+                <div class="d-flex gap-3">
+                    <button type="button" class="btn btn-outline-primary">
+                        ♥ В избранное
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary">
+                        📋 Сравнить
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Подробное описание -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="h4 mb-4">Подробное описание</h2>
+                        
+                        <div class="content">
+                            <p>
+                                Полное описание товара с подробным перечислением всех характеристик,
+                                преимуществ и особенностей использования.
+                            </p>
+                            <p>
+                                Здесь можно разместить подробную информацию о материалах, технологии
+                                производства, рекомендациях по эксплуатации и уходу.
+                            </p>
+                            
+                            <h3 class="h5 mt-4 mb-3">Преимущества</h3>
+                            <ul>
+                                <li>Высокое качество материалов</li>
+                                <li>Современный дизайн</li>
+                                <li>Долговечность и надёжность</li>
+                                <li>Гарантия производителя</li>
+                            </ul>
+                            
+                            <h3 class="h5 mt-4 mb-3">Комплектация</h3>
+                            <ul>
+                                <li>Товар — 1 шт.</li>
+                                <li>Инструкция по эксплуатации</li>
+                                <li>Гарантийный талон</li>
+                                <li>Упаковка</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Отзывы -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="h4 mb-4">Отзывы <span class="text-muted">(3)</span></h2>
+                        
+                        <!-- Отзыв 1 -->
+                        <div class="border-bottom pb-4 mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <strong>Александр М.</strong>
+                                <span class="text-muted">15.01.2026</span>
+                            </div>
+                            <div class="text-warning mb-2">★★★★★</div>
+                            <p>Отличный товар! Полностью соответствует описанию. Быстрая доставка, качественная упаковка. Рекомендую!</p>
+                        </div>
+                        
+                        <!-- Отзыв 2 -->
+                        <div class="border-bottom pb-4 mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <strong>Елена К.</strong>
+                                <span class="text-muted">10.01.2026</span>
+                            </div>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                            <p>Хорошее качество за свою цену. Единственный минус — долго ждал доставку. В остальном всё отлично.</p>
+                        </div>
+                        
+                        <!-- Форма отзыва -->
+                        <div class="mt-4">
+                            <h3 class="h5 mb-3">Оставить отзыв</h3>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Ваше имя" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" placeholder="Email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-select" required>
+                                            <option value="">Оценка</option>
+                                            <option value="5">★★★★★</option>
+                                            <option value="4">★★★★☆</option>
+                                            <option value="3">★★★☆☆</option>
+                                            <option value="2">★★☆☆☆</option>
+                                            <option value="1">★☆☆☆☆</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control" rows="4" placeholder="Ваш отзыв" required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary">Отправить отзыв</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Хлебные крошки -->
+        <nav aria-label="breadcrumb" class="mt-5">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                <li class="breadcrumb-item"><a href="/catalog/">Каталог</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Товар</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+{# JSON-LD Product #}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Название товара",
+    "description": "{{ site.seo.description }}",
+    "image": "{{ site.config.base_url }}/assets/svg/javascript.svg",
+    "sku": "ART-001",
+    "brand": {
+        "@type": "Brand",
+        "name": "Бренд"
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": "10000.00",
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "url": "{{ site.config.base_url }}/catalog/product/"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "3"
+    }
+}
+</script>
+{% endblock %}

@@ -1,0 +1,245 @@
+{% extends "layouts/base.njk" %}
+
+{% set title = "Каталог — Мой сайт" %}
+{% set description = "Каталог товаров и услуг. Выберите нужную категорию или товар." %}
+
+{% block content %}
+<section class="catalog py-5">
+    <div class="container">
+        <h1 class="mb-4">Каталог</h1>
+        
+        <div class="row g-4">
+            <!-- Фильтры -->
+            <div class="col-12 col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="h5 mb-3">Фильтры</h2>
+                        
+                        <form>
+                            <!-- Категория -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Категория</label>
+                                <select class="form-select">
+                                    <option value="">Все категории</option>
+                                    <option value="1">Категория 1</option>
+                                    <option value="2">Категория 2</option>
+                                    <option value="3">Категория 3</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Цена -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Цена</label>
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" placeholder="От" min="0">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" placeholder="До" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Чекбоксы -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Опции</label>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="opt1">
+                                    <label class="form-check-label" for="opt1">Опция 1</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="opt2">
+                                    <label class="form-check-label" for="opt2">Опция 2</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="opt3">
+                                    <label class="form-check-label" for="opt3">Опция 3</label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100">Применить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Товары -->
+            <div class="col-12 col-lg-9">
+                <!-- Сортировка -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <span>Найдено товаров: <strong>12</strong></span>
+                    <select class="form-select w-auto">
+                        <option value="popular">По популярности</option>
+                        <option value="price-asc">Сначала дешёвые</option>
+                        <option value="price-desc">Сначала дорогие</option>
+                        <option value="name">По названию</option>
+                    </select>
+                </div>
+                
+                <!-- Сетка товаров -->
+                <div class="row g-4">
+                    <!-- Товар 1 -->
+                    <div class="col-12 col-sm-6 col-xl-4">
+                        <article class="card h-100">
+                            <div class="card__wrap-media">
+                                <img loading="lazy" src="assets/svg/javascript.svg" alt="Товар 1" class="card-img-top" style="height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 card-title">
+                                    <a href="/catalog/product-1/" class="text-decoration-none">Товар 1</a>
+                                </h3>
+                                <p class="card-text text-muted flex-grow-1">
+                                    Краткое описание товара. Основные характеристики и преимущества.
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="h5 mb-3">1 000 ₽</div>
+                                    <a href="/catalog/product-1/" class="btn btn-primary w-100">Подробнее</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Товар 2 -->
+                    <div class="col-12 col-sm-6 col-xl-4">
+                        <article class="card h-100">
+                            <div class="card__wrap-media">
+                                <img loading="lazy" src="assets/svg/javascript.svg" alt="Товар 2" class="card-img-top" style="height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 card-title">
+                                    <a href="/catalog/product-2/" class="text-decoration-none">Товар 2</a>
+                                </h3>
+                                <p class="card-text text-muted flex-grow-1">
+                                    Краткое описание товара. Основные характеристики и преимущества.
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="h5 mb-3">2 500 ₽</div>
+                                    <a href="/catalog/product-2/" class="btn btn-primary w-100">Подробнее</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Товар 3 -->
+                    <div class="col-12 col-sm-6 col-xl-4">
+                        <article class="card h-100">
+                            <div class="card__wrap-media">
+                                <img loading="lazy" src="assets/svg/javascript.svg" alt="Товар 3" class="card-img-top" style="height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 card-title">
+                                    <a href="/catalog/product-3/" class="text-decoration-none">Товар 3</a>
+                                </h3>
+                                <p class="card-text text-muted flex-grow-1">
+                                    Краткое описание товара. Основные характеристики и преимущества.
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="h5 mb-3">3 700 ₽</div>
+                                    <a href="/catalog/product-3/" class="btn btn-primary w-100">Подробнее</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Товар 4 -->
+                    <div class="col-12 col-sm-6 col-xl-4">
+                        <article class="card h-100">
+                            <div class="card__wrap-media">
+                                <img loading="lazy" src="assets/svg/javascript.svg" alt="Товар 4" class="card-img-top" style="height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 card-title">
+                                    <a href="/catalog/product-4/" class="text-decoration-none">Товар 4</a>
+                                </h3>
+                                <p class="card-text text-muted flex-grow-1">
+                                    Краткое описание товара. Основные характеристики и преимущества.
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="h5 mb-3">4 200 ₽</div>
+                                    <a href="/catalog/product-4/" class="btn btn-primary w-100">Подробнее</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Товар 5 -->
+                    <div class="col-12 col-sm-6 col-xl-4">
+                        <article class="card h-100">
+                            <div class="card__wrap-media">
+                                <img loading="lazy" src="assets/svg/javascript.svg" alt="Товар 5" class="card-img-top" style="height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 card-title">
+                                    <a href="/catalog/product-5/" class="text-decoration-none">Товар 5</a>
+                                </h3>
+                                <p class="card-text text-muted flex-grow-1">
+                                    Краткое описание товара. Основные характеристики и преимущества.
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="h5 mb-3">5 900 ₽</div>
+                                    <a href="/catalog/product-5/" class="btn btn-primary w-100">Подробнее</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Товар 6 -->
+                    <div class="col-12 col-sm-6 col-xl-4">
+                        <article class="card h-100">
+                            <div class="card__wrap-media">
+                                <img loading="lazy" src="assets/svg/javascript.svg" alt="Товар 6" class="card-img-top" style="height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 card-title">
+                                    <a href="/catalog/product-6/" class="text-decoration-none">Товар 6</a>
+                                </h3>
+                                <p class="card-text text-muted flex-grow-1">
+                                    Краткое описание товара. Основные характеристики и преимущества.
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="h5 mb-3">7 500 ₽</div>
+                                    <a href="/catalog/product-6/" class="btn btn-primary w-100">Подробнее</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                
+                <!-- Пагинация -->
+                <nav aria-label="Пагинация каталога" class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Назад</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Вперёд</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Хлебные крошки -->
+        <nav aria-label="breadcrumb" class="mt-5">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Каталог</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+{# JSON-LD CollectionPage #}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Каталог",
+    "description": "{{ site.seo.description }}",
+    "url": "{{ site.config.base_url }}/catalog/"
+}
+</script>
+{% endblock %}
