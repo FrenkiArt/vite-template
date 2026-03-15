@@ -1,6 +1,3 @@
-# Nunjucks templates
-**/*.njk
-
 # Локальные файлы
 .qwen/
 *.local

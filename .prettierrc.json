@@ -13,5 +13,13 @@
   "quoteProps": "as-needed",
   "arrowParens": "always",
   "proseWrap": "preserve",
-  "plugins": ["@prettier/plugin-php"]
+  "plugins": ["@prettier/plugin-php", "prettier-plugin-jinja-template"],
+  "overrides": [
+    {
+      "files": ["*.njk", "*.nunjucks", "*.jinja", "*.jinja2"],
+      "options": {
+        "parser": "jinja-template"
+      }
+    }
+  ]
 }
