@@ -7,7 +7,6 @@ import webfontDownload from 'vite-plugin-webfont-dl';
 import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 
 export default defineConfig({
-  //root: path.join(__dirname, '/'),
   plugins: [
     webfontDownload(),
     visualizer({
@@ -19,11 +18,9 @@ export default defineConfig({
     //viteCompression(),
     vituum(),
     nunjucks({
-      root: './src', // Корневая папка для поиска шаблонов.
-      // Дополнительные настройки (опционально)
+      root: './src',
       globals: {
         currentYear: new Date().getFullYear(),
-        resource: { pagetitle: 'Главная', content: '<p>Привет</p>' },
       },
     }),
     VitePluginSvgSpritemap('./src/icons/*.svg', {
