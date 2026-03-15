@@ -42,10 +42,6 @@ export default defineConfig({
     emptyOutDir: true, // Очистка выходной директории
 
     rollupOptions: {
-      /*  input: {
-        index: path.resolve(__dirname, 'src/templates/pages/index.njk'),
-        //allelements: path.resolve(__dirname, 'src/templates/pages/all-elements.njk'),
-      }, */
       output: {
         entryFileNames: `assets/js/[name].js`,
         chunkFileNames: `assets/js/[name].js`,
