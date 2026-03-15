@@ -31,6 +31,10 @@ stats.html
 stats.json
 stats.yml
 
+# Qwen local files
+.qwen/
+qwen-local.bat
+
 .env
 .env.local
 .env.*.local
