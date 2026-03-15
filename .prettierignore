@@ -1,12 +1,17 @@
-dist
-.local
-.output.js
-node_modules
+# Nunjucks templates
+**/*.njk
 
-**/*.svg
-**/*.sh
+# Локальные файлы
+.qwen/
+*.local
 
-public
-.npmrc
+# Логи
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-*-lock.yaml
+# Статистика
+stats.html
+stats.json
+stats.yml
