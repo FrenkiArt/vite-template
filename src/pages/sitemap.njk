@@ -4,23 +4,96 @@
 {% set description = "Карта сайта для навигации по всем страницам" %}
 
 {% block content %}
-
-<section class="uni-sec">
+<section class="uni-sec py-5">
     <div class="container">
-        <ul>
-        <li>element_1</li>
-        <li>element_2</li>
-        <li>element_3</li>
-        <li>element_4</li>
-        <li>element_5</li>
-        <li>element_6</li>
-        <li>element_7</li>
-        <li>element_8</li>
-        <li>element_9</li>
-        <li>element_10</li>
-        <li>element_11</li>
-        </ul>
+        <h1 class="mb-4">Карта сайта</h1>
+        <p class="lead mb-5">Все страницы сайта для удобной навигации</p>
+        
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="h4 card-title">
+                            <a href="/" class="stretched-link text-decoration-none">Главная страница</a>
+                        </h2>
+                        <p class="card-text text-muted">
+                            Тестовые компоненты, элементы Bootstrap и демонстрация стилей
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="h4 card-title">
+                            <a href="/sitemap/" class="stretched-link text-decoration-none">Карта сайта</a>
+                        </h2>
+                        <p class="card-text text-muted">
+                            Навигация по всем страницам сайта
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="h4 card-title">
+                            <a href="/catalog/" class="stretched-link text-decoration-none">Каталог</a>
+                        </h2>
+                        <p class="card-text text-muted">
+                            Каталог товаров и услуг
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="h4 card-title">
+                            <a href="/contacts/" class="stretched-link text-decoration-none">Контакты</a>
+                        </h2>
+                        <p class="card-text text-muted">
+                            Контактная информация и реквизиты
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {# Хлебные крошки #}
+        <nav aria-label="breadcrumb" class="mt-5">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/">Главная</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Карта сайта</li>
+            </ol>
+        </nav>
     </div>
 </section>
- 
+
+{# JSON-LD BreadcrumbList #}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "{{ site.config.base_url }}/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Карта сайта",
+            "item": "{{ site.config.base_url }}/sitemap/"
+        }
+    ]
+}
+</script>
 {% endblock %}
