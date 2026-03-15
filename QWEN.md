@@ -85,7 +85,9 @@
 **✅ Правильно (MODX 3 Namespaces):**
 
 ```php
-$resources = $modx->getIterator(\MODX\Revolution\modResource::class, ['parent' => 1]);
+$resources = $modx->getIterator(\MODX\Revolution\modResource::class, [
+  'parent' => 1,
+]);
 ```
 
 **❌ Неправильно (устаревший стиль MODX 2):**
@@ -110,28 +112,121 @@ $resources = $modx->getCollection('modResource', ['parent' => 1]);
 
 **Важно!** Проект работает в режиме **Nunjucks-шаблонизатора**, а не Fenom/MODX.
 
-- **Путь:** `D:\sites\vite-template`
+- **Путь:** `D:\sites\НаименованиеПроекта`
 - **Стек:** Vite.js + Nunjucks + Bootstrap 5.3 + SCSS (модульный)
 - **JS архитектура:** Vite автоматически собирает все `.js` файлы — явного entry-point не требуется (`/src/main.js` создаётся автоматически для всех шаблонов).
-- **CSS структура:** SCSS лежат в `src/assets/styles/`, через PostCSS компилируются в CSS.
+- **CSS структура:** SCSS лежат в `src/assets/styles/`, импортируются в `main.scss`.
 - **robots.txt:** Блокирует весь сайт (для промежуточного этапа разработки).
-- **Фаза по умолчанию:** Фронтенд (чистая верстка на Vite + Nunjucks), без интеграции в MODX.
+- **Фаза по умолчанию:** Фронтенд (чистая вёрстка на Vite + Nunjucks), без интеграции в MODX.
 
 ---
 
-## 📁 Структура проекта
+## 🎨 Дизайн-система проекта
 
-```text
-src/
-├── layouts/      # Базовые шаблоны (base.njk)
-├── components/   # Переиспользуемые компоненты (header, footer, sec-nav)
-├── pages/        # Страницы (index.njk, 404.njk, sitemap.njk)
-├── data/         # Глобальные JSON-данные (site.json)
-├── icons/        # SVG для автоматического спрайта
-└── assets/
-    ├── styles/   # SCSS модули
-    └── js/       # JS модули
+### Цветовая палитра
+
+| Переменная  | Значение  | Описание                     |
+| ----------- | --------- | ---------------------------- |
+| `$primary`  | `#a300f7` | Основной акцент (фиолетовый) |
+| `$gray-900` | `#000000` | Фон (тёмная тема)            |
+| `$gray-800` | `#101010` | Фон секций                   |
+| `$gray-700` | `#191919` | Фон карточек                 |
+| `$white`    | `#fff`    | Текст                        |
+
+### Типографика
+
+| Элемент           | Шрифт         | Класс                       |
+| ----------------- | ------------- | --------------------------- |
+| Заголовки (h1-h6) | **Unbounded** | `.ff-unbounded`             |
+| Основной текст    | **Gilroy**    | `.ff-gilroy` (по умолчанию) |
+| Лёгкий шрифт      | —             | `.fw-light` (300)           |
+| Жирный шрифт      | —             | `.fw-bold` (700)            |
+
+### Градиенты
+
+```scss
+.bg-grad-hero {
+  background-image: radial-gradient(
+    39% 39% at 53% 48%,
+    rgba(163, 0, 247, 0.17) 0%,
+    rgba(163, 0, 247, 0) 100%
+  );
+}
 ```
+
+---
+
+## 📁 Структура стилей
+
+**Файлы в `src/assets/styles/`:**
+
+| Файл                    | Назначение                                         |
+| ----------------------- | -------------------------------------------------- |
+| `custom-variables.scss` | Переменные Bootstrap (цвета, шрифты, отступы)      |
+| `custom-bootstrap.scss` | Сборка Bootstrap (только нужные модули)            |
+| `custom-utilities.scss` | Утилиты Bootstrap (opacity, overflow, flex и т.д.) |
+| `style.scss`            | Базовые стили (скроллбары, body, layout)           |
+| `main.scss`             | Точка входа (импортирует все модули)               |
+| `header.scss`           | Стили хедера                                       |
+| `footer.scss`           | Стили футера                                       |
+| `sections.scss`         | Стили секций (about, clients, skills)              |
+| `portfolio.scss`        | Hero-секция (уникальные стили)                     |
+| `links.scss`            | Универсальные стили ссылок (transition, hover)     |
+| `buttons.scss`          | Зарезервирован для кнопок                          |
+| `card.scss`             | Базовые стили карточек                             |
+| `card-template.scss`    | Шаблон для кастомных карточек                      |
+| `nav.scss`              | Справочник для сложных меню                        |
+| `details.scss`          | Зарезервирован для аккордеонов                     |
+| `typograf.scss`         | Зарезервирован для типографики                     |
+| `added-styles.scss`     | Утилитарные классы (`.ff-unbounded`, `.ff-gilroy`) |
+| `aspect-ratio.scss`     | Классы соотношения сторон (`.ar-16x9`, `.ar-4x3`)  |
+| `stuff.scss`            | Утилиты (`.sprite-icon`)                           |
+
+---
+
+## 📝 Соглашения
+
+### Именование файлов
+
+| Тип        | Формат            | Пример               |
+| ---------- | ----------------- | -------------------- |
+| SCSS файлы | `kebab-case.scss` | `card-template.scss` |
+| Компоненты | `kebab-case.njk`  | `header.njk`         |
+| Страницы   | `kebab-case.njk`  | `contacts.njk`       |
+| JS модули  | `kebab-case.js`   | `init-slider.js`     |
+
+### CSS / SCSS классы (БЭМ + Bootstrap)
+
+**Приоритет классов:**
+
+1. **Bootstrap утилиты** — `.fs-3`, `.fw-bold`, `.text-white`, `.bg-opacity-10`
+2. **Утилитарные классы проекта** — `.ff-unbounded`, `.ff-gilroy`, `.bg-grad-hero`
+3. **Кастомные классы** — `.hero-section`, `.card__title`
+
+**Пример:**
+
+```html
+<!-- ✅ Правильно: Bootstrap + утилиты -->
+<h2 class="section-title text-white mb-4 fs-3 fw-bold ff-unbounded">
+  Заголовок
+</h2>
+
+<!-- ✅ Правильно: БЭМ для уникальных блоков -->
+<article class="card">
+  <div class="card__wrap-media">
+    <img class="card__img" src="..." alt="" />
+  </div>
+  <div class="card__content">
+    <h3 class="card__title">Заголовок</h3>
+  </div>
+</article>
+```
+
+**Правила:**
+
+- `__` (два подчёркивания) — элемент (БЭМ)
+- `.ff-unbounded`, `.ff-gilroy` — шрифты (утилиты)
+- `.fs-*`, `.fw-*`, `.text-*` — размеры, вес, цвет (Bootstrap)
 
 ---
 
@@ -161,124 +256,6 @@ src/
 
 ---
 
-## 📝 Соглашения
-
-### Именование файлов
-
-| Тип        | Формат            | Пример               |
-| ---------- | ----------------- | -------------------- |
-| SCSS файлы | `kebab-case.scss` | `card-template.scss` |
-| Компоненты | `kebab-case.njk`  | `header.njk`         |
-| Страницы   | `kebab-case.njk`  | `contacts.njk`       |
-| JS модули  | `kebab-case.js`   | `init-slider.js`     |
-
-### CSS / SCSS классы (BEM-подобные)
-
-```scss
-/* Блок */
-.card {
-}
-
-/* Элемент */
-.card__title {
-}
-.card__content {
-}
-
-/* Модификатор */
-.card--highlighted {
-}
-.btn--primary {
-}
-
-/* В контексте Bootstrap */
-.hero-section {
-}
-.hero-section__content {
-}
-```
-
-**Правила:**
-
-- `__` (два подчёркивания) — элемент
-- `--` (два дефиса) — модификатор
-- `-` (один дефис) — слова в названии блока
-
-### HTML классы
-
-```html
-<!-- ✅ Правильно -->
-<article class="card">
-  <div class="card__header">
-    <h3 class="card__title">Заголовок</h3>
-  </div>
-  <div class="card__content">Текст</div>
-</article>
-
-<!-- ✅ С Bootstrap -->
-<section class="hero-section py-5">
-  <div class="container">
-    <h1 class="hero-section__title display-4">Заголовок</h1>
-  </div>
-</section>
-```
-
----
-
-## 📱 Mobile First
-
-SCSS медиа-запросы от меньшего к большему:
-
-```scss
-.element {
-  // Mobile (базовые стили)
-  padding: 1rem;
-
-  @media (min-width: 576px) {
-    // Tablet
-    padding: 2rem;
-  }
-
-  @media (min-width: 992px) {
-    // Desktop
-    padding: 3rem;
-  }
-}
-```
-
----
-
-## 📄 Новая страница
-
-Создать `src/pages/page.njk`:
-
-```nunjucks
-{% extends "layouts/base.njk" %}
-{% set title = "Заголовок страницы" %}
-
-{% block content %}
-<section class="py-5">
-  <div class="container">
-    <h1>Заголовок</h1>
-  </div>
-</section>
-{% endblock %}
-```
-
----
-
-## 📦 Глобальные данные
-
-Все файлы из `src/data/` доступны в шаблонах:
-
-```nunjucks
-{{ site.site_name }}
-{{ site.contacts.phone_display }}
-{{ site.menu2 }}  ← массив меню
-```
-
----
-
 ## 🧩 Новый компонент
 
 Создать `src/components/component-name.njk`:
@@ -301,62 +278,57 @@ SCSS медиа-запросы от меньшего к большему:
 **Пример (header.njk):**
 
 ```nunjucks
-<header id="header" class="header">
+<header id="header" class="header fixed-top py-3">
   <div class="container">
-    <a href="/">{{ site.site_name }}</a>
-    <nav>
-      {% for item in site.menu2 %}
-        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-      {% endfor %}
-    </nav>
+    <div class="row align-items-center">
+      <div class="col-md-3">
+        <a href="/" class="header__logo text-white text-decoration-none ff-unbounded fw-bold fs-4">
+          {{ site.site_name }}
+        </a>
+      </div>
+      <div class="col-md-6">
+        <nav class="header__nav">
+          <ul class="list-unstyled d-flex justify-content-center gap-4 mb-0">
+            {% for item in site.menu2 %}
+              <li><a href="{{ item.url }}" class="text-white text-decoration-none ff-gilroy">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
   </div>
 </header>
 ```
 
 ---
 
-## 🎨 Добавить SCSS модуль
+## 📄 Новая страница
 
-1. Создать `src/assets/styles/module-name.scss`
+Создать `src/pages/page.njk`:
 
-```scss
-// module-name.scss
-.module-name {
-  &__element {
-    // стили элемента
-  }
+```nunjucks
+{% extends "layouts/base.njk" %}
+{% set title = "Заголовок страницы" %}
 
-  &__element--modifier {
-    // стили модификатора
-  }
-}
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <h1 class="ff-unbounded">Заголовок</h1>
+  </div>
+</section>
+{% endblock %}
 ```
 
-1. Импортировать в `main.scss`:
+---
 
-```scss
-@import 'module-name';
-```
+## 📦 Глобальные данные
 
-1. Использовать BEM-классы в шаблонах:
+Все файлы из `src/data/` доступны в шаблонах:
 
-```html
-<div class="module-name">
-  <div class="module-name__element module-name__element--modifier">Контент</div>
-</div>
-```
-
-**Пример (buttons.scss):**
-
-```scss
-.btn-custom {
-  background-color: $primary;
-  color: $white;
-
-  &:hover {
-    background-color: darken($primary, 10%);
-  }
-}
+```nunjucks
+{{ site.site_name }}
+{{ site.contacts.phone_display }}
+{{ site.menu2 }}  ← массив меню
 ```
 
 ---
