@@ -121,25 +121,27 @@ $resources = $modx->getCollection('modResource', ['parent' => 1]);
 
 ## 📁 Структура проекта
 
+```text
 src/
-├── layouts/          # Базовые шаблоны (base.njk)
-├── components/       # Переиспользуемые компоненты (header, footer, sec-nav)
-├── pages/            # Страницы (index.njk, 404.njk, sitemap.njk)
-├── data/             # Глобальные JSON-данные (site.json)
-├── icons/            # SVG для автоматического спрайта
+├── layouts/      # Базовые шаблоны (base.njk)
+├── components/   # Переиспользуемые компоненты (header, footer, sec-nav)
+├── pages/        # Страницы (index.njk, 404.njk, sitemap.njk)
+├── data/         # Глобальные JSON-данные (site.json)
+├── icons/        # SVG для автоматического спрайта
 └── assets/
-    ├── styles/       # SCSS модули
-    └── js/           # JS модули
+    ├── styles/   # SCSS модули
+    └── js/       # JS модули
+```
 
 ---
 
 ## ⚙️ Команды
 
-| Команда         | Описание                 |
-| --------------- | ------------------------ |
+| Команда         | Описание                  |
+| --------------- | ------------------------- |
 | `npm run dev`   | Запуск сервера разработки |
-| `npm run build` | Сборка продакшена        |
-| `npm run lint`  | Проверка ESLint          |
+| `npm run build` | Сборка продакшена         |
+| `npm run lint`  | Проверка ESLint           |
 
 ---
 
@@ -174,19 +176,26 @@ src/
 
 ```scss
 /* Блок */
-.card { }
+.card {
+}
 
 /* Элемент */
-.card__title { }
-.card__content { }
+.card__title {
+}
+.card__content {
+}
 
 /* Модификатор */
-.card--highlighted { }
-.btn--primary { }
+.card--highlighted {
+}
+.btn--primary {
+}
 
 /* В контексте Bootstrap */
-.hero-section { }
-.hero-section__content { }
+.hero-section {
+}
+.hero-section__content {
+}
 ```
 
 **Правила:**
@@ -224,12 +233,12 @@ SCSS медиа-запросы от меньшего к большему:
 .element {
   // Mobile (базовые стили)
   padding: 1rem;
-  
+
   @media (min-width: 576px) {
     // Tablet
     padding: 2rem;
   }
-  
+
   @media (min-width: 992px) {
     // Desktop
     padding: 3rem;
@@ -316,7 +325,7 @@ SCSS медиа-запросы от меньшего к большему:
   &__element {
     // стили элемента
   }
-  
+
   &__element--modifier {
     // стили модификатора
   }
@@ -333,9 +342,7 @@ SCSS медиа-запросы от меньшего к большему:
 
 ```html
 <div class="module-name">
-  <div class="module-name__element module-name__element--modifier">
-    Контент
-  </div>
+  <div class="module-name__element module-name__element--modifier">Контент</div>
 </div>
 ```
 
@@ -390,10 +397,7 @@ SCSS медиа-запросы от меньшего к большему:
     "streetAddress": "{{ site.contacts.address }}",
     "addressCountry": "RU"
   },
-  "sameAs": [
-    "{{ site.social.vk }}",
-    "{{ site.social.telegram }}"
-  ]
+  "sameAs": ["{{ site.social.vk }}", "{{ site.social.telegram }}"]
 }
 ```
 
