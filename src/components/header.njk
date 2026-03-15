@@ -3,13 +3,13 @@
 
      <nav>
       <ul>
-        {% for item in site.menu %}
+        {% for item in site.menu2 %}
         <li><a href="{{ item.url }}">{{ item.title }}</a></li>
         {% endfor %}
       </ul>
     </nav>
 
-    <a href="tel:{{ site.phone }}">{{ site.phone }}</a>
+    <a href="tel:{{ site.contacts.phone_link }}">{{ site.contacts.phone_display }}</a>
 
     <div class="div">
       {# ID иконки теперь формируется как "sprite-имя_файла_без_расширения" #}

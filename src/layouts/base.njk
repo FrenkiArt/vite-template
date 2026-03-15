@@ -10,6 +10,36 @@
     {# Блок для мета-описания #}
     <meta name="description" content="{% block description %}{{ description | default('') }}{% endblock %}">
 
+    {# Блок для Open Graph и Twitter Cards #}
+    {% block social %}
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{ title | default(site_name) }}">
+        <meta property="og:description" content="{{ description | default('') }}">
+        <meta property="og:url" content="{{ site.config.base_url }}{{ site.resource.uri }}">
+        <meta property="og:site_name" content="{{ site.site_name | default('Site') }}">
+        <meta property="og:image" content="{{ site.config.base_url }}{{ site.seo.og_image }}">
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:title" content="{{ title | default(site_name) }}">
+        <meta property="twitter:description" content="{{ description | default('') }}">
+    {% endblock %}
+
+    {# JSON-LD микроразметка #}
+    {% block jsonld %}
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "{{ site.site_name | default('Site') }}",
+            "url": "{{ site.config.base_url }}{{ site.resource.uri }}",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "{{ site.config.base_url }}/search?q={query}",
+                "query-input": "required name=query"
+            }
+        }
+        </script>
+    {% endblock %}
+
     {# Блок для дополнительных мета-тегов и ресурсов в head #}
     {% block head %}
         {# Кэширование #}

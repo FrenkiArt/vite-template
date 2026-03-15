@@ -5,5 +5,40 @@
     { "title": "Главная", "url": "/" },
     { "title": "Каталог", "url": "/catalog/" },
     { "title": "Контакты", "url": "/contacts/" }
-  ]
+  ],
+  "config": {
+    "base_url": "https://mysite.com"
+  },
+  "resource": {
+    "uri": "/",
+    "pagetitle": "Главная страница",
+    "longtitle": "Главная страница — Мой сайт",
+    "description": "Описание главной страницы",
+    "introtext": "Вступительный текст",
+    "content": "Основной контент",
+    "publishedon": 1710000000,
+    "createdon": 1710000000,
+    "editedon": 1710000000
+  },
+  "seo": {
+    "title": "Главная страница — Мой сайт",
+    "description": "Описание для поисковиков",
+    "keywords": "ключевые, слова, теги",
+    "robots": "index, follow",
+    "og_image": "/assets/img/og-image.jpg",
+    "canonical": ""
+  },
+  "contacts": {
+    "email": "info@mysite.com",
+    "phone_display": "+7 (123) 456-78-90",
+    "phone_link": "+71234567890",
+    "address": "г. Казань, ул. Примерная, д. 1",
+    "working_hours": "Пн-Пт: 9:00–18:00"
+  },
+  "social": {
+    "vk": "https://vk.com/mysite",
+    "telegram": "https://t.me/mysite",
+    "whatsapp": "https://wa.me/71234567890",
+    "youtube": ""
+  }
 }

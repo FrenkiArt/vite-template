@@ -4,7 +4,6 @@ import nunjucks from '@vituum/vite-plugin-nunjucks';
 import path from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
 // import viteCompression from 'vite-plugin-compression';
-//import { VitePWA } from 'vite-plugin-pwa';
 import webfontDownload from 'vite-plugin-webfont-dl';
 import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 
@@ -19,7 +18,6 @@ export default defineConfig({
       brotliSize: false,
     }),
     //viteCompression(),
-    //VitePWA(),
     vituum(),
     nunjucks({
       root: './src', // Корневая папка для поиска шаблонов.

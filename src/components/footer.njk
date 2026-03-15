@@ -1,7 +1,44 @@
 <footer id="footer" class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-12">© {{ currentYear }}</div>
+            <div class="col-12">
+                <p>© {{ currentYear }} {{ site.site_name }}</p>
+                <p>{{ site.contacts.address }}</p>
+                <p>{{ site.contacts.working_hours }}</p>
+                <a href="tel:{{ site.contacts.phone_link }}">{{ site.contacts.phone_display }}</a>
+                <a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a>
+                
+                {# Соцсети #}
+                {% if site.social.vk %}<a href="{{ site.social.vk }}" target="_blank" rel="noopener">VK</a>{% endif %}
+                {% if site.social.telegram %}<a href="{{ site.social.telegram }}" target="_blank" rel="noopener">Telegram</a>{% endif %}
+                {% if site.social.whatsapp %}<a href="{{ site.social.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a>{% endif %}
+            </div>
         </div>
     </div>
+    
+    {# JSON-LD Organization #}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "{{ site.site_name }}",
+        "url": "{{ site.config.base_url }}",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "{{ site.contacts.phone_link }}",
+            "contactType": "customer service"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ site.contacts.address }}",
+            "addressLocality": "Казань",
+            "addressCountry": "RU"
+        },
+        "sameAs": [
+            {% if site.social.vk %}"{{ site.social.vk }}"{% endif %}{% if site.social.vk and site.social.telegram %},{% endif %}
+            {% if site.social.telegram %}"{{ site.social.telegram }}"{% endif %}{% if site.social.telegram and site.social.whatsapp %},{% endif %}
+            {% if site.social.whatsapp %}"{{ site.social.whatsapp }}"{% endif %}
+        ]
+    }
+    </script>
 </footer>
