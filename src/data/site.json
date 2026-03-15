@@ -3,7 +3,9 @@
   "phone": "+7 (123) 456-78-90",
   "menu2": [
     { "title": "Главная", "url": "/" },
+    { "title": "О нас", "url": "/about/" },
     { "title": "Каталог", "url": "/catalog/" },
+    { "title": "Новости", "url": "/news/" },
     { "title": "Контакты", "url": "/contacts/" }
   ],
   "config": {
