@@ -6,6 +6,9 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import webfontDownload from 'vite-plugin-webfont-dl';
 import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 
+const IMAGE_EXTS = ['png', 'jpg', 'jpeg', 'jfif', 'pjpeg', 'pjp', 'gif', 'avif', 'webp'];
+const FONT_EXTS = ['eot', 'ttf', 'otf', 'woff2', 'woff'];
+
 export default defineConfig({
   plugins: [
     webfontDownload(),
@@ -30,6 +33,7 @@ export default defineConfig({
   server: {
     open: true,
     cors: true,
+    host: true,
   },
 
   build: {
@@ -44,28 +48,20 @@ export default defineConfig({
         chunkFileNames: `assets/js/[name].js`,
         assetFileNames: (assetInfo) => {
           const ext = assetInfo.names[0].split('.').pop();
-          if (
-            [
-              'png',
-              'jpe?g',
-              'jfif',
-              'pjpeg',
-              'pjp',
-              'gif',
-              'avif',
-              'webp',
-            ].includes(ext)
-          ) {
+
+          if (IMAGE_EXTS.includes(ext)) {
             return `assets/img/[name].[ext]`;
-          } else if (ext === 'svg') {
-            return `assets/svg/[name].[ext]`;
-          } else if (['css', 'scss'].includes(ext)) {
-            return `assets/css/[name].[ext]`;
-          } else if (['eot', 'ttf', 'otf', 'woff2?', 'woff'].includes(ext)) {
-            return `assets/fonts/[name].[ext]`;
-          } else {
-            return `assets/[ext]/[name].[ext]`;
           }
+          if (ext === 'svg') {
+            return `assets/svg/[name].[ext]`;
+          }
+          if (['css', 'scss'].includes(ext)) {
+            return `assets/css/[name].[ext]`;
+          }
+          if (FONT_EXTS.includes(ext)) {
+            return `assets/fonts/[name].[ext]`;
+          }
+          return `assets/[ext]/[name].[ext]`;
         },
       },
     },
