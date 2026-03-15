@@ -135,11 +135,11 @@ src/
 
 ## ⚙️ Команды
 
-| Команда | Описание |
-|---------|----------|
-| `npm run dev` | Запуск сервера разработки |
-| `npm run build` | Сборка продакшена |
-| `npm run lint` | Проверка ESLint |
+| Команда                | Описание                 |
+| ---------------------- | ------------------------ |
+| `npm run dev`          | Запуск сервера разработки |
+| `npm run build`        | Сборка продакшена        |
+| `npm run lint`         | Проверка ESLint          |
 
 ---
 
@@ -163,12 +163,12 @@ src/
 
 ### Именование файлов
 
-| Тип | Формат | Пример |
-|-----|--------|--------|
-| SCSS файлы | `kebab-case.scss` | `card-template.scss` |
-| Компоненты | `kebab-case.njk` | `header.njk` |
-| Страницы | `kebab-case.njk` | `contacts.njk` |
-| JS модули | `kebab-case.js` | `init-slider.js` |
+| Тип          | Формат           | Пример               |
+| ------------ | ---------------- | -------------------- |
+| SCSS файлы   | `kebab-case.scss` | `card-template.scss` |
+| Компоненты   | `kebab-case.njk`  | `header.njk`         |
+| Страницы     | `kebab-case.njk`  | `contacts.njk`       |
+| JS модули    | `kebab-case.js`   | `init-slider.js`     |
 
 ### CSS / SCSS классы (BEM-подобные)
 
@@ -190,6 +190,7 @@ src/
 ```
 
 **Правила:**
+
 - `__` (два подчёркивания) — элемент
 - `--` (два дефиса) — модификатор
 - `-` (один дефис) — слова в названии блока
@@ -337,11 +338,12 @@ SCSS медиа-запросы от меньшего к большему:
 ```
 
 **Пример (buttons.scss):**
+
 ```scss
 .btn-custom {
   background-color: $primary;
   color: $white;
-  
+
   &:hover {
     background-color: darken($primary, 10%);
   }
@@ -353,6 +355,7 @@ SCSS медиа-запросы от меньшего к большему:
 ## 🏷️ JSON-LD примеры
 
 **WebSite (в base.njk):**
+
 ```json
 {
   "@context": "https://schema.org",
@@ -368,6 +371,7 @@ SCSS медиа-запросы от меньшего к большему:
 ```
 
 **Organization (в footer):**
+
 ```json
 {
   "@context": "https://schema.org",
@@ -392,6 +396,7 @@ SCSS медиа-запросы от меньшего к большему:
 ```
 
 **Article (новость/статья):**
+
 ```json
 {
   "@context": "https://schema.org",
@@ -408,6 +413,7 @@ SCSS медиа-запросы от меньшего к большему:
 ```
 
 **Product (товар):**
+
 ```json
 {
   "@context": "https://schema.org",
@@ -425,6 +431,7 @@ SCSS медиа-запросы от меньшего к большему:
 ```
 
 **BreadcrumbList (хлебные крошки):**
+
 ```json
 {
   "@context": "https://schema.org",
@@ -451,4 +458,3 @@ SCSS медиа-запросы от меньшего к большему:
   ]
 }
 ```
-
