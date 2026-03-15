@@ -2,7 +2,6 @@
 //import lightGallery from 'lightgallery';
 //import lgFullscreen from 'lightgallery/plugins/fullscreen';
 import { Modal } from 'bootstrap/js/dist/modal';
-//import Modal from 'bootstrap/js/dist/modal'
 
 import Swiper from 'swiper';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
@@ -42,7 +41,7 @@ function initLightGalleries() {
 }
 
 function initTemplateSlider() {
-  const slider = new SwiperCore('.slider-template', {
+  const slider = new Swiper('.slider-template', {
     loop: true,
     spaceBetween: 0,
     slidesPerView: 1,
@@ -64,8 +63,9 @@ function initTemplateSlider() {
     },
   });
 }
+
 function initTemplateSlider2() {
-  const slider = new SwiperCore('.slider-template2', {
+  const slider = new Swiper('.slider-template2', {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 0,
