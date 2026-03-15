@@ -6,7 +6,17 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import webfontDownload from 'vite-plugin-webfont-dl';
 import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 
-const IMAGE_EXTS = ['png', 'jpg', 'jpeg', 'jfif', 'pjpeg', 'pjp', 'gif', 'avif', 'webp'];
+const IMAGE_EXTS = [
+  'png',
+  'jpg',
+  'jpeg',
+  'jfif',
+  'pjpeg',
+  'pjp',
+  'gif',
+  'avif',
+  'webp',
+];
 const FONT_EXTS = ['eot', 'ttf', 'otf', 'woff2', 'woff'];
 
 export default defineConfig({
