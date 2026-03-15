@@ -119,10 +119,151 @@ $resources = $modx->getCollection('modResource', ['parent' => 1]);
 
 ---
 
+## 📁 Структура проекта
+
+src/
+├── layouts/          # Базовые шаблоны (base.njk)
+├── components/       # Переиспользуемые компоненты (header, footer, sec-nav)
+├── pages/            # Страницы (index.njk, 404.njk, sitemap.njk)
+├── data/             # Глобальные JSON-данные (site.json)
+├── icons/            # SVG для автоматического спрайта
+└── assets/
+    ├── styles/       # SCSS модули
+    └── js/           # JS модули
+
+---
+
+## ⚙️ Команды
+
+| Команда | Описание |
+|---------|----------|
+| `npm run dev` | Запуск сервера разработки |
+| `npm run build` | Сборка продакшена |
+| `npm run lint` | Проверка ESLint |
+
+---
+
+## 🖼️ SVG-спрайт
+
+- **Автоматический:** `/__spritemap#sprite-<имя>` (из `src/icons/`)
+- **Ручной:** `assets/svg/sprite.svg#<имя>` (кастомные файлы)
+
+---
+
 ## ⚠️ Критичные правила (не путать с прошлым опытом!)
 
 1. **Не ищи `/src/main.js`** — он создаётся автоматически для каждого шаблона!
 2. **Не путай SCSS в `styles/` с CSS** — это source-файлы, их нужно компилировать через Vite.
 3. **Не удаляй файлы из `dist/`** — проект на промежуточном этапе, robots.txt блокирует всё намеренно.
 4. **Nunjucks ≠ Fenom** — в шаблонах используются `{% extends %}`, `{% include %}`, `{{ variable }}`, а не `{$_modx}`.
+
+---
+
+## 📝 Соглашения
+
+### Именование файлов
+
+| Тип | Формат | Пример |
+|-----|--------|--------|
+| SCSS файлы | `kebab-case.scss` | `card-template.scss` |
+| Компоненты | `kebab-case.njk` | `header.njk` |
+| Страницы | `kebab-case.njk` | `contacts.njk` |
+| JS модули | `kebab-case.js` | `init-slider.js` |
+
+### CSS / SCSS классы (BEM-подобные)
+
+```scss
+/* Блок */
+.card { }
+
+/* Элемент */
+.card__title { }
+.card__content { }
+
+/* Модификатор */
+.card--highlighted { }
+.btn--primary { }
+
+/* В контексте Bootstrap */
+.hero-section { }
+.hero-section__content { }
+```
+
+**Правила:**
+- `__` (два подчёркивания) — элемент
+- `--` (два дефиса) — модификатор
+- `-` (один дефис) — слова в названии блока
+
+### HTML классы
+
+```html
+<!-- ✅ Правильно -->
+<article class="card">
+  <div class="card__header">
+    <h3 class="card__title">Заголовок</h3>
+  </div>
+  <div class="card__content">Текст</div>
+</article>
+
+<!-- ✅ С Bootstrap -->
+<section class="hero-section py-5">
+  <div class="container">
+    <h1 class="hero-section__title display-4">Заголовок</h1>
+  </div>
+</section>
+```
+
+---
+
+## 📱 Mobile First
+
+SCSS медиа-запросы от меньшего к большему:
+
+```scss
+.element {
+  // Mobile (базовые стили)
+  padding: 1rem;
+  
+  @media (min-width: 576px) {
+    // Tablet
+    padding: 2rem;
+  }
+  
+  @media (min-width: 992px) {
+    // Desktop
+    padding: 3rem;
+  }
+}
+```
+
+---
+
+## 📄 Новая страница
+
+Создать `src/pages/page.njk`:
+
+```nunjucks
+{% extends "layouts/base.njk" %}
+{% set title = "Заголовок страницы" %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <h1>Заголовок</h1>
+  </div>
+</section>
+{% endblock %}
+```
+
+---
+
+## 📦 Глобальные данные
+
+Все файлы из `src/data/` доступны в шаблонах:
+
+```nunjucks
+{{ site.site_name }}
+{{ site.contacts.phone_display }}
+{{ site.menu2 }}  ← массив меню
+```
 
