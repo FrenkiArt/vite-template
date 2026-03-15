@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import vituum from 'vituum';
 import nunjucks from '@vituum/vite-plugin-nunjucks';
-import path from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
 // import viteCompression from 'vite-plugin-compression';
 import webfontDownload from 'vite-plugin-webfont-dl';
@@ -43,8 +42,8 @@ export default defineConfig({
     emptyOutDir: true, // Очистка выходной директории
 
     rollupOptions: {
-      /*  input: { 
-        index: path.resolve(__dirname, 'src/templates/pages/index.njk'), 
+      /*  input: {
+        index: path.resolve(__dirname, 'src/templates/pages/index.njk'),
         //allelements: path.resolve(__dirname, 'src/templates/pages/all-elements.njk'),
       }, */
       output: {
