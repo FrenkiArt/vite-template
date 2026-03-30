@@ -14,7 +14,7 @@
     "archive-dist": "node archive.js"
   },
   "devDependencies": {
-    "@prettier/plugin-php": "^0.24.0",
+    "@prettier/plugin-php": "^0.25.0",
     "@spiriit/vite-plugin-svg-spritemap": "^6.0.0",
     "@vituum/vite-plugin-nunjucks": "^2.0.1",
     "autoprefixer": "^10.4.27",
