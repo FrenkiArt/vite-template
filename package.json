@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@prettier/plugin-php": "^0.25.0",
-    "@spiriit/vite-plugin-svg-spritemap": "^6.0.0",
+    "@spiriit/vite-plugin-svg-spritemap": "^7.0.0",
     "@vituum/vite-plugin-nunjucks": "^2.0.1",
     "autoprefixer": "^10.4.27",
     "eslint": "^10.1.0",
