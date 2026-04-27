@@ -31,7 +31,7 @@
     "vite": "^8.0.9",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-webfont-dl": "^3.12.0",
-    "vituum": "^2.0.1"
+    "vituum": "^2.0.2"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
