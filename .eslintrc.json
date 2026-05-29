@@ -1,5 +1,5 @@
 {
-  "plugins": ["prettier", "import"],
+  "plugins": ["prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
@@ -30,21 +30,5 @@
         "endOfLine": "auto"
       }
     ],
-    "import/order": [
-      "error",
-      {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ],
-        "newlines-between": "always"
-      }
-    ],
-    "import/newline-after-import": "error",
-    "import/no-duplicates": "error"
   }
 }

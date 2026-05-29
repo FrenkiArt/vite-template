@@ -88,17 +88,17 @@ $utilities: map-merge(
       ), */
     // scss-docs-end utils-shadow
     // scss-docs-start utils-focus-ring
-    'focus-ring': (
+    /* 'focus-ring': (
         css-var: true,
         css-variable-name: focus-ring-color,
         class: focus-ring,
         values: map-loop($theme-colors-rgb, rgba-css-var, '$key', 'focus-ring'),
-      ),
+      ), */
     // scss-docs-end utils-focus-ring
     // scss-docs-start utils-position
     'position': (
         property: position,
-        values: static relative absolute fixed sticky,
+        values: static relative absolute fixed sticky initial inherit,
       ),
     'top': (
       property: top,
@@ -591,7 +591,9 @@ $utilities: map-merge(
         property: font-family,
         class: font,
         values: (
-          monospace: var(--#{$prefix}font-monospace),
+          //monospace: var(--#{$prefix}font-monospace),
+          body: var($font-family-base),
+          heading: var($headings-font-family),
         ),
       ),
     'font-size': (
@@ -616,6 +618,7 @@ $utilities: map-merge(
         semibold: $font-weight-semibold,
         bold: $font-weight-bold,
         bolder: $font-weight-bolder,
+        black: 900,
       ),
     ),
     'line-height': (
@@ -623,6 +626,7 @@ $utilities: map-merge(
       class: lh,
       values: (
         1: 1,
+        headings: $headings-line-height,
         sm: $line-height-sm,
         base: $line-height-base,
         lg: $line-height-lg,
