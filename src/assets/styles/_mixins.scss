@@ -1,0 +1,30 @@
+// Функция адаптивного множителя
+// $r — обычный border-radius
+// $max-br — максимальный радиус, после которого глаз перестаёт различать изменения
+// по умолчанию 40px
+
+@function squircle-k($r, $max-br: 40px) {
+  // нормализуем радиус в диапазон 0–1
+  $t: $r / $max-br;
+
+  // ограничиваем от 0 до 1
+  @if $t < 0 {
+    $t: 0;
+  } @else if $t > 1 {
+    $t: 1;
+  }
+
+  // интерполяция между 1.75 и 2.05
+  @return 1.75 + (0.3 * $t);
+}
+
+// Миксин сглаживания
+@mixin smooth-br($br, $max-br: 40px) {
+  border-radius: $br;
+
+  @supports (corner-shape: squircle) {
+    $k: squircle-k($br, $max-br);
+    corner-shape: squircle;
+    border-radius: calc(#{$br} * #{$k});
+  }
+}

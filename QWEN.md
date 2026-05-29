@@ -112,7 +112,6 @@ $resources = $modx->getCollection('modResource', ['parent' => 1]);
 
 **Важно!** Проект работает в режиме **Nunjucks-шаблонизатора**, а не Fenom/MODX.
 
-- **Путь:** `D:\sites\НаименованиеПроекта`
 - **Стек:** Vite.js + Nunjucks + Bootstrap 5.3 + SCSS (модульный)
 - **JS архитектура:** Vite автоматически собирает все `.js` файлы — явного entry-point не требуется (`/src/main.js` создаётся автоматически для всех шаблонов).
 - **CSS структура:** SCSS лежат в `src/assets/styles/`, импортируются в `main.scss`.
@@ -242,8 +241,71 @@ $resources = $modx->getCollection('modResource', ['parent' => 1]);
 
 ## 🖼️ SVG-спрайт
 
-- **Автоматический:** `/__spritemap#sprite-<имя>` (из `src/icons/`)
-- **Ручной:** `assets/svg/sprite.svg#<имя>` (кастомные файлы)
+**Плагин:** `@spiriit/vite-plugin-svg-spritemap`
+
+### Настройка (`vite.config.js`)
+
+```javascript
+import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
+
+export default defineConfig({
+  plugins: [
+    VitePluginSvgSpritemap('./src/icons/*.svg', {
+      prefix: '', // Убираем префикс 'sprite-'
+      route: '/svg/spritemap', // Путь к спрайту в папке /svg/
+      styles: false, // Не генерировать CSS-классы
+    }),
+  ],
+});
+```
+
+### Как это работает
+
+**Dev режим (`npm run dev`):**
+
+- Плагин создаёт **виртуальный endpoint** `/svg/spritemap`
+- Спрайт генерируется **в памяти** при запросе
+- Файл не создаётся на диске
+
+**Production сборка (`npm run build`):**
+
+- Плагин создаёт **реальный файл** в `dist/assets/spritemap.[hash].svg`
+- В HTML **автоматически подставляется** правильный путь с хэшем
+- Пример: `/svg/spritemap` → `/assets/spritemap.a13724f4.svg`
+
+### Использование
+
+```html
+<svg class="sprite-icon" width="24" height="24">
+  <use xlink:href="/svg/spritemap#vite"></use>
+</svg>
+```
+
+**Важно:** Плагин сам заменит путь на реальный при сборке!
+
+### Примеры
+
+| Файл                        | ID            | Использование                |
+| --------------------------- | ------------- | ---------------------------- |
+| `src/icons/vite.svg`        | `vite`        | `/svg/spritemap#vite`        |
+| `src/icons/menu.svg`        | `menu`        | `/svg/spritemap#menu`        |
+| `src/icons/arrow-right.svg` | `arrow-right` | `/svg/spritemap#arrow-right` |
+| `src/icons/logo.svg`        | `logo`        | `/svg/spritemap#logo`        |
+
+### Параметры плагина
+
+| Параметр | Значение           | Описание                                  |
+| -------- | ------------------ | ----------------------------------------- |
+| `prefix` | `''`               | Префикс для ID (по умолчанию `'sprite-'`) |
+| `route`  | `'/svg/spritemap'` | Виртуальный путь (заменится в build)      |
+| `styles` | `false`            | Генерировать ли CSS-классы                |
+
+### Ссылки
+
+- [Документация плагина](https://spiriitlabs.github.io/vite-plugin-svg-spritemap/)
+- [Опции: prefix](https://spiriitlabs.github.io/vite-plugin-svg-spritemap/options/prefix.html)
+- [Опции: route](https://spiriitlabs.github.io/vite-plugin-svg-spritemap/options/route.html)
+- [Опции: styles](https://spiriitlabs.github.io/vite-plugin-svg-spritemap/options/styles.html)
 
 ---
 
