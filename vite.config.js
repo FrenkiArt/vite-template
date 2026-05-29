@@ -36,10 +36,24 @@ export default defineConfig({
         currentYear: new Date().getFullYear(),
       },
     }),
-     VitePluginSvgSpritemap('./src/icons/*.svg', {
+    /*  VitePluginSvgSpritemap('./src/icons/*.svg', {
       prefix: '', // Убираем префикс 'sprite-'
       route: '/svg/spritemap', // Путь к спрайту в папке /svg/
       styles: false, // Не генерировать CSS-классы
+    }), */
+    VitePluginSvgSpritemap('./src/icons/*.svg', {
+      prefix: false, // Убираем префикс 'sprite-'
+      styles: false, // Не генерировать CSS-классы
+      route: {
+        url: '/assets/svg/spritemap.svg',
+        name: 'Sprite icons',
+      },
+      output: {
+        filename: '/svg/spritemap.svg',
+        name: 'spritemap',
+        view: true,
+        use: true,
+      },
     }),
   ],
   server: {

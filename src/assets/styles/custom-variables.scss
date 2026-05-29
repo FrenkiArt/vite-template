@@ -40,7 +40,7 @@ $body-tertiary-bg: null;
 //$enable-grid-classes: true;
 //$enable-cssgrid: false;
 $enable-negative-margins: true;
-$enable-deprecation-messages: true;
+$enable-deprecation-messages: false;
 $enable-important-utilities: true;
 $enable-dark-mode: false;
 //$color-mode-type: media-query;
@@ -140,16 +140,14 @@ $transition-collapse: height 0.35s ease;
 $transition-collapse-width: width 0.35s ease;
 // scss-docs-end collapse-transition
 
-// stylelint-disable function-disallowed-list
 // scss-docs-start aspect-ratios
-$aspect-ratios: (
+/* $aspect-ratios: (
   '1x1': 100%,
   '4x3': calc(3 / 4 * 100%),
   '16x9': calc(9 / 16 * 100%),
   '21x9': calc(9 / 21 * 100%),
-);
+); */
 // scss-docs-end aspect-ratios
-// stylelint-enable function-disallowed-list
 
 $font-family-base: 'Inter', sans-serif;
 $font-size-base: 1rem;
